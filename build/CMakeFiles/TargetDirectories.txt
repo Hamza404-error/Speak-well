@@ -1,0 +1,5 @@
+C:/Projects/MyBackendApp/build/CMakeFiles/MyBackendApp.dir
+C:/Projects/MyBackendApp/build/CMakeFiles/ALL_BUILD.dir
+C:/Projects/MyBackendApp/build/CMakeFiles/ZERO_CHECK.dir
+C:/Projects/MyBackendApp/build/test/CMakeFiles/MyBackendApp_test.dir
+C:/Projects/MyBackendApp/build/test/CMakeFiles/ALL_BUILD.dir

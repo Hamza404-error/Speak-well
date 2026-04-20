@@ -1,0 +1,817 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>ClarifiedNation – Breaking Barriers Through Sign Language</title>
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@700;900&family=DM+Sans:wght@300;400;500;600&display=swap" rel="stylesheet" />
+  <style>
+    /* ── CSS Variables ── */
+    :root {
+      --teal:       #1b6b6e;
+      --teal-dark:  #124b4d;
+      --teal-light: #2a9ea3;
+      --teal-pale:  #e6f4f4;
+      --teal-mid:   #c2e4e4;
+      --gold:       #c9a84c;
+      --gold-light: #e8c97e;
+      --cream:      #f9f5ef;
+      --white:      #ffffff;
+      --off-white:  #f5f7f7;
+      --gray-100:   #f1f3f3;
+      --gray-200:   #e4e8e8;
+      --gray-300:   #cdd3d3;
+      --gray-400:   #96a3a4;
+      --gray-600:   #556162;
+      --gray-700:   #3a4f50;
+      --dark:       #182020;
+      --green:      #2e9b6a;
+      --green-pale: #e6f7ef;
+      --font-display: 'Playfair Display', Georgia, serif;
+      --font-body:    'DM Sans', sans-serif;
+      --shadow-sm:  0 2px 8px rgba(14,28,29,.07);
+      --shadow-md:  0 6px 24px rgba(14,28,29,.11);
+      --shadow-lg:  0 16px 48px rgba(14,28,29,.15);
+      --radius:     14px;
+      --radius-lg:  20px;
+      --t:          .25s cubic-bezier(.4,0,.2,1);
+    }
+
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+    html { scroll-behavior: smooth; }
+
+    body {
+      font-family: var(--font-body);
+      background: var(--white);
+      color: var(--dark);
+      font-size: 15px;
+      line-height: 1.65;
+      overflow-x: hidden;
+    }
+
+    /* ── UTILITY ── */
+    .container { max-width: 1100px; margin: 0 auto; padding: 0 28px; }
+    .badge {
+      display: inline-block;
+      font-size: 11px;
+      font-weight: 600;
+      letter-spacing: .12em;
+      text-transform: uppercase;
+      color: var(--teal);
+      margin-bottom: 12px;
+    }
+    .btn {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      padding: 13px 28px;
+      border-radius: 50px;
+      font-family: var(--font-body);
+      font-size: 14px;
+      font-weight: 600;
+      cursor: pointer;
+      border: 2px solid transparent;
+      transition: all .25s ease;
+      text-decoration: none;
+    }
+    .btn-primary {
+      background: var(--teal);
+      color: var(--white);
+    }
+    .btn-primary:hover { background: var(--teal-dark); transform: translateY(-2px); box-shadow: var(--shadow-md); }
+    .btn-outline {
+      background: transparent;
+      border-color: var(--teal);
+      color: var(--teal);
+    }
+    .btn-outline:hover { background: var(--teal); color: var(--white); transform: translateY(-2px); }
+    .btn-white {
+      background: var(--white);
+      color: var(--teal-dark);
+    }
+    .btn-white:hover { background: var(--cream); transform: translateY(-2px); }
+    .btn-outline-white {
+      background: transparent;
+      border-color: rgba(255,255,255,.6);
+      color: var(--white);
+    }
+    .btn-outline-white:hover { background: rgba(255,255,255,.1); transform: translateY(-2px); }
+
+    /* ── NAV ── */
+    nav {
+      background: var(--white);
+      border-bottom: 1.5px solid var(--gray-200);
+      position: sticky; top: 0; z-index: 100;
+    }
+    .nav-inner {
+      max-width: 1160px; margin: 0 auto; padding: 0 28px;
+      display: flex; align-items: center; justify-content: space-between; height: 64px;
+    }
+    .logo {
+      font-family: var(--font-display); font-size: 20px; font-weight: 700;
+      color: var(--teal-dark); text-decoration: none; letter-spacing: -.3px;
+    }
+    .nav-links { display: flex; gap: 4px; list-style: none; }
+    .nav-links a {
+      text-decoration: none; color: var(--gray-600);
+      font-size: 13px; font-weight: 600; letter-spacing: .09em; text-transform: uppercase;
+      padding: 7px 16px; border-radius: 6px;
+      transition: background var(--t), color var(--t);
+    }
+    .nav-links a:hover { background: var(--teal-pale); color: var(--teal); }
+    .nav-links a.active {
+      color: var(--teal);
+      border-bottom: 2.5px solid var(--teal);
+      border-radius: 0;
+    }
+    .nav-avatar {
+      width: 36px; height: 36px; border-radius: 50%;
+      background: linear-gradient(135deg, var(--teal-light), var(--teal-dark));
+      display: flex; align-items: center; justify-content: center;
+      font-size: 14px; font-weight: 700; color: var(--white);
+      cursor: pointer; border: 2px solid var(--gray-200);
+      transition: border-color var(--t), box-shadow var(--t);
+    }
+    .nav-avatar:hover { border-color: var(--teal-light); box-shadow: 0 0 0 3px var(--teal-pale); }
+
+    .nav-actions .sign-in {
+      font-size: 14px;
+      font-weight: 500;
+      color: var(--gray-600);
+      text-decoration: none;
+      transition: color .2s;
+    }
+    .nav-actions .sign-in:hover { color: var(--teal); }
+
+    /* ── HERO ── */
+    .hero {
+      background: linear-gradient(135deg, #eef7f7 0%, #f9f5ef 60%, #fdf9f1 100%);
+      padding: 80px 0 70px;
+      position: relative;
+      overflow: hidden;
+    }
+    .hero::before {
+      content: '';
+      position: absolute;
+      top: -60px; right: -80px;
+      width: 460px; height: 460px;
+      background: radial-gradient(circle, rgba(27,107,110,.08) 0%, transparent 70%);
+      border-radius: 50%;
+    }
+    .hero-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 60px;
+      align-items: center;
+    }
+    .hero-eyebrow {
+      font-size: 11px;
+      font-weight: 600;
+      letter-spacing: .18em;
+      text-transform: uppercase;
+      color: var(--teal);
+      margin-bottom: 18px;
+    }
+    .hero h1 {
+      font-family: var(--font-display);
+      font-size: clamp(38px, 5vw, 56px);
+      font-weight: 900;
+      line-height: 1.1;
+      color: var(--dark);
+      margin-bottom: 20px;
+    }
+    .hero p {
+      font-size: 15px;
+      color: var(--gray-600);
+      max-width: 440px;
+      margin-bottom: 32px;
+    }
+    .hero-ctas { display: flex; gap: 14px; flex-wrap: wrap; }
+    .hero-image-wrap {
+      position: relative;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+    }
+    .hero-card {
+      background: var(--white);
+      border-radius: 24px;
+      box-shadow: var(--shadow-lg);
+      padding: 36px;
+      width: 100%;
+      max-width: 380px;
+      position: relative;
+    }
+    .hero-illustration {
+      width: 100%;
+      height: 220px;
+      background: linear-gradient(135deg, #d8f0f0 0%, #e8f5e9 100%);
+      border-radius: 16px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 80px;
+      margin-bottom: 16px;
+    }
+    .hero-card-label {
+      font-size: 13px;
+      font-weight: 600;
+      color: var(--teal);
+      text-align: center;
+    }
+    .hero-float-badge {
+      position: absolute;
+      bottom: -18px;
+      right: -20px;
+      background: var(--white);
+      border-radius: 12px;
+      padding: 12px 18px;
+      box-shadow: var(--shadow-md);
+      font-size: 12px;
+      font-weight: 600;
+      color: var(--dark);
+      display: flex;
+      align-items: center;
+      gap: 8px;
+    }
+    .hero-float-badge .dot { width: 8px; height: 8px; border-radius: 50%; background: #4caf50; }
+
+    /* ── FEATURES INTRO ── */
+    .features-intro {
+      padding: 80px 0 60px;
+      text-align: center;
+    }
+    .features-intro h2 {
+      font-family: var(--font-display);
+      font-size: clamp(28px, 4vw, 40px);
+      font-weight: 700;
+      margin-bottom: 12px;
+    }
+    .features-intro p {
+      color: var(--gray-600);
+      max-width: 480px;
+      margin: 0 auto 56px;
+    }
+    .features-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 28px;
+    }
+    .feature-card {
+      background: var(--white);
+      border: 1px solid var(--gray-200);
+      border-radius: var(--radius);
+      padding: 32px 28px;
+      text-align: left;
+      transition: all .3s ease;
+      position: relative;
+      overflow: hidden;
+    }
+    .feature-card::after {
+      content: '';
+      position: absolute;
+      bottom: 0; left: 0;
+      height: 3px;
+      width: 0;
+      background: var(--teal);
+      transition: width .3s ease;
+    }
+    .feature-card:hover { box-shadow: var(--shadow-md); transform: translateY(-4px); }
+    .feature-card:hover::after { width: 100%; }
+    .feature-icon {
+      width: 48px; height: 48px;
+      border-radius: 12px;
+      background: #e8f5f5;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 22px;
+      margin-bottom: 18px;
+    }
+    .feature-card h3 {
+      font-size: 17px;
+      font-weight: 700;
+      margin-bottom: 8px;
+      color: var(--dark);
+    }
+    .feature-card p {
+      font-size: 13.5px;
+      color: var(--gray-600);
+      line-height: 1.6;
+      margin-bottom: 18px;
+    }
+    .feature-stat {
+      font-size: 12px;
+      font-weight: 600;
+      color: var(--teal);
+      display: flex;
+      gap: 6px;
+      align-items: center;
+    }
+    .feature-stat span { background: #e8f5f5; padding: 3px 10px; border-radius: 20px; }
+    .feature-cta {
+      font-size: 13px;
+      font-weight: 600;
+      color: var(--teal);
+      text-decoration: none;
+      display: inline-flex;
+      align-items: center;
+      gap: 4px;
+      transition: gap .2s;
+    }
+    .feature-cta:hover { gap: 8px; }
+
+    /* ── COMMUNITY BANNER ── */
+    .community-banner {
+      background: linear-gradient(135deg, var(--teal-dark) 0%, var(--teal) 50%, #2a9ea3 100%);
+      margin: 20px 0;
+      padding: 64px 0;
+      position: relative;
+      overflow: hidden;
+    }
+    .community-banner::before {
+      content: '';
+      position: absolute;
+      inset: 0;
+      background: url("data:image/svg+xml,%3Csvg width='60' height='60' viewBox='0 0 60 60' xmlns='http://www.w3.org/2000/svg'%3E%3Cg fill='none' fill-rule='evenodd'%3E%3Cg fill='%23ffffff' fill-opacity='0.04'%3E%3Cpath d='M36 34v-4h-2v4h-4v2h4v4h2v-4h4v-2h-4zm0-30V0h-2v4h-4v2h4v4h2V6h4V4h-4zM6 34v-4H4v4H0v2h4v4h2v-4h4v-2H6zM6 4V0H4v4H0v2h4v4h2V6h4V4H6z'/%3E%3C/g%3E%3C/g%3E%3C/svg%3E");
+    }
+    .community-inner {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 60px;
+      align-items: center;
+      position: relative;
+    }
+    .community-text h2 {
+      font-family: var(--font-display);
+      font-size: clamp(28px, 4vw, 44px);
+      font-weight: 900;
+      color: var(--white);
+      line-height: 1.15;
+      margin-bottom: 16px;
+    }
+    .community-text p {
+      color: rgba(255,255,255,.78);
+      font-size: 14.5px;
+      max-width: 400px;
+      margin-bottom: 28px;
+    }
+    .learners-count {
+      display: inline-flex;
+      align-items: center;
+      gap: 10px;
+      background: rgba(255,255,255,.12);
+      backdrop-filter: blur(6px);
+      border: 1px solid rgba(255,255,255,.2);
+      border-radius: 50px;
+      padding: 10px 20px;
+      font-size: 13px;
+      font-weight: 600;
+      color: var(--white);
+      margin-top: 16px;
+    }
+    .learners-count .count-num { font-size: 18px; font-family: var(--font-display); }
+    .community-event {
+      background: rgba(255,255,255,.1);
+      backdrop-filter: blur(10px);
+      border: 1px solid rgba(255,255,255,.15);
+      border-radius: 20px;
+      padding: 40px 32px;
+      text-align: center;
+      color: var(--white);
+    }
+    .community-event .event-badge {
+      font-size: 11px;
+      font-weight: 700;
+      letter-spacing: .14em;
+      text-transform: uppercase;
+      color: var(--gold-light);
+      margin-bottom: 8px;
+    }
+    .community-event h3 {
+      font-family: var(--font-display);
+      font-size: 32px;
+      font-weight: 900;
+      color: var(--white);
+      line-height: 1.15;
+      margin-bottom: 20px;
+    }
+    .hand-signs {
+      display: flex;
+      justify-content: center;
+      gap: 20px;
+      margin: 24px 0;
+      font-size: 32px;
+    }
+    .community-event p {
+      font-size: 13px;
+      color: rgba(255,255,255,.72);
+      line-height: 1.6;
+      margin-bottom: 20px;
+    }
+
+    /* ── JOURNEY ── */
+    .journey {
+      padding: 88px 0;
+      background: var(--cream);
+    }
+    .journey-header {
+      display: flex;
+      align-items: flex-end;
+      justify-content: space-between;
+      margin-bottom: 52px;
+      flex-wrap: wrap;
+      gap: 24px;
+    }
+    .journey-header h2 {
+      font-family: var(--font-display);
+      font-size: clamp(30px, 4vw, 44px);
+      font-weight: 700;
+      line-height: 1.15;
+    }
+    .journey-header p {
+      max-width: 320px;
+      font-size: 14px;
+      color: var(--gray-600);
+    }
+    .steps-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 36px;
+    }
+    .step {
+      position: relative;
+    }
+    .step-num {
+      font-family: var(--font-display);
+      font-size: 48px;
+      font-weight: 900;
+      color: rgba(27,107,110,.12);
+      line-height: 1;
+      margin-bottom: 12px;
+    }
+    .step h3 {
+      font-size: 18px;
+      font-weight: 700;
+      margin-bottom: 10px;
+    }
+    .step p {
+      font-size: 13.5px;
+      color: var(--gray-600);
+      line-height: 1.7;
+    }
+
+    /* ── TESTIMONIALS ── */
+    .testimonials {
+      padding: 88px 0;
+    }
+    .testimonials-header { margin-bottom: 48px; }
+    .testimonials-header .badge { display: block; }
+    .testimonials-header h2 {
+      font-family: var(--font-display);
+      font-size: clamp(28px, 3.5vw, 38px);
+      font-weight: 700;
+      max-width: 400px;
+      margin-bottom: 12px;
+    }
+    .testimonials-header p {
+      color: var(--gray-600);
+      font-size: 14px;
+      max-width: 400px;
+    }
+    .testimonials-layout {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 28px;
+    }
+    .testimonial-card {
+      background: var(--white);
+      border: 1px solid var(--gray-200);
+      border-radius: var(--radius);
+      padding: 28px 26px;
+      transition: box-shadow .25s;
+    }
+    .testimonial-card:hover { box-shadow: var(--shadow-md); }
+    .stars {
+      font-size: 15px;
+      color: var(--gold);
+      letter-spacing: 2px;
+      margin-bottom: 14px;
+    }
+    .testimonial-card blockquote {
+      font-size: 14px;
+      color: var(--gray-600);
+      line-height: 1.7;
+      margin-bottom: 18px;
+      font-style: italic;
+    }
+    .reviewer {
+      display: flex;
+      align-items: center;
+      gap: 12px;
+    }
+    .reviewer-avatar {
+      width: 38px; height: 38px;
+      border-radius: 50%;
+      background: linear-gradient(135deg, var(--teal-light), var(--teal-dark));
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 15px;
+      font-weight: 700;
+      color: var(--white);
+      flex-shrink: 0;
+    }
+    .reviewer-name { font-size: 13.5px; font-weight: 700; }
+    .reviewer-title { font-size: 12px; color: var(--gray-400); }
+
+    /* ── CTA SECTION ── */
+    .cta-section {
+      background: linear-gradient(135deg, var(--teal-dark) 0%, #0e3d3f 100%);
+      padding: 88px 0;
+      text-align: center;
+      position: relative;
+      overflow: hidden;
+    }
+    .cta-section::before {
+      content: '';
+      position: absolute;
+      top: -100px; left: 50%;
+      transform: translateX(-50%);
+      width: 700px; height: 700px;
+      background: radial-gradient(circle, rgba(201,168,76,.12) 0%, transparent 65%);
+      border-radius: 50%;
+      pointer-events: none;
+    }
+    .cta-section h2 {
+      font-family: var(--font-display);
+      font-size: clamp(32px, 5vw, 52px);
+      font-weight: 900;
+      color: var(--white);
+      line-height: 1.15;
+      max-width: 560px;
+      margin: 0 auto 16px;
+    }
+    .cta-section p {
+      color: rgba(255,255,255,.68);
+      font-size: 15px;
+      max-width: 420px;
+      margin: 0 auto 36px;
+    }
+    .cta-btns { display: flex; justify-content: center; gap: 14px; flex-wrap: wrap; }
+
+    /* ── FOOTER ── */
+    footer {
+      background: var(--dark);
+      color: rgba(255,255,255,.55);
+      padding: 40px 0;
+    }
+    .footer-inner {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      flex-wrap: wrap;
+      gap: 20px;
+    }
+    .footer-logo {
+      font-family: var(--font-display);
+      font-size: 18px;
+      font-weight: 700;
+      color: var(--white);
+    }
+    .footer-links {
+      display: flex;
+      gap: 28px;
+      list-style: none;
+    }
+    .footer-links a {
+      color: rgba(255,255,255,.5);
+      text-decoration: none;
+      font-size: 13px;
+      transition: color .2s;
+    }
+    .footer-links a:hover { color: var(--white); }
+    .footer-copy { font-size: 12px; }
+
+    /* ── ANIMATIONS ── */
+    @keyframes fadeUp {
+      from { opacity: 0; transform: translateY(24px); }
+      to   { opacity: 1; transform: translateY(0); }
+    }
+    .hero-text > * { animation: fadeUp .6s ease both; }
+    .hero-eyebrow  { animation-delay: .05s; }
+    .hero h1       { animation-delay: .15s; }
+    .hero p        { animation-delay: .25s; }
+    .hero-ctas     { animation-delay: .35s; }
+    .hero-image-wrap { animation: fadeUp .7s .3s ease both; }
+
+    /* ── RESPONSIVE ── */
+    @media (max-width: 860px) {
+      .hero-grid,
+      .community-inner,
+      .testimonials-layout { grid-template-columns: 1fr; }
+      .hero-image-wrap { order: -1; }
+      .features-grid,
+      .steps-grid { grid-template-columns: 1fr 1fr; }
+      .nav-links { display: none; }
+      .journey-header { flex-direction: column; align-items: flex-start; }
+    }
+    @media (max-width: 560px) {
+      .features-grid,
+      .steps-grid { grid-template-columns: 1fr; }
+      .footer-inner { flex-direction: column; align-items: flex-start; }
+    }
+  </style>
+</head>
+<body>
+
+<!-- ── NAVBAR ── -->
+<nav>
+  <div class="container">
+    <div class="nav-inner">
+      <a href="/" class="logo">Clarified Horizon</a>
+        <ul class="nav-links">
+          <li><a href="/" class="active">HOME</a></li>
+          <li><a href="/learn">LEARN</a></li>
+          <li><a href="/translate">TRANSLATE</a></li>
+        </ul>
+      <div class="nav-actions">
+        <a href="/signin" class="sign-in">Sign In</a>
+        <a href="/learn" class="btn btn-primary">Get Started</a>
+      </div>
+    </div>
+  </div>
+</nav>
+
+<!-- ── HERO ── -->
+<section class="hero">
+  <div class="container">
+    <div class="hero-grid">
+      <div class="hero-text">
+        <div class="hero-eyebrow">Empowering Communication</div>
+        <h1>Breaking Barriers<br>Through Sign<br>Language.</h1>
+        <p>Learn American Sign Language to find and express yourself with our AI-powered platform designed for clarity and connection.</p>
+        <div class="hero-ctas">
+          <a href="/learn" class="btn btn-primary">Get Started For Free →</a>
+          <a href="#" class="btn btn-outline">▶ Watch Demo</a>
+        </div>
+      </div>
+      <div class="hero-image-wrap">
+        <div class="hero-card">
+          <div class="hero-illustration">🤟</div>
+          <div class="hero-card-label">Real-Time Sign Detection Active</div>
+          <div class="hero-float-badge">
+            <span class="dot"></span>
+            AI Analyzing Sign…
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ── FEATURES ── -->
+<section class="features-intro">
+  <div class="container">
+    <div class="badge">Capabilities</div>
+    <h2>Intelligence Meets Expression</h2>
+    <p>Three core pillars that power your learning journey from first gesture to fluent conversation.</p>
+    <div class="features-grid">
+
+      <div class="feature-card">
+        <div class="feature-icon">⚡</div>
+        <h3>Real-Time Translation</h3>
+        <p>Translate in real time from hand gestures to instant text and speech. Our proprietary AI understands context, not just isolated signs.</p>
+        <div class="feature-stat"><span>99% Accuracy</span> <span>Real-Time</span></div>
+      </div>
+
+      <div class="feature-card">
+        <div class="feature-icon">🎓</div>
+        <h3>Interactive Learning</h3>
+        <p>Master ASL with personalized, interactive courses that provide real feedback on your signs as you practice each lesson.</p>
+        <a href="/learn" class="feature-cta">Start Learning →</a>
+      </div>
+
+      <div class="feature-card">
+        <div class="feature-icon">🌐</div>
+        <h3>Community Support</h3>
+        <p>Connect with a global community of learners and experts. Participate in workshops and peer reviews to accelerate growth.</p>
+        <div class="feature-stat"><span>50,000+ Members</span></div>
+      </div>
+
+    </div>
+  </div>
+</section>
+<!-- ── JOURNEY ── -->
+<section class="journey">
+  <div class="container">
+    <div class="journey-header">
+      <div>
+        <div class="badge">The Journey</div>
+        <h2>Simplicity in Motion</h2>
+      </div>
+      <p>Your path to fluency is structured and supported every step of the way.</p>
+    </div>
+
+    <div class="steps-grid">
+      <div class="step">
+        <div class="step-num">01</div>
+        <h3>Choose your path</h3>
+        <p>Whether you are a complete beginner looking for the basics, or a teacher expanding your signing vocabulary — we have a track for you.</p>
+      </div>
+      <div class="step">
+        <div class="step-num">02</div>
+        <h3>Practice with AI</h3>
+        <p>Our camera-based AI gives you real-time feedback on hand shape, position, and motion so you can improve with every repetition.</p>
+      </div>
+      <div class="step">
+        <div class="step-num">03</div>
+        <h3>Connect &amp; Communicate</h3>
+        <p>Apply your skills in real-world scenarios and join our community to build confidence using sign language every day.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ── TESTIMONIALS ── -->
+<section class="testimonials">
+  <div class="container">
+    <div class="testimonials-header">
+      <span class="badge">Success Stories</span>
+      <h2>Voices from Our Community</h2>
+      <p>We are proud to support thousands of adults on their journey to more inclusive communication.</p>
+    </div>
+
+    <div class="testimonials-layout">
+
+      <div class="testimonial-card">
+        <div class="stars">★★★★★</div>
+        <blockquote>"The real-time AI feedback is a game changer. I have reached Level 3 fluency faster than I did in a past classroom-only course."</blockquote>
+        <div class="reviewer">
+          <div class="reviewer-avatar">F</div>
+          <div>
+            <div class="reviewer-name">Farah J.</div>
+            <div class="reviewer-title">Community Member</div>
+          </div>
+        </div>
+      </div>
+
+      <div class="testimonial-card">
+        <div class="stars">★★★★★</div>
+        <blockquote>"As a manager, this platform helped me bridge the gap with a deaf team member. The translation tool is brilliantly built."</blockquote>
+        <div class="reviewer">
+          <div class="reviewer-avatar">M</div>
+          <div>
+            <div class="reviewer-name">Marcus G.</div>
+            <div class="reviewer-title">Team Manager</div>
+          </div>
+        </div>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+<!-- ── CTA ── -->
+<section class="cta-section">
+  <div class="container">
+    <h2>Ready to start your journey to fluency?</h2>
+    <p>Join over 50,000 learners today and start breaking communication barriers for good.</p>
+    <div class="cta-btns">
+      <a href="/learn" class="btn btn-white">Get Started For Free</a>
+      <a href="#" class="btn btn-outline-white">View Pricing</a>
+    </div>
+  </div>
+</section>
+
+<!-- ── FOOTER ── -->
+<footer>
+  <div class="container">
+    <div class="footer-inner">
+      <div class="footer-logo">ClarifiedNation</div>
+      <ul class="footer-links">
+        <li><a href="#">Privacy Policy</a></li>
+        <li><a href="#">Terms of Service</a></li>
+        <li><a href="#">Contact Support</a></li>
+        <li><a href="#">Accessibility</a></li>
+      </ul>
+      <div class="footer-copy">© 2025 ClarifiedNation. All rights reserved.</div>
+    </div>
+  </div>
+</footer>
+
+<script>
+  document.addEventListener('DOMContentLoaded', () => {
+    const userName = localStorage.getItem('userName');
+    if (userName) {
+      const firstLetter = userName.charAt(0).toUpperCase();
+      const navActions = document.querySelector('.nav-actions');
+      if (navActions) {
+        navActions.innerHTML = '<div class="nav-avatar" title="Logged in as ' + userName + ' (Click to Log Out / Dashboard)" onclick="if(confirm(\'Do you want to log out? (Cancel to go to Dashboard)\')) { localStorage.removeItem(\'userName\'); window.location.reload(); } else { window.location.href=\'/learn\'; }">' + firstLetter + '</div>';
+      }
+    }
+  });
+</script>
+
+</body>
+</html>

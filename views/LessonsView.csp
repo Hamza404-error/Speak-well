@@ -1,0 +1,1101 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>SignHorizon – Learn</title>
+  <link href="https://fonts.googleapis.com/css2?family=Sora:wght@300;400;500;600;700;800&family=Lora:ital,wght@0,500;0,600;1,400&display=swap" rel="stylesheet" />
+  <style>
+    :root {
+      --teal:        #1b6b6e;
+      --teal-dark:   #124b4d;
+      --teal-light:  #2a9ea3;
+      --teal-pale:   #e6f4f4;
+      --teal-mid:    #c2e4e4;
+      --gold:        #d4a43a;
+      --gold-light:  #f0c96a;
+      --white:       #ffffff;
+      --off-white:   #f7f9f9;
+      --gray-100:    #f0f2f2;
+      --gray-200:    #e2e6e6;
+      --gray-300:    #c8cecf;
+      --gray-500:    #7a8a8b;
+      --gray-700:    #3d4f50;
+      --dark:        #0e1c1d;
+      --green:       #2e9b6a;
+      --green-pale:  #e6f7ef;
+      --font-h:      'Sora', sans-serif;
+      --font-b:      'Sora', sans-serif;
+      --radius-sm:   8px;
+      --radius:      14px;
+      --radius-lg:   20px;
+      --shadow-sm:   0 2px 8px rgba(14,28,29,.07);
+      --shadow-md:   0 6px 24px rgba(14,28,29,.11);
+      --shadow-lg:   0 16px 48px rgba(14,28,29,.16);
+      --transition:  .25s cubic-bezier(.4,0,.2,1);
+    }
+
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+    html { scroll-behavior: smooth; }
+
+    body {
+      font-family: var(--font-b);
+      background: var(--off-white);
+      color: var(--dark);
+      font-size: 15px;
+      line-height: 1.65;
+      overflow-x: hidden;
+    }
+
+    /* ── NAVBAR ── */
+    nav {
+      background: var(--white);
+      border-bottom: 1.5px solid var(--gray-200);
+      position: sticky; top: 0; z-index: 200;
+    }
+    .nav-inner {
+      max-width: 1160px; margin: 0 auto; padding: 0 28px;
+      display: flex; align-items: center; justify-content: space-between; height: 62px;
+    }
+    .logo {
+      font-family: var(--font-h); font-size: 19px; font-weight: 800;
+      color: var(--teal-dark); text-decoration: none; letter-spacing: -.3px;
+    }
+    .logo span { color: var(--teal-light); }
+    .nav-links { display: flex; gap: 8px; list-style: none; }
+    .nav-links a {
+      text-decoration: none; color: var(--gray-700);
+      font-size: 13px; font-weight: 600; letter-spacing: .04em; text-transform: uppercase;
+      padding: 6px 14px; border-radius: 6px;
+      transition: background var(--transition), color var(--transition);
+    }
+    .nav-links a:hover { background: var(--teal-pale); color: var(--teal); }
+    .nav-links a.active { color: var(--teal); border-bottom: 2.5px solid var(--teal); border-radius: 0; }
+    .nav-icons { display: flex; gap: 10px; }
+    .nav-icon-btn {
+      width: 36px; height: 36px; border-radius: 50%; border: 1.5px solid var(--gray-200);
+      background: var(--white); cursor: pointer; display: flex; align-items: center; justify-content: center;
+      font-size: 16px; transition: border-color var(--transition), box-shadow var(--transition);
+    }
+    .nav-icon-btn:hover { border-color: var(--teal-light); box-shadow: 0 0 0 3px var(--teal-pale); }
+    .nav-avatar {
+      width: 36px; height: 36px; border-radius: 50%;
+      background: linear-gradient(135deg, var(--teal-light), var(--teal-dark));
+      display: flex; align-items: center; justify-content: center;
+      font-size: 14px; font-weight: 700; color: var(--white);
+      cursor: pointer; border: 1.5px solid var(--gray-200);
+      transition: border-color var(--transition), box-shadow var(--transition);
+      margin-left: 6px;
+    }
+    .nav-avatar:hover { border-color: var(--teal-light); box-shadow: 0 0 0 3px var(--teal-pale); }
+
+    /* ── PAGE SHELL ── */
+    .page-shell { max-width: 1160px; margin: 0 auto; padding: 40px 28px 80px; }
+
+    /* ── PAGE HEADER ── */
+    .page-header { margin-bottom: 36px; }
+    .page-header h1 {
+      font-family: var(--font-h); font-size: clamp(26px, 4vw, 36px);
+      font-weight: 800; color: var(--dark); letter-spacing: -.5px;
+      margin-bottom: 8px;
+    }
+    .page-header p { font-size: 15px; color: var(--gray-500); max-width: 520px; }
+
+    /* ── PROGRESS BAR ── */
+    .overall-progress {
+      background: var(--white); border: 1.5px solid var(--gray-200);
+      border-radius: var(--radius); padding: 20px 24px; margin-bottom: 36px;
+      display: flex; align-items: center; gap: 24px;
+      box-shadow: var(--shadow-sm);
+    }
+    .progress-label { font-size: 13px; font-weight: 600; color: var(--gray-700); white-space: nowrap; }
+    .progress-track {
+      flex: 1; height: 8px; background: var(--gray-200); border-radius: 99px; overflow: hidden;
+    }
+    .progress-fill {
+      height: 100%; background: linear-gradient(90deg, var(--teal-light), var(--teal));
+      border-radius: 99px; transition: width .6s ease;
+    }
+    .progress-pct { font-size: 14px; font-weight: 700; color: var(--teal); white-space: nowrap; }
+    .progress-meta { font-size: 12px; color: var(--gray-500); white-space: nowrap; }
+
+    /* ── UNITS LIST ── */
+    .units-list { display: flex; flex-direction: column; gap: 20px; }
+
+    /* ── UNIT CARD ── */
+    .unit-card {
+      background: var(--white);
+      border: 1.5px solid var(--gray-200);
+      border-radius: var(--radius-lg);
+      overflow: hidden;
+      box-shadow: var(--shadow-sm);
+      transition: box-shadow var(--transition);
+    }
+    .unit-card:hover { box-shadow: var(--shadow-md); }
+
+    /* Unit Header */
+    .unit-header {
+      display: flex; align-items: center; gap: 18px;
+      padding: 22px 26px;
+      cursor: pointer;
+      user-select: none;
+      transition: background var(--transition);
+    }
+    .unit-header:hover { background: var(--off-white); }
+    .unit-number {
+      width: 44px; height: 44px; border-radius: 12px; flex-shrink: 0;
+      display: flex; align-items: center; justify-content: center;
+      font-family: var(--font-h); font-size: 16px; font-weight: 800;
+      color: var(--white);
+    }
+    .unit-info { flex: 1; }
+    .unit-info h2 { font-size: 16px; font-weight: 700; margin-bottom: 3px; }
+    .unit-info p { font-size: 12.5px; color: var(--gray-500); }
+    .unit-meta { display: flex; align-items: center; gap: 14px; }
+    .unit-badge {
+      font-size: 11px; font-weight: 700; letter-spacing: .07em;
+      text-transform: uppercase; padding: 4px 12px; border-radius: 20px;
+    }
+    .badge-complete { background: var(--green-pale); color: var(--green); }
+    .badge-inprogress { background: var(--teal-pale); color: var(--teal); }
+    .badge-locked { background: var(--gray-100); color: var(--gray-500); }
+    .unit-lessons-count { font-size: 12px; color: var(--gray-500); font-weight: 500; }
+    .unit-chevron {
+      width: 28px; height: 28px; border-radius: 50%; background: var(--gray-100);
+      display: flex; align-items: center; justify-content: center;
+      font-size: 12px; color: var(--gray-500);
+      transition: transform var(--transition), background var(--transition);
+      flex-shrink: 0;
+    }
+    .unit-card.open .unit-chevron { transform: rotate(180deg); background: var(--teal-pale); color: var(--teal); }
+
+    /* Unit mini progress */
+    .unit-progress-mini {
+      display: flex; align-items: center; gap: 10px; padding: 0 26px 16px;
+      border-bottom: 1.5px solid var(--gray-100);
+    }
+    .unit-progress-mini .mini-track {
+      flex: 1; height: 4px; background: var(--gray-200); border-radius: 99px; overflow: hidden;
+    }
+    .unit-progress-mini .mini-fill {
+      height: 100%; background: linear-gradient(90deg, var(--teal-light), var(--teal));
+      border-radius: 99px;
+    }
+    .unit-progress-mini .mini-label { font-size: 11px; color: var(--gray-500); font-weight: 600; white-space: nowrap; }
+
+    /* Unit Body */
+    .unit-body { max-height: 0; overflow: hidden; transition: max-height .45s cubic-bezier(.4,0,.2,1); }
+    .unit-card.open .unit-body { max-height: 9999px; }
+
+    /* Lessons List */
+    .lessons-list { padding: 8px 0 12px; }
+    .lesson-row {
+      display: flex; align-items: center; gap: 16px;
+      padding: 14px 26px;
+      border-radius: 0;
+      cursor: pointer;
+      text-decoration: none;
+      color: inherit;
+      transition: background var(--transition);
+      position: relative;
+    }
+    .lesson-row:hover { background: var(--off-white); }
+    .lesson-row.locked { cursor: not-allowed; opacity: .55; }
+    .lesson-row.locked:hover { background: transparent; }
+
+    .lesson-icon {
+      width: 38px; height: 38px; border-radius: 10px; flex-shrink: 0;
+      display: flex; align-items: center; justify-content: center; font-size: 17px;
+      transition: transform var(--transition);
+    }
+    .lesson-row:not(.locked):hover .lesson-icon { transform: scale(1.08); }
+
+    .lesson-icon-complete { background: var(--green-pale); }
+    .lesson-icon-active   { background: var(--teal-pale); }
+    .lesson-icon-locked   { background: var(--gray-100); }
+
+    .lesson-info { flex: 1; }
+    .lesson-info h3 { font-size: 14.5px; font-weight: 600; margin-bottom: 2px; }
+    .lesson-info p { font-size: 12px; color: var(--gray-500); }
+
+    .lesson-right { display: flex; align-items: center; gap: 10px; }
+    .lesson-duration {
+      font-size: 12px; font-weight: 500; color: var(--gray-500);
+      background: var(--gray-100); padding: 3px 10px; border-radius: 20px;
+    }
+    .lesson-status-icon { font-size: 16px; }
+
+    .lesson-divider {
+      height: 1px; background: var(--gray-100); margin: 0 26px;
+    }
+
+    /* Lesson detail panel */
+    .lesson-detail {
+      max-height: 0; overflow: hidden;
+      transition: max-height .35s cubic-bezier(.4,0,.2,1);
+      background: var(--off-white);
+    }
+    .lesson-row.expanded + .lesson-detail { max-height: 800px; }
+    .lesson-detail-inner {
+      padding: 20px 26px 24px 80px;
+    }
+    .lesson-detail-grid {
+      display: grid; grid-template-columns: 1fr 1fr; gap: 16px; margin-bottom: 16px;
+    }
+    .detail-chip {
+      background: var(--white); border: 1.5px solid var(--gray-200);
+      border-radius: var(--radius-sm); padding: 14px 16px;
+    }
+    .detail-chip .chip-label { font-size: 11px; font-weight: 600; color: var(--gray-500); text-transform: uppercase; letter-spacing: .07em; margin-bottom: 4px; }
+    .detail-chip .chip-val { font-size: 14px; font-weight: 700; color: var(--dark); }
+    .lesson-desc { font-size: 13.5px; color: var(--gray-700); line-height: 1.7; margin-bottom: 16px; }
+    .lesson-start-btn {
+      display: inline-flex; align-items: center; gap: 8px;
+      background: var(--teal); color: var(--white);
+      padding: 11px 24px; border-radius: 50px;
+      font-size: 13.5px; font-weight: 700;
+      text-decoration: none; border: none; cursor: pointer;
+      transition: background var(--transition), transform var(--transition), box-shadow var(--transition);
+    }
+    .lesson-start-btn:hover { background: var(--teal-dark); transform: translateY(-2px); box-shadow: var(--shadow-md); }
+    .lesson-start-btn.locked-btn {
+      background: var(--gray-300); cursor: not-allowed; color: var(--white);
+    }
+    .lesson-start-btn.locked-btn:hover { transform: none; box-shadow: none; }
+
+    /* ── LESSON VIEWER MODAL ── */
+    .modal-overlay {
+      position: fixed; inset: 0; z-index: 500;
+      background: rgba(14,28,29,.55); backdrop-filter: blur(6px);
+      display: flex; align-items: flex-start; justify-content: center;
+      padding: 40px 20px 40px;
+      opacity: 0; pointer-events: none;
+      transition: opacity .3s ease;
+      overflow-y: auto;
+    }
+    .modal-overlay.open { opacity: 1; pointer-events: all; }
+    .modal {
+      background: var(--white); border-radius: var(--radius-lg);
+      box-shadow: var(--shadow-lg); width: 100%; max-width: 940px;
+      transform: translateY(30px);
+      transition: transform .35s cubic-bezier(.4,0,.2,1);
+      position: relative;
+    }
+    .modal-overlay.open .modal { transform: translateY(0); }
+
+    .modal-close {
+      position: absolute; top: 16px; right: 16px;
+      width: 34px; height: 34px; border-radius: 50%; background: var(--gray-100);
+      border: none; cursor: pointer; font-size: 17px; color: var(--gray-700);
+      display: flex; align-items: center; justify-content: center; z-index: 10;
+      transition: background var(--transition);
+    }
+    .modal-close:hover { background: var(--gray-200); }
+
+    /* Breadcrumb */
+    .modal-breadcrumb {
+      padding: 20px 28px 0;
+      font-size: 12.5px; color: var(--gray-500);
+      display: flex; align-items: center; gap: 6px;
+    }
+    .modal-breadcrumb a { color: var(--gray-500); text-decoration: none; }
+    .modal-breadcrumb a:hover { color: var(--teal); }
+    .modal-breadcrumb span { color: var(--teal); font-weight: 600; }
+
+    /* Modal title */
+    .modal-title {
+      padding: 10px 28px 0;
+      font-family: var(--font-h); font-size: clamp(22px, 3vw, 30px);
+      font-weight: 800; color: var(--dark); letter-spacing: -.4px;
+    }
+
+    /* Modal body */
+    .modal-body {
+      display: grid; grid-template-columns: 1fr 300px; gap: 0;
+      padding: 20px 28px 28px; gap: 24px;
+    }
+    @media (max-width: 720px) { .modal-body { grid-template-columns: 1fr; } }
+
+    /* Video area */
+    .video-area {
+      border-radius: var(--radius); overflow: hidden;
+      background: #0e1c1d;
+      aspect-ratio: 16/9;
+      display: flex; align-items: center; justify-content: center;
+      position: relative;
+    }
+    .video-placeholder {
+      width: 100%; height: 100%;
+      background: linear-gradient(135deg, #0e2c2e 0%, #1b4a4c 100%);
+      display: flex; flex-direction: column; align-items: center; justify-content: center;
+      gap: 12px; color: rgba(255,255,255,.6);
+    }
+    .video-placeholder .play-btn {
+      width: 64px; height: 64px; border-radius: 50%;
+      background: var(--teal); display: flex; align-items: center; justify-content: center;
+      font-size: 24px; cursor: pointer; color: var(--white);
+      transition: transform .2s, box-shadow .2s;
+      border: none;
+    }
+    .video-placeholder .play-btn:hover { transform: scale(1.08); box-shadow: 0 0 0 8px rgba(42,158,163,.25); }
+    .video-placeholder p { font-size: 13px; color: rgba(255,255,255,.5); }
+
+    /* Video controls bar */
+    .video-controls {
+      background: #0e1c1d; border-radius: 0 0 var(--radius) var(--radius);
+      padding: 14px 20px;
+      display: flex; align-items: center; gap: 14px;
+    }
+    .ctrl-btn {
+      background: none; border: none; color: rgba(255,255,255,.7); font-size: 16px;
+      cursor: pointer; transition: color .2s;
+    }
+    .ctrl-btn:hover { color: var(--white); }
+    .ctrl-track {
+      flex: 1; height: 4px; background: rgba(255,255,255,.2); border-radius: 99px;
+      position: relative; cursor: pointer;
+    }
+    .ctrl-fill {
+      height: 100%; width: 40%; background: var(--teal-light); border-radius: 99px;
+    }
+    .ctrl-fill::after {
+      content: ''; position: absolute; right: -5px; top: -4px;
+      width: 12px; height: 12px; border-radius: 50%; background: var(--white);
+      box-shadow: 0 0 0 2px var(--teal-light);
+    }
+
+    /* Tutorial guide */
+    .tutorial-guide {
+      margin-top: 20px;
+      background: var(--white); border: 1.5px solid var(--gray-200); border-radius: var(--radius);
+      padding: 24px;
+    }
+    .tg-eyebrow {
+      font-size: 10.5px; font-weight: 700; letter-spacing: .12em;
+      text-transform: uppercase; color: var(--teal); margin-bottom: 8px;
+    }
+    .tg-title { font-family: var(--font-h); font-size: 20px; font-weight: 700; margin-bottom: 20px; }
+    .steps-grid-modal {
+      display: grid; grid-template-columns: 1fr 1fr; gap: 16px; margin-bottom: 14px;
+    }
+    .step-item { display: flex; gap: 12px; align-items: flex-start; }
+    .step-dot {
+      width: 26px; height: 26px; border-radius: 8px; flex-shrink: 0;
+      background: var(--teal); display: flex; align-items: center; justify-content: center;
+      font-size: 11px; font-weight: 800; color: var(--white);
+    }
+    .step-item h4 { font-size: 13.5px; font-weight: 700; margin-bottom: 4px; }
+    .step-item p { font-size: 12.5px; color: var(--gray-700); line-height: 1.6; }
+    .tip-box {
+      background: var(--teal-pale); border-radius: var(--radius-sm);
+      padding: 12px 16px; font-size: 13px; color: var(--teal-dark);
+      font-style: italic; display: flex; gap: 8px; align-items: flex-start;
+    }
+
+    /* Right panel */
+    .right-panel { display: flex; flex-direction: column; gap: 16px; }
+
+    /* AI Practice */
+    .ai-panel {
+      background: var(--white); border: 1.5px solid var(--gray-200); border-radius: var(--radius);
+      padding: 18px;
+    }
+    .ai-panel-header {
+      display: flex; align-items: center; justify-content: space-between; margin-bottom: 12px;
+    }
+    .ai-panel-header h3 {
+      font-size: 14px; font-weight: 700; display: flex; align-items: center; gap: 7px;
+    }
+    .live-badge {
+      font-size: 10px; font-weight: 700; letter-spacing: .1em; text-transform: uppercase;
+      background: #ff4d4d; color: var(--white); padding: 3px 8px; border-radius: 4px;
+    }
+    .cam-view {
+      width: 100%; aspect-ratio: 4/3; background: linear-gradient(160deg, #1c1c1c, #2e2e2e);
+      border-radius: 10px; position: relative; overflow: hidden; margin-bottom: 12px;
+      display: flex; align-items: center; justify-content: center;
+    }
+    .cam-icon { font-size: 48px; opacity: .25; }
+    .cam-badge {
+      position: absolute; top: 10px; right: 10px;
+      background: var(--teal); color: var(--white);
+      font-size: 11px; font-weight: 700; padding: 4px 10px; border-radius: 6px;
+    }
+    .cam-hint {
+      position: absolute; bottom: 10px; left: 50%; transform: translateX(-50%);
+      background: rgba(0,0,0,.6); color: rgba(255,255,255,.85);
+      font-size: 11.5px; font-style: italic; padding: 5px 12px; border-radius: 6px;
+      white-space: nowrap;
+    }
+    .accuracy-row {
+      display: flex; justify-content: space-between; align-items: center;
+      font-size: 13.5px; font-weight: 600; margin-bottom: 14px;
+    }
+    .accuracy-row .pct { color: var(--teal); font-size: 15px; font-weight: 800; }
+    .assessment-btn {
+      width: 100%; padding: 12px; border-radius: 10px;
+      background: var(--teal); color: var(--white); border: none; cursor: pointer;
+      font-family: var(--font-h); font-size: 13.5px; font-weight: 700;
+      transition: background var(--transition), transform var(--transition);
+    }
+    .assessment-btn:hover { background: var(--teal-dark); transform: translateY(-1px); }
+
+    /* Module progress panel */
+    .module-panel {
+      background: var(--white); border: 1.5px solid var(--gray-200); border-radius: var(--radius);
+      padding: 18px;
+    }
+    .module-panel-title {
+      font-size: 10.5px; font-weight: 700; letter-spacing: .12em; text-transform: uppercase;
+      color: var(--gray-500); margin-bottom: 14px;
+    }
+    .module-lesson-item {
+      display: flex; align-items: center; gap: 12px; padding: 10px 12px;
+      border-radius: var(--radius-sm); transition: background var(--transition); cursor: pointer;
+    }
+    .module-lesson-item:hover { background: var(--off-white); }
+    .module-lesson-item.active { background: var(--teal-pale); }
+    .mod-icon {
+      width: 32px; height: 32px; border-radius: 8px; flex-shrink: 0;
+      display: flex; align-items: center; justify-content: center; font-size: 14px;
+    }
+    .mod-icon.active-icon { background: var(--teal); }
+    .mod-icon.locked-icon { background: var(--gray-100); }
+    .mod-info .mod-name { font-size: 13.5px; font-weight: 600; }
+    .mod-info .mod-meta { font-size: 11.5px; color: var(--gray-500); }
+    .module-lesson-item.active .mod-info .mod-meta { color: var(--teal); }
+    .mod-divider { height: 1px; background: var(--gray-100); margin: 4px 0; }
+    .mark-complete-btn {
+      width: 100%; margin-top: 14px; padding: 11px;
+      border-radius: 10px; background: var(--off-white);
+      border: 1.5px solid var(--gray-200); color: var(--dark);
+      font-family: var(--font-h); font-size: 13px; font-weight: 700; cursor: pointer;
+      display: flex; align-items: center; justify-content: center; gap: 6px;
+      transition: all var(--transition);
+    }
+    .mark-complete-btn:hover { border-color: var(--teal); color: var(--teal); background: var(--teal-pale); }
+
+    /* ── FOOTER ── */
+    footer {
+      background: var(--dark); color: rgba(255,255,255,.45); padding: 32px 0;
+      margin-top: 60px;
+    }
+    .footer-inner {
+      max-width: 1160px; margin: 0 auto; padding: 0 28px;
+      display: flex; justify-content: space-between; align-items: center; flex-wrap: wrap; gap: 16px;
+    }
+    .footer-logo-wrap .footer-logo { font-family: var(--font-h); font-size: 17px; font-weight: 800; color: var(--white); }
+    .footer-logo-wrap .footer-tagline { font-size: 12px; color: rgba(255,255,255,.4); margin-top: 2px; }
+    .footer-links { display: flex; gap: 24px; list-style: none; }
+    .footer-links a { color: rgba(255,255,255,.45); text-decoration: none; font-size: 12.5px; transition: color .2s; }
+    .footer-links a:hover { color: var(--white); }
+    .footer-copy { font-size: 11.5px; }
+
+    /* ── RESPONSIVE ── */
+    @media (max-width: 700px) {
+      .nav-links { display: none; }
+      .lesson-detail-grid { grid-template-columns: 1fr; }
+      .lesson-detail-inner { padding-left: 26px; }
+      .steps-grid-modal { grid-template-columns: 1fr; }
+    }
+
+    /* ── ANIMATIONS ── */
+    @keyframes fadeUp {
+      from { opacity: 0; transform: translateY(20px); }
+      to   { opacity: 1; transform: translateY(0); }
+    }
+    .page-header { animation: fadeUp .5s ease both; }
+    .overall-progress { animation: fadeUp .5s .1s ease both; }
+    .unit-card { animation: fadeUp .5s ease both; }
+    .unit-card:nth-child(1) { animation-delay: .15s; }
+    .unit-card:nth-child(2) { animation-delay: .22s; }
+    .unit-card:nth-child(3) { animation-delay: .29s; }
+    .unit-card:nth-child(4) { animation-delay: .36s; }
+  </style>
+</head>
+<body>
+
+<!-- ── NAVBAR ── -->
+<nav>
+  <div class="nav-inner">
+    <a href="/" class="logo">Sign<span>Horizon</span></a>
+    <ul class="nav-links">
+      <li><a href="/lesson" class="active">LESSONS</a></li>
+      <li><a href="#">PRACTICE</a></li>
+      <li><a href="#">DICTIONARY</a></li>
+    </ul>
+    <div class="nav-icons">
+      <button class="nav-icon-btn" title="Dashboard" onclick="window.location='/learn'">📊</button>
+      <button class="nav-icon-btn" title="Home" onclick="window.location='/'">🏠</button>
+    </div>
+  </div>
+</nav>
+
+<!-- ── PAGE SHELL ── -->
+<div class="page-shell">
+
+  <!-- Page Header -->
+  <div class="page-header">
+    <h1>Learn Sign Language</h1>
+    <p>Work through each module at your own pace. Complete lessons to unlock the next unit.</p>
+  </div>
+
+  <!-- Overall Progress -->
+  <div class="overall-progress">
+    <span class="progress-label">Overall Progress</span>
+    <div class="progress-track"><div class="progress-fill" style="width:22%"></div></div>
+    <span class="progress-pct">22%</span>
+    <span class="progress-meta">4 / 18 lessons complete</span>
+  </div>
+
+  <!-- Units -->
+  <div class="units-list" id="unitsList">
+
+    <!-- ═══ UNIT 1 ═══ -->
+    <div class="unit-card open" data-unit="1">
+      <div class="unit-header" onclick="toggleUnit(this)">
+        <div class="unit-number" style="background:linear-gradient(135deg,#1b6b6e,#2a9ea3)">1</div>
+        <div class="unit-info">
+          <h2>Module 1: Basic Greetings</h2>
+          <p>The essential signs for meeting and greeting — your first steps in ASL.</p>
+        </div>
+        <div class="unit-meta">
+          <span class="unit-badge badge-inprogress">In Progress</span>
+          <span class="unit-lessons-count">5 lessons</span>
+        </div>
+        <div class="unit-chevron">▼</div>
+      </div>
+      <div class="unit-progress-mini">
+        <div class="mini-track"><div class="mini-fill" style="width:40%"></div></div>
+        <span class="mini-label">2 / 5 complete</span>
+      </div>
+      <div class="unit-body">
+        <div class="lessons-list">
+
+          <!-- Lesson 1 -->
+          <div class="lesson-row" onclick="openLesson(this, 'Hello','Module 1: Basic Greetings','Discover the classic \'Hello\' wave sign used throughout ASL. You will learn the handshape, proper placement, and the outward arc motion that makes this greeting universally recognizable.','3 min','99%')">
+            <div class="lesson-icon lesson-icon-complete">✅</div>
+            <div class="lesson-info">
+              <h3>1. Hello</h3>
+              <p>The universal greeting — handshape, placement &amp; movement</p>
+            </div>
+            <div class="lesson-right">
+              <span class="lesson-duration">3 min</span>
+              <span class="lesson-status-icon">✅</span>
+            </div>
+          </div>
+          <div class="lesson-detail"><div class="lesson-detail-inner"></div></div>
+          <div class="lesson-divider"></div>
+
+          <!-- Lesson 2 -->
+          <div class="lesson-row" onclick="openLesson(this, 'How are you?','Module 1: Basic Greetings','Learn to ask \'How are you?\' in ASL — a flowing two-part sign combining a point and an outward roll that feels natural once you practice the wrist movement.','5 min','84%')">
+            <div class="lesson-icon lesson-icon-complete">✅</div>
+            <div class="lesson-info">
+              <h3>2. How are you?</h3>
+              <p>Asking after someone — two-part wrist roll technique</p>
+            </div>
+            <div class="lesson-right">
+              <span class="lesson-duration">5 min</span>
+              <span class="lesson-status-icon">✅</span>
+            </div>
+          </div>
+          <div class="lesson-detail"><div class="lesson-detail-inner"></div></div>
+          <div class="lesson-divider"></div>
+
+          <!-- Lesson 3 — ACTIVE -->
+          <div class="lesson-row" onclick="openLesson(this, 'My name is…','Module 1: Basic Greetings','Introduce yourself in ASL by learning the name sign construction: flat hand contact on the chin, followed by fingerspelling your initials for emphasis.','8 min','72%')">
+            <div class="lesson-icon lesson-icon-active">▶️</div>
+            <div class="lesson-info">
+              <h3>3. My name is…</h3>
+              <p>Introductions — name sign construction &amp; fingerspelling</p>
+            </div>
+            <div class="lesson-right">
+              <span class="lesson-duration">8 min</span>
+              <span class="lesson-status-icon">🔵</span>
+            </div>
+          </div>
+          <div class="lesson-detail"><div class="lesson-detail-inner"></div></div>
+          <div class="lesson-divider"></div>
+
+          <!-- Lesson 4 -->
+          <div class="lesson-row locked">
+            <div class="lesson-icon lesson-icon-locked">🔒</div>
+            <div class="lesson-info">
+              <h3>4. Nice to meet you</h3>
+              <p>A polite follow-up greeting sign</p>
+            </div>
+            <div class="lesson-right">
+              <span class="lesson-duration">6 min</span>
+              <span class="lesson-status-icon">🔒</span>
+            </div>
+          </div>
+          <div class="lesson-detail"><div class="lesson-detail-inner"></div></div>
+          <div class="lesson-divider"></div>
+
+          <!-- Lesson 5 -->
+          <div class="lesson-row locked">
+            <div class="lesson-icon lesson-icon-locked">🔒</div>
+            <div class="lesson-info">
+              <h3>5. Goodbye &amp; See you later</h3>
+              <p>Farewell signs and their context</p>
+            </div>
+            <div class="lesson-right">
+              <span class="lesson-duration">4 min</span>
+              <span class="lesson-status-icon">🔒</span>
+            </div>
+          </div>
+          <div class="lesson-detail"><div class="lesson-detail-inner"></div></div>
+
+        </div>
+      </div>
+    </div>
+
+    <!-- ═══ UNIT 2 ═══ -->
+    <div class="unit-card" data-unit="2">
+      <div class="unit-header" onclick="toggleUnit(this)">
+        <div class="unit-number" style="background:linear-gradient(135deg,#d4a43a,#e8c97e)">2</div>
+        <div class="unit-info">
+          <h2>Module 2: Numbers &amp; Counting</h2>
+          <p>Master ASL numbers 1–100 and learn to count fluently in any conversation.</p>
+        </div>
+        <div class="unit-meta">
+          <span class="unit-badge badge-locked">Locked</span>
+          <span class="unit-lessons-count">4 lessons</span>
+        </div>
+        <div class="unit-chevron">▼</div>
+      </div>
+      <div class="unit-progress-mini">
+        <div class="mini-track"><div class="mini-fill" style="width:0%"></div></div>
+        <span class="mini-label">0 / 4 complete</span>
+      </div>
+      <div class="unit-body">
+        <div class="lessons-list">
+          <div class="lesson-row locked">
+            <div class="lesson-icon lesson-icon-locked">🔒</div>
+            <div class="lesson-info"><h3>1. Numbers 1–10</h3><p>Handshape variations and common mistakes</p></div>
+            <div class="lesson-right"><span class="lesson-duration">7 min</span><span class="lesson-status-icon">🔒</span></div>
+          </div>
+          <div class="lesson-detail"><div class="lesson-detail-inner"></div></div>
+          <div class="lesson-divider"></div>
+          <div class="lesson-row locked">
+            <div class="lesson-icon lesson-icon-locked">🔒</div>
+            <div class="lesson-info"><h3>2. Numbers 11–20</h3><p>The flip technique for teens</p></div>
+            <div class="lesson-right"><span class="lesson-duration">6 min</span><span class="lesson-status-icon">🔒</span></div>
+          </div>
+          <div class="lesson-detail"><div class="lesson-detail-inner"></div></div>
+          <div class="lesson-divider"></div>
+          <div class="lesson-row locked">
+            <div class="lesson-icon lesson-icon-locked">🔒</div>
+            <div class="lesson-info"><h3>3. Tens &amp; Hundreds</h3><p>Building larger numbers efficiently</p></div>
+            <div class="lesson-right"><span class="lesson-duration">8 min</span><span class="lesson-status-icon">🔒</span></div>
+          </div>
+          <div class="lesson-detail"><div class="lesson-detail-inner"></div></div>
+          <div class="lesson-divider"></div>
+          <div class="lesson-row locked">
+            <div class="lesson-icon lesson-icon-locked">🔒</div>
+            <div class="lesson-info"><h3>4. Counting in Context</h3><p>Age, money, and time expressions</p></div>
+            <div class="lesson-right"><span class="lesson-duration">9 min</span><span class="lesson-status-icon">🔒</span></div>
+          </div>
+          <div class="lesson-detail"><div class="lesson-detail-inner"></div></div>
+        </div>
+      </div>
+    </div>
+
+    <!-- ═══ UNIT 3 ═══ -->
+    <div class="unit-card" data-unit="3">
+      <div class="unit-header" onclick="toggleUnit(this)">
+        <div class="unit-number" style="background:linear-gradient(135deg,#2e6b4f,#2e9b6a)">3</div>
+        <div class="unit-info">
+          <h2>Module 3: Emotions &amp; Feelings</h2>
+          <p>Express happiness, sadness, surprise, and more with nuanced facial grammar.</p>
+        </div>
+        <div class="unit-meta">
+          <span class="unit-badge badge-locked">Locked</span>
+          <span class="unit-lessons-count">5 lessons</span>
+        </div>
+        <div class="unit-chevron">▼</div>
+      </div>
+      <div class="unit-progress-mini">
+        <div class="mini-track"><div class="mini-fill" style="width:0%"></div></div>
+        <span class="mini-label">0 / 5 complete</span>
+      </div>
+      <div class="unit-body">
+        <div class="lessons-list">
+          <div class="lesson-row locked"><div class="lesson-icon lesson-icon-locked">🔒</div><div class="lesson-info"><h3>1. Happy &amp; Sad</h3><p>Core emotion handshapes and expressions</p></div><div class="lesson-right"><span class="lesson-duration">5 min</span><span class="lesson-status-icon">🔒</span></div></div>
+          <div class="lesson-detail"><div class="lesson-detail-inner"></div></div>
+          <div class="lesson-divider"></div>
+          <div class="lesson-row locked"><div class="lesson-icon lesson-icon-locked">🔒</div><div class="lesson-info"><h3>2. Excited &amp; Nervous</h3><p>High-energy vs. low-energy signs</p></div><div class="lesson-right"><span class="lesson-duration">6 min</span><span class="lesson-status-icon">🔒</span></div></div>
+          <div class="lesson-detail"><div class="lesson-detail-inner"></div></div>
+          <div class="lesson-divider"></div>
+          <div class="lesson-row locked"><div class="lesson-icon lesson-icon-locked">🔒</div><div class="lesson-info"><h3>3. Angry &amp; Frustrated</h3><p>Intensity modifiers and body language</p></div><div class="lesson-right"><span class="lesson-duration">7 min</span><span class="lesson-status-icon">🔒</span></div></div>
+          <div class="lesson-detail"><div class="lesson-detail-inner"></div></div>
+          <div class="lesson-divider"></div>
+          <div class="lesson-row locked"><div class="lesson-icon lesson-icon-locked">🔒</div><div class="lesson-info"><h3>4. Surprised &amp; Confused</h3><p>Facial grammar for questions</p></div><div class="lesson-right"><span class="lesson-duration">5 min</span><span class="lesson-status-icon">🔒</span></div></div>
+          <div class="lesson-detail"><div class="lesson-detail-inner"></div></div>
+          <div class="lesson-divider"></div>
+          <div class="lesson-row locked"><div class="lesson-icon lesson-icon-locked">🔒</div><div class="lesson-info"><h3>5. Emotions in Sentences</h3><p>Combining emotion signs naturally</p></div><div class="lesson-right"><span class="lesson-duration">10 min</span><span class="lesson-status-icon">🔒</span></div></div>
+          <div class="lesson-detail"><div class="lesson-detail-inner"></div></div>
+        </div>
+      </div>
+    </div>
+
+    <!-- ═══ UNIT 4 ═══ -->
+    <div class="unit-card" data-unit="4">
+      <div class="unit-header" onclick="toggleUnit(this)">
+        <div class="unit-number" style="background:linear-gradient(135deg,#5a3b8a,#8b62c9)">4</div>
+        <div class="unit-info">
+          <h2>Module 4: Daily Conversations</h2>
+          <p>Put it all together — full conversational exchanges for everyday situations.</p>
+        </div>
+        <div class="unit-meta">
+          <span class="unit-badge badge-locked">Locked</span>
+          <span class="unit-lessons-count">4 lessons</span>
+        </div>
+        <div class="unit-chevron">▼</div>
+      </div>
+      <div class="unit-progress-mini">
+        <div class="mini-track"><div class="mini-fill" style="width:0%"></div></div>
+        <span class="mini-label">0 / 4 complete</span>
+      </div>
+      <div class="unit-body">
+        <div class="lessons-list">
+          <div class="lesson-row locked"><div class="lesson-icon lesson-icon-locked">🔒</div><div class="lesson-info"><h3>1. Asking for Help</h3><p>Polite requests and assistance signs</p></div><div class="lesson-right"><span class="lesson-duration">8 min</span><span class="lesson-status-icon">🔒</span></div></div>
+          <div class="lesson-detail"><div class="lesson-detail-inner"></div></div>
+          <div class="lesson-divider"></div>
+          <div class="lesson-row locked"><div class="lesson-icon lesson-icon-locked">🔒</div><div class="lesson-info"><h3>2. At the Store</h3><p>Shopping vocabulary and transactions</p></div><div class="lesson-right"><span class="lesson-duration">10 min</span><span class="lesson-status-icon">🔒</span></div></div>
+          <div class="lesson-detail"><div class="lesson-detail-inner"></div></div>
+          <div class="lesson-divider"></div>
+          <div class="lesson-row locked"><div class="lesson-icon lesson-icon-locked">🔒</div><div class="lesson-info"><h3>3. Talking About Family</h3><p>Family member signs and relationships</p></div><div class="lesson-right"><span class="lesson-duration">9 min</span><span class="lesson-status-icon">🔒</span></div></div>
+          <div class="lesson-detail"><div class="lesson-detail-inner"></div></div>
+          <div class="lesson-divider"></div>
+          <div class="lesson-row locked"><div class="lesson-icon lesson-icon-locked">🔒</div><div class="lesson-info"><h3>4. Full Conversation Role-play</h3><p>End-to-end dialogue with AI partner</p></div><div class="lesson-right"><span class="lesson-duration">15 min</span><span class="lesson-status-icon">🔒</span></div></div>
+          <div class="lesson-detail"><div class="lesson-detail-inner"></div></div>
+        </div>
+      </div>
+    </div>
+
+  </div><!-- /units-list -->
+</div><!-- /page-shell -->
+
+<!-- ── FOOTER ── -->
+<footer>
+  <div class="footer-inner">
+    <div class="footer-logo-wrap">
+      <div class="footer-logo">SignHorizon</div>
+      <div class="footer-tagline">© 2024 SignHorizon Education. Clarifying the horizon of communication.</div>
+    </div>
+    <ul class="footer-links">
+      <li><a href="#">Accessibility Statement</a></li>
+      <li><a href="#">Terms of Service</a></li>
+      <li><a href="#">Privacy Policy</a></li>
+      <li><a href="#">Help Center</a></li>
+    </ul>
+  </div>
+</footer>
+
+<!-- ── LESSON MODAL ── -->
+<div class="modal-overlay" id="lessonModal" onclick="handleOverlayClick(event)">
+  <div class="modal" id="modalContent">
+    <button class="modal-close" onclick="closeModal()">✕</button>
+
+    <div class="modal-breadcrumb">
+      <a href="#">Learn</a> ›
+      <a href="#" id="modalBreadUnit">Module 1: Basic Greetings</a> ›
+      <span id="modalBreadLesson">Lesson 1: Hello</span>
+    </div>
+    <h1 class="modal-title" id="modalTitle">Learning the "Hello" Sign</h1>
+
+    <div class="modal-body">
+      <!-- Left: video + guide -->
+      <div>
+        <div>
+          <div class="video-area">
+            <div class="video-placeholder">
+              <button class="play-btn" id="playBtn" onclick="togglePlay()">▶</button>
+              <p>Video demonstration loading…</p>
+            </div>
+          </div>
+          <div class="video-controls">
+            <button class="ctrl-btn" onclick="togglePlay()" id="ctrlPlayBtn">▶</button>
+            <button class="ctrl-btn">↺</button>
+            <div class="ctrl-track">
+              <div class="ctrl-fill" id="ctrlFill"></div>
+            </div>
+            <button class="ctrl-btn">⛶</button>
+            <button class="ctrl-btn">⤢</button>
+          </div>
+        </div>
+
+        <div class="tutorial-guide">
+          <div class="tg-eyebrow">Tutorial Guide</div>
+          <div class="tg-title">Execution &amp; Form</div>
+          <div class="steps-grid-modal" id="modalStepsGrid">
+            <div class="step-item">
+              <div class="step-dot">1</div>
+              <div>
+                <h4>The Handshape</h4>
+                <p>Start with a flat hand, fingers together, and thumb tucked comfortably against the side of your palm.</p>
+              </div>
+            </div>
+            <div class="step-item">
+              <div class="step-dot">3</div>
+              <div>
+                <h4>The Movement</h4>
+                <p>Move your hand away from your head in a small, outward arc, similar to a salute.</p>
+              </div>
+            </div>
+            <div class="step-item">
+              <div class="step-dot">2</div>
+              <div>
+                <h4>The Placement</h4>
+                <p>Touch the tips of your fingers to your forehead, just above your temple.</p>
+              </div>
+            </div>
+          </div>
+          <div class="tip-box">ℹ️ Keep your movement fluid and natural. Don't over-stiffen your wrist!</div>
+        </div>
+      </div>
+
+      <!-- Right panel -->
+      <div class="right-panel">
+        <!-- AI Practice -->
+        <div class="ai-panel">
+          <div class="ai-panel-header">
+            <h3>📷 Practice with AI</h3>
+            <span class="live-badge">LIVE ANALYSIS</span>
+          </div>
+          <div class="cam-view">
+            <div class="cam-icon">📷</div>
+            <div class="cam-badge">Hand Detected</div>
+            <div class="cam-hint">"Keep your hand steady"</div>
+          </div>
+          <div class="accuracy-row">
+            <span>Accuracy</span>
+            <span class="pct" id="modalAccuracy">84%</span>
+          </div>
+          <button class="assessment-btn">Start Final Assessment</button>
+        </div>
+
+        <!-- Module progress -->
+        <div class="module-panel">
+          <div class="module-panel-title">Module Progress</div>
+          <div class="module-lesson-item active">
+            <div class="mod-icon active-icon">▶</div>
+            <div class="mod-info">
+              <div class="mod-name" id="modalActiveName">1. Hello</div>
+              <div class="mod-meta">Currently Learning</div>
+            </div>
+          </div>
+          <div class="mod-divider"></div>
+          <div class="module-lesson-item">
+            <div class="mod-icon locked-icon">🔒</div>
+            <div class="mod-info">
+              <div class="mod-name">2. How are you?</div>
+              <div class="mod-meta">5 minutes</div>
+            </div>
+          </div>
+          <div class="mod-divider"></div>
+          <div class="module-lesson-item">
+            <div class="mod-icon locked-icon">🔒</div>
+            <div class="mod-info">
+              <div class="mod-name">3. My name is…</div>
+              <div class="mod-meta">8 minutes</div>
+            </div>
+          </div>
+          <button class="mark-complete-btn" onclick="completeCurrentLesson()">Mark as Complete →</button>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<script>
+  // ── Toggle unit open/close ──
+  function toggleUnit(header) {
+    const card = header.closest('.unit-card');
+    const badge = card.querySelector('.unit-badge');
+    
+    // Prevent opening if the unit is explicitly locked
+    if (badge && badge.classList.contains('badge-locked')) return;
+    
+    card.classList.toggle('open');
+  }
+
+  // ── Open lesson modal ──
+  let currentLessonRow = null;
+
+  function openLesson(row, title, unit, desc, duration, accuracy) {
+    if (row.classList.contains('locked')) return;
+    currentLessonRow = row;
+
+    // Update modal content
+    document.getElementById('modalTitle').textContent = 'Learning the "' + title + '" Sign';
+    document.getElementById('modalBreadUnit').textContent = unit;
+    document.getElementById('modalBreadLesson').textContent = 'Lesson: ' + title;
+    document.getElementById('modalAccuracy').textContent = accuracy;
+    document.getElementById('modalActiveName').textContent = title;
+
+    document.getElementById('lessonModal').classList.add('open');
+    document.body.style.overflow = 'hidden';
+  }
+
+  function closeModal() {
+    document.getElementById('lessonModal').classList.remove('open');
+    document.body.style.overflow = '';
+  }
+
+  function handleOverlayClick(e) {
+    if (e.target === document.getElementById('lessonModal')) closeModal();
+  }
+
+  // Close on Escape
+  document.addEventListener('keydown', e => { if (e.key === 'Escape') closeModal(); });
+
+  // ── Complete current lesson and unlock next ──
+  function completeCurrentLesson() {
+    if (!currentLessonRow) return;
+
+    // 1. Mark the current lesson as complete visually
+    const icon = currentLessonRow.querySelector('.lesson-icon');
+    if (icon) {
+      icon.className = 'lesson-icon lesson-icon-complete';
+      icon.textContent = '✅';
+    }
+    const statusIcon = currentLessonRow.querySelector('.lesson-status-icon');
+    if (statusIcon) statusIcon.textContent = '✅';
+
+    // 2. Find the next lesson in the current unit
+    const lessonsList = currentLessonRow.closest('.lessons-list');
+    const allLessons = Array.from(lessonsList.querySelectorAll('.lesson-row'));
+    const currentIndex = allLessons.indexOf(currentLessonRow);
+    const nextLessonRow = allLessons[currentIndex + 1];
+
+    if (nextLessonRow) {
+      // Unlock the next lesson
+      nextLessonRow.classList.remove('locked');
+      const nextIcon = nextLessonRow.querySelector('.lesson-icon');
+      if (nextIcon) {
+        nextIcon.className = 'lesson-icon lesson-icon-active';
+        nextIcon.textContent = '▶️';
+      }
+      const nextStatusIcon = nextLessonRow.querySelector('.lesson-status-icon');
+      if (nextStatusIcon) nextStatusIcon.textContent = '🔵';
+
+      // Attach the onclick handler if it's missing (for hardcoded HTML elements)
+      if (!nextLessonRow.hasAttribute('onclick')) {
+        const titleElem = nextLessonRow.querySelector('h3');
+        const title = titleElem ? titleElem.textContent.replace(/^\d+\.\s*/, '') : 'Next Lesson';
+        const unitTitle = currentLessonRow.closest('.unit-card').querySelector('h2').textContent;
+        const durationElem = nextLessonRow.querySelector('.lesson-duration');
+        const duration = durationElem ? durationElem.textContent : '5 min';
+        nextLessonRow.setAttribute('onclick', `openLesson(this, '${title}', '${unitTitle}', '', '${duration}', '0%')`);
+      }
+    } else {
+      // No more lessons in this unit, mark unit complete
+      const currentUnit = currentLessonRow.closest('.unit-card');
+      const unitBadge = currentUnit.querySelector('.unit-badge');
+      if (unitBadge) {
+        unitBadge.className = 'unit-badge badge-complete';
+        unitBadge.textContent = 'Complete';
+      }
+
+      // Find and unlock the next unit
+      const nextUnit = currentUnit.nextElementSibling;
+      if (nextUnit && nextUnit.classList.contains('unit-card')) {
+        const nextUnitBadge = nextUnit.querySelector('.unit-badge');
+        if (nextUnitBadge) {
+          nextUnitBadge.className = 'unit-badge badge-inprogress';
+          nextUnitBadge.textContent = 'In Progress';
+        }
+        
+        nextUnit.classList.add('open'); // Auto-open newly unlocked unit
+
+        // Unlock its first lesson
+        const firstNextLesson = nextUnit.querySelector('.lesson-row');
+        if (firstNextLesson) {
+          firstNextLesson.classList.remove('locked');
+          const nextIcon = firstNextLesson.querySelector('.lesson-icon');
+          if (nextIcon) {
+            nextIcon.className = 'lesson-icon lesson-icon-active';
+            nextIcon.textContent = '▶️';
+          }
+          const nextStatusIcon = firstNextLesson.querySelector('.lesson-status-icon');
+          if (nextStatusIcon) nextStatusIcon.textContent = '🔵';
+
+          if (!firstNextLesson.hasAttribute('onclick')) {
+            const titleElem = firstNextLesson.querySelector('h3');
+            const title = titleElem ? titleElem.textContent.replace(/^\d+\.\s*/, '') : 'Next Lesson';
+            const unitTitle = nextUnit.querySelector('h2').textContent;
+            const durationElem = firstNextLesson.querySelector('.lesson-duration');
+            const duration = durationElem ? durationElem.textContent : '5 min';
+            firstNextLesson.setAttribute('onclick', `openLesson(this, '${title}', '${unitTitle}', '', '${duration}', '0%')`);
+          }
+        }
+      }
+    }
+
+    updateOverallProgress();
+    closeModal();
+  }
+
+  function updateOverallProgress() {
+    const allLessons = document.querySelectorAll('.lesson-row');
+    const completed = document.querySelectorAll('.lesson-icon-complete').length;
+    const total = allLessons.length;
+    const pct = Math.round((completed / total) * 100);
+    
+    const fill = document.querySelector('.overall-progress .progress-fill');
+    const pctText = document.querySelector('.overall-progress .progress-pct');
+    const metaText = document.querySelector('.overall-progress .progress-meta');
+    
+    if (fill) fill.style.width = pct + '%';
+    if (pctText) pctText.textContent = pct + '%';
+    if (metaText) metaText.textContent = completed + ' / ' + total + ' lessons complete';
+
+    // Update unit-level mini progress
+    if (currentLessonRow) {
+      const currentUnit = currentLessonRow.closest('.unit-card');
+      const unitLessons = currentUnit.querySelectorAll('.lesson-row');
+      const unitCompleted = currentUnit.querySelectorAll('.lesson-icon-complete').length;
+      const unitTotal = unitLessons.length;
+      const unitPct = Math.round((unitCompleted / unitTotal) * 100);
+      
+      const miniFill = currentUnit.querySelector('.mini-fill');
+      const miniLabel = currentUnit.querySelector('.mini-label');
+      if (miniFill) miniFill.style.width = unitPct + '%';
+      if (miniLabel) miniLabel.textContent = unitCompleted + ' / ' + unitTotal + ' complete';
+    }
+  }
+
+  // ── Fake play button ──
+  let playing = false;
+  let progress = 40;
+  let ticker;
+  function togglePlay() {
+    playing = !playing;
+    document.getElementById('playBtn').textContent = playing ? '⏸' : '▶';
+    document.getElementById('ctrlPlayBtn').textContent = playing ? '⏸' : '▶';
+    if (playing) {
+      ticker = setInterval(() => {
+        progress = Math.min(progress + .3, 100);
+        document.getElementById('ctrlFill').style.width = progress + '%';
+        if (progress >= 100) { clearInterval(ticker); playing = false; document.getElementById('playBtn').textContent = '▶'; document.getElementById('ctrlPlayBtn').textContent = '▶'; progress = 0; }
+      }, 100);
+    } else { clearInterval(ticker); }
+  }
+
+    // ── Show Avatar if Logged In ──
+    document.addEventListener('DOMContentLoaded', () => {
+      const userName = localStorage.getItem('userName');
+      if (userName) {
+        const firstLetter = userName.charAt(0).toUpperCase();
+        const navIcons = document.querySelector('.nav-icons');
+        if (navIcons) {
+          const avatarHtml = `<div class="nav-avatar" title="Logged in as ${userName} (Click to log out)" onclick="if(confirm('Do you want to log out?')) { localStorage.removeItem('userName'); window.location.href='/'; }">${firstLetter}</div>`;
+          navIcons.insertAdjacentHTML('beforeend', avatarHtml);
+        }
+      }
+    });
+</script>
+</body>
+</html>

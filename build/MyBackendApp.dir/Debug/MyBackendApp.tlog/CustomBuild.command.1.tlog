@@ -1,0 +1,80 @@
+^C:\PROJECTS\MYBACKENDAPP\BUILD\CMAKEFILES\EED3787F3C81852638AC9A842B45D483\HOMEVIEW.H.RULE
+setlocal
+cd C:\Projects\MyBackendApp
+if %errorlevel% neq 0 goto :cmEnd
+C:
+if %errorlevel% neq 0 goto :cmEnd
+C:\vcpkg\installed\x64-windows\tools\drogon\drogon_ctl.exe create view views/HomeView.csp -o C:/Projects/MyBackendApp/build
+if %errorlevel% neq 0 goto :cmEnd
+:cmEnd
+endlocal & call :cmErrorLevel %errorlevel% & goto :cmDone
+:cmErrorLevel
+exit /b %1
+:cmDone
+if %errorlevel% neq 0 goto :VCEnd
+^C:\PROJECTS\MYBACKENDAPP\BUILD\CMAKEFILES\EED3787F3C81852638AC9A842B45D483\LEARNVIEW.H.RULE
+setlocal
+cd C:\Projects\MyBackendApp
+if %errorlevel% neq 0 goto :cmEnd
+C:
+if %errorlevel% neq 0 goto :cmEnd
+C:\vcpkg\installed\x64-windows\tools\drogon\drogon_ctl.exe create view views/LearnView.csp -o C:/Projects/MyBackendApp/build
+if %errorlevel% neq 0 goto :cmEnd
+:cmEnd
+endlocal & call :cmErrorLevel %errorlevel% & goto :cmDone
+:cmErrorLevel
+exit /b %1
+:cmDone
+if %errorlevel% neq 0 goto :VCEnd
+^C:\PROJECTS\MYBACKENDAPP\BUILD\CMAKEFILES\EED3787F3C81852638AC9A842B45D483\LESSONSVIEW.H.RULE
+setlocal
+cd C:\Projects\MyBackendApp
+if %errorlevel% neq 0 goto :cmEnd
+C:
+if %errorlevel% neq 0 goto :cmEnd
+C:\vcpkg\installed\x64-windows\tools\drogon\drogon_ctl.exe create view views/LessonsView.csp -o C:/Projects/MyBackendApp/build
+if %errorlevel% neq 0 goto :cmEnd
+:cmEnd
+endlocal & call :cmErrorLevel %errorlevel% & goto :cmDone
+:cmErrorLevel
+exit /b %1
+:cmDone
+if %errorlevel% neq 0 goto :VCEnd
+^C:\PROJECTS\MYBACKENDAPP\BUILD\CMAKEFILES\EED3787F3C81852638AC9A842B45D483\SIGNINVIEW.H.RULE
+setlocal
+cd C:\Projects\MyBackendApp
+if %errorlevel% neq 0 goto :cmEnd
+C:
+if %errorlevel% neq 0 goto :cmEnd
+C:\vcpkg\installed\x64-windows\tools\drogon\drogon_ctl.exe create view views/SignInView.csp -o C:/Projects/MyBackendApp/build
+if %errorlevel% neq 0 goto :cmEnd
+:cmEnd
+endlocal & call :cmErrorLevel %errorlevel% & goto :cmDone
+:cmErrorLevel
+exit /b %1
+:cmDone
+if %errorlevel% neq 0 goto :VCEnd
+^C:\PROJECTS\MYBACKENDAPP\BUILD\CMAKEFILES\EED3787F3C81852638AC9A842B45D483\SIGNUPVIEW.H.RULE
+setlocal
+cd C:\Projects\MyBackendApp
+if %errorlevel% neq 0 goto :cmEnd
+C:
+if %errorlevel% neq 0 goto :cmEnd
+C:\vcpkg\installed\x64-windows\tools\drogon\drogon_ctl.exe create view views/SignUpView.csp -o C:/Projects/MyBackendApp/build
+if %errorlevel% neq 0 goto :cmEnd
+:cmEnd
+endlocal & call :cmErrorLevel %errorlevel% & goto :cmDone
+:cmErrorLevel
+exit /b %1
+:cmDone
+if %errorlevel% neq 0 goto :VCEnd
+^C:\PROJECTS\MYBACKENDAPP\CMAKELISTS.TXT
+setlocal
+"C:\Program Files\CMake\bin\cmake.exe" -SC:/Projects/MyBackendApp -BC:/Projects/MyBackendApp/build --check-stamp-file C:/Projects/MyBackendApp/build/CMakeFiles/generate.stamp
+if %errorlevel% neq 0 goto :cmEnd
+:cmEnd
+endlocal & call :cmErrorLevel %errorlevel% & goto :cmDone
+:cmErrorLevel
+exit /b %1
+:cmDone
+if %errorlevel% neq 0 goto :VCEnd

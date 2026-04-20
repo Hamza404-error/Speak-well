@@ -1,0 +1,49 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="18.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <ItemGroup>
+    <ClCompile Include="C:\Projects\MyBackendApp\main.cc">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="C:\Projects\MyBackendApp\build\HomeView.cc">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="C:\Projects\MyBackendApp\build\LearnView.cc">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="C:\Projects\MyBackendApp\build\LessonsView.cc">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="C:\Projects\MyBackendApp\build\SignInView.cc">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="C:\Projects\MyBackendApp\build\SignUpView.cc">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+  </ItemGroup>
+  <ItemGroup>
+    <CustomBuild Include="C:\Projects\MyBackendApp\build\CMakeFiles\eed3787f3c81852638ac9a842b45d483\HomeView.h.rule">
+      <Filter>CMake Rules</Filter>
+    </CustomBuild>
+    <CustomBuild Include="C:\Projects\MyBackendApp\build\CMakeFiles\eed3787f3c81852638ac9a842b45d483\LearnView.h.rule">
+      <Filter>CMake Rules</Filter>
+    </CustomBuild>
+    <CustomBuild Include="C:\Projects\MyBackendApp\build\CMakeFiles\eed3787f3c81852638ac9a842b45d483\LessonsView.h.rule">
+      <Filter>CMake Rules</Filter>
+    </CustomBuild>
+    <CustomBuild Include="C:\Projects\MyBackendApp\build\CMakeFiles\eed3787f3c81852638ac9a842b45d483\SignInView.h.rule">
+      <Filter>CMake Rules</Filter>
+    </CustomBuild>
+    <CustomBuild Include="C:\Projects\MyBackendApp\build\CMakeFiles\eed3787f3c81852638ac9a842b45d483\SignUpView.h.rule">
+      <Filter>CMake Rules</Filter>
+    </CustomBuild>
+    <CustomBuild Include="C:\Projects\MyBackendApp\CMakeLists.txt" />
+  </ItemGroup>
+  <ItemGroup>
+    <Filter Include="CMake Rules">
+      <UniqueIdentifier>{8D33BF88-6A5F-3A03-8A38-06280517266A}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Source Files">
+      <UniqueIdentifier>{CA2E2A32-39F6-33A1-84F8-0D549106B76E}</UniqueIdentifier>
+    </Filter>
+  </ItemGroup>
+</Project>
