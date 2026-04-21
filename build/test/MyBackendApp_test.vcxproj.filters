@@ -1,16 +1,16 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
 <Project ToolsVersion="18.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
   <ItemGroup>
-    <ClCompile Include="C:\Projects\MyBackendApp\test\test_main.cc">
+    <ClCompile Include="C:\Projects\ASL\Speak-well\test\test_main.cc">
       <Filter>Source Files</Filter>
     </ClCompile>
   </ItemGroup>
   <ItemGroup>
-    <CustomBuild Include="C:\Projects\MyBackendApp\test\CMakeLists.txt" />
+    <CustomBuild Include="C:\Projects\ASL\Speak-well\test\CMakeLists.txt" />
   </ItemGroup>
   <ItemGroup>
     <Filter Include="Source Files">
-      <UniqueIdentifier>{CA2E2A32-39F6-33A1-84F8-0D549106B76E}</UniqueIdentifier>
+      <UniqueIdentifier>{C9D85B9D-8D87-34F6-AA82-EFDE2EE1BED3}</UniqueIdentifier>
     </Filter>
   </ItemGroup>
 </Project>

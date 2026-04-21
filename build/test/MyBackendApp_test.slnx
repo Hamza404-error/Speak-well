@@ -7,7 +7,7 @@
 		<BuildType Name="RelWithDebInfo"/>
 		<Platform Name="x64"/>
 	</Configurations>
-	<Project Path="ALL_BUILD.vcxproj" Type="8bc9ceb8-8b4a-11d0-8d11-00a0c91bc942" Id="79df1076-1a73-30f6-8e76-c40059259022" DefaultStartup="true">
+	<Project Path="ALL_BUILD.vcxproj" Type="8bc9ceb8-8b4a-11d0-8d11-00a0c91bc942" Id="23d900a4-ca38-36cd-94c3-e85878c368fe" DefaultStartup="true">
 		<BuildDependency Project="MyBackendApp_test.vcxproj"/>
 		<BuildDependency Project="../ZERO_CHECK.vcxproj"/>
 		<Build Solution="Debug|*" Project="false"/>
@@ -15,8 +15,8 @@
 		<Build Solution="MinSizeRel|*" Project="false"/>
 		<Build Solution="RelWithDebInfo|*" Project="false"/>
 	</Project>
-	<Project Path="MyBackendApp_test.vcxproj" Type="8bc9ceb8-8b4a-11d0-8d11-00a0c91bc942" Id="efc9afa1-6d86-3450-bb23-d0313fc0a9ad">
+	<Project Path="MyBackendApp_test.vcxproj" Type="8bc9ceb8-8b4a-11d0-8d11-00a0c91bc942" Id="f4dbea01-d2e9-3954-9af2-ec746322d10e">
 		<BuildDependency Project="../ZERO_CHECK.vcxproj"/>
 	</Project>
-	<Project Path="../ZERO_CHECK.vcxproj" Type="8bc9ceb8-8b4a-11d0-8d11-00a0c91bc942" Id="79873aa1-636f-3cd3-8b43-294c9224536e"/>
+	<Project Path="../ZERO_CHECK.vcxproj" Type="8bc9ceb8-8b4a-11d0-8d11-00a0c91bc942" Id="0f73cfbe-6786-358c-9f11-c47121fc020f"/>
 </Solution>

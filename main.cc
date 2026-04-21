@@ -45,6 +45,14 @@ int main() {
         auto resp = drogon::HttpResponse::newHttpViewResponse("SignInView");
         callback(resp);
     });
+    drogon::app().registerHandler("/translate",
+    [](const drogon::HttpRequestPtr &,
+       std::function<void(const drogon::HttpResponsePtr &)> &&callback) {
+        
+        auto resp = drogon::HttpResponse::newHttpViewResponse("TranslateView");
+        callback(resp);
+    });
+
     // ... باقي الكود (addListener و run) ...
     std::cout << "Server is running... Open http://127.0.0.1:8080 in your browser." << std::endl;
     drogon::app().addListener("127.0.0.1", 8080);

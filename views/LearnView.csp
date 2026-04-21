@@ -353,8 +353,8 @@
     <a href="/" class="logo">Clarified Horizon</a>
     <ul class="nav-links">
       <li><a href="/">HOME</a></li>
-      <li><a href="#" class="active">LEARN</a></li>
-      <li><a href="#">TRANSLATE</a></li>
+      <li><a href="/learn" class="active">LEARN</a></li>
+      <li><a href="/translate">TRANSLATE</a></li>
     </ul>
     <div class="nav-avatar" title="Sarah">S</div>
   </div>
