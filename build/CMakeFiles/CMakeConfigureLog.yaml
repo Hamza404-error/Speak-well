@@ -2319,7 +2319,6 @@ events:
         - "C:/vcpkg/installed/x64-windows/debug"
         - "C:/vcpkg/installed/x64-windows"
       ENV{PATH}:
-<<<<<<< HEAD
         - "C:\\WINDOWS\\system32"
         - "C:\\WINDOWS"
         - "C:\\WINDOWS\\System32\\Wbem"
@@ -2327,13 +2326,6 @@ events:
         - "C:\\WINDOWS\\System32\\OpenSSH\\"
         - "C:\\Program Files (x86)\\NVIDIA Corporation\\PhysX\\Common"
         - "C:\\Program Files\\Git\\cmd"
-=======
-        - "C:\\Windows\\system32"
-        - "C:\\Windows"
-        - "C:\\Windows\\System32\\Wbem"
-        - "C:\\Windows\\System32\\WindowsPowerShell\\v1.0\\"
-        - "C:\\Windows\\System32\\OpenSSH\\"
->>>>>>> origin/frontend_branch
         - "C:\\Program Files\\Microsoft SQL Server\\170\\Tools\\Binn\\"
         - "C:\\Program Files\\Microsoft SQL Server\\Client SDK\\ODBC\\170\\Tools\\Binn\\"
         - "C:\\Program Files\\dotnet\\"
@@ -2369,17 +2361,10 @@ events:
       
       The output was:
       0
-<<<<<<< HEAD
       MSBuild version 18.4.0+6e61e96ac for .NET Framework
       Build started 21/04/2026 1:29:16 am.
       
       Project "C:\\Projects\\ASL\\Speak-well\\build\\CMakeFiles\\4.3.0-rc1\\CompilerIdCXX\\CompilerIdCXX.vcxproj" on node 1 (default targets).
-=======
-      MSBuild version 18.0.5+e22287bf1 for .NET Framework
-      Build started 4/27/2026 6:43:12 PM.
-      
-      Project "C:\\Projects\\Horizon\\build\\CMakeFiles\\4.3.0-rc1\\CompilerIdCXX\\CompilerIdCXX.vcxproj" on node 1 (default targets).
->>>>>>> origin/frontend_branch
       PrepareForBuild:
         Creating directory "Debug\\".
         Structured output is enabled. The formatting of compiler diagnostics will reflect the error hierarchy. See https://aka.ms/cpp/structured-output for more details.
@@ -2395,7 +2380,6 @@ events:
         CMakeCXXCompilerId.cpp
       Link:
         C:\\Program Files\\Microsoft Visual Studio\\18\\Community\\VC\\Tools\\MSVC\\14.50.35717\\bin\\HostX64\\x64\\link.exe /ERRORREPORT:QUEUE /OUT:".\\CompilerIdCXX.exe" /INCREMENTAL:NO /NOLOGO /LIBPATH:"C:\\vcpkg\\installed\\x64-windows\\lib" /LIBPATH:"C:\\vcpkg\\installed\\x64-windows\\lib\\manual-link" kernel32.lib user32.lib gdi32.lib winspool.lib comdlg32.lib advapi32.lib shell32.lib ole32.lib oleaut32.lib uuid.lib odbc32.lib odbccp32.lib "C:\\vcpkg\\installed\\x64-windows\\lib\\*.lib" /MANIFEST /MANIFESTUAC:"level='asInvoker' uiAccess='false'" /manifest:embed /PDB:".\\CompilerIdCXX.pdb" /SUBSYSTEM:CONSOLE /TLBID:1 /DYNAMICBASE /NXCOMPAT /IMPLIB:".\\CompilerIdCXX.lib" /MACHINE:X64 Debug\\CMakeCXXCompilerId.obj
-<<<<<<< HEAD
         CompilerIdCXX.vcxproj -> C:\\Projects\\ASL\\Speak-well\\build\\CMakeFiles\\4.3.0-rc1\\CompilerIdCXX\\CompilerIdCXX.exe
       AppLocalFromInstalled:
         pwsh.exe -ExecutionPolicy Bypass -noprofile -File "C:\\vcpkg\\scripts\\buildsystems\\msbuild\\applocal.ps1" "C:\\Projects\\ASL\\Speak-well\\build\\CMakeFiles\\4.3.0-rc1\\CompilerIdCXX\\CompilerIdCXX.exe" "C:\\vcpkg\\installed\\x64-windows\\bin" "Debug\\CompilerIdCXX.tlog\\CompilerIdCXX.write.1u.tlog" "Debug\\vcpkg.applocal.log"
@@ -2403,15 +2387,6 @@ events:
         operable program or batch file.
         The command "pwsh.exe -ExecutionPolicy Bypass -noprofile -File "C:\\vcpkg\\scripts\\buildsystems\\msbuild\\applocal.ps1" "C:\\Projects\\ASL\\Speak-well\\build\\CMakeFiles\\4.3.0-rc1\\CompilerIdCXX\\CompilerIdCXX.exe" "C:\\vcpkg\\installed\\x64-windows\\bin" "Debug\\CompilerIdCXX.tlog\\CompilerIdCXX.write.1u.tlog" "Debug\\vcpkg.applocal.log"" exited with code 9009.
         "C:\\WINDOWS\\System32\\WindowsPowerShell\\v1.0\\powershell.exe" -ExecutionPolicy Bypass -noprofile -File "C:\\vcpkg\\scripts\\buildsystems\\msbuild\\applocal.ps1" "C:\\Projects\\ASL\\Speak-well\\build\\CMakeFiles\\4.3.0-rc1\\CompilerIdCXX\\CompilerIdCXX.exe" "C:\\vcpkg\\installed\\x64-windows\\bin" "Debug\\CompilerIdCXX.tlog\\CompilerIdCXX.write.1u.tlog" "Debug\\vcpkg.applocal.log"
-=======
-        CompilerIdCXX.vcxproj -> C:\\Projects\\Horizon\\build\\CMakeFiles\\4.3.0-rc1\\CompilerIdCXX\\CompilerIdCXX.exe
-      AppLocalFromInstalled:
-        pwsh.exe -ExecutionPolicy Bypass -noprofile -File "C:\\vcpkg\\scripts\\buildsystems\\msbuild\\applocal.ps1" "C:\\Projects\\Horizon\\build\\CMakeFiles\\4.3.0-rc1\\CompilerIdCXX\\CompilerIdCXX.exe" "C:\\vcpkg\\installed\\x64-windows\\bin" "Debug\\CompilerIdCXX.tlog\\CompilerIdCXX.write.1u.tlog" "Debug\\vcpkg.applocal.log"
-        'pwsh.exe' is not recognized as an internal or external command,
-        operable program or batch file.
-        The command "pwsh.exe -ExecutionPolicy Bypass -noprofile -File "C:\\vcpkg\\scripts\\buildsystems\\msbuild\\applocal.ps1" "C:\\Projects\\Horizon\\build\\CMakeFiles\\4.3.0-rc1\\CompilerIdCXX\\CompilerIdCXX.exe" "C:\\vcpkg\\installed\\x64-windows\\bin" "Debug\\CompilerIdCXX.tlog\\CompilerIdCXX.write.1u.tlog" "Debug\\vcpkg.applocal.log"" exited with code 9009.
-        "C:\\Windows\\System32\\WindowsPowerShell\\v1.0\\powershell.exe" -ExecutionPolicy Bypass -noprofile -File "C:\\vcpkg\\scripts\\buildsystems\\msbuild\\applocal.ps1" "C:\\Projects\\Horizon\\build\\CMakeFiles\\4.3.0-rc1\\CompilerIdCXX\\CompilerIdCXX.exe" "C:\\vcpkg\\installed\\x64-windows\\bin" "Debug\\CompilerIdCXX.tlog\\CompilerIdCXX.write.1u.tlog" "Debug\\vcpkg.applocal.log"
->>>>>>> origin/frontend_branch
       PostBuildEvent:
         for %%i in (cl.exe) do @echo CMAKE_CXX_COMPILER=%%~$PATH:i
         :VCEnd
@@ -2419,21 +2394,13 @@ events:
       FinalizeBuildStatus:
         Deleting file "Debug\\CompilerIdCXX.tlog\\unsuccessfulbuild".
         Touching "Debug\\CompilerIdCXX.tlog\\CompilerIdCXX.lastbuildstate".
-<<<<<<< HEAD
       Done Building Project "C:\\Projects\\ASL\\Speak-well\\build\\CMakeFiles\\4.3.0-rc1\\CompilerIdCXX\\CompilerIdCXX.vcxproj" (default targets).
-=======
-      Done Building Project "C:\\Projects\\Horizon\\build\\CMakeFiles\\4.3.0-rc1\\CompilerIdCXX\\CompilerIdCXX.vcxproj" (default targets).
->>>>>>> origin/frontend_branch
       
       Build succeeded.
           0 Warning(s)
           0 Error(s)
       
-<<<<<<< HEAD
       Time Elapsed 00:00:00.94
-=======
-      Time Elapsed 00:00:10.52
->>>>>>> origin/frontend_branch
       
       
       Compilation of the CXX compiler identification source "CMakeCXXCompilerId.cpp" produced "CompilerIdCXX.exe"
@@ -2441,11 +2408,7 @@ events:
       Compilation of the CXX compiler identification source "CMakeCXXCompilerId.cpp" produced "CompilerIdCXX.vcxproj"
       
       The CXX compiler identification is MSVC, found in:
-<<<<<<< HEAD
         C:/Projects/ASL/Speak-well/build/CMakeFiles/4.3.0-rc1/CompilerIdCXX/CompilerIdCXX.exe
-=======
-        C:/Projects/Horizon/build/CMakeFiles/4.3.0-rc1/CompilerIdCXX/CompilerIdCXX.exe
->>>>>>> origin/frontend_branch
       
   -
     kind: "find-v1"
@@ -2724,7 +2687,6 @@ events:
         - "C:/vcpkg/installed/x64-windows/debug"
         - "C:/vcpkg/installed/x64-windows"
       ENV{PATH}:
-<<<<<<< HEAD
         - "C:\\WINDOWS\\system32"
         - "C:\\WINDOWS"
         - "C:\\WINDOWS\\System32\\Wbem"
@@ -2732,13 +2694,6 @@ events:
         - "C:\\WINDOWS\\System32\\OpenSSH\\"
         - "C:\\Program Files (x86)\\NVIDIA Corporation\\PhysX\\Common"
         - "C:\\Program Files\\Git\\cmd"
-=======
-        - "C:\\Windows\\system32"
-        - "C:\\Windows"
-        - "C:\\Windows\\System32\\Wbem"
-        - "C:\\Windows\\System32\\WindowsPowerShell\\v1.0\\"
-        - "C:\\Windows\\System32\\OpenSSH\\"
->>>>>>> origin/frontend_branch
         - "C:\\Program Files\\Microsoft SQL Server\\170\\Tools\\Binn\\"
         - "C:\\Program Files\\Microsoft SQL Server\\Client SDK\\ODBC\\170\\Tools\\Binn\\"
         - "C:\\Program Files\\dotnet\\"
@@ -3116,7 +3071,6 @@ events:
         - "C:/vcpkg/installed/x64-windows/debug"
         - "C:/vcpkg/installed/x64-windows"
       ENV{PATH}:
-<<<<<<< HEAD
         - "C:\\WINDOWS\\system32"
         - "C:\\WINDOWS"
         - "C:\\WINDOWS\\System32\\Wbem"
@@ -3124,13 +3078,6 @@ events:
         - "C:\\WINDOWS\\System32\\OpenSSH\\"
         - "C:\\Program Files (x86)\\NVIDIA Corporation\\PhysX\\Common"
         - "C:\\Program Files\\Git\\cmd"
-=======
-        - "C:\\Windows\\system32"
-        - "C:\\Windows"
-        - "C:\\Windows\\System32\\Wbem"
-        - "C:\\Windows\\System32\\WindowsPowerShell\\v1.0\\"
-        - "C:\\Windows\\System32\\OpenSSH\\"
->>>>>>> origin/frontend_branch
         - "C:\\Program Files\\Microsoft SQL Server\\170\\Tools\\Binn\\"
         - "C:\\Program Files\\Microsoft SQL Server\\Client SDK\\ODBC\\170\\Tools\\Binn\\"
         - "C:\\Program Files\\dotnet\\"
@@ -3426,7 +3373,6 @@ events:
         - "C:/vcpkg/installed/x64-windows/debug"
         - "C:/vcpkg/installed/x64-windows"
       ENV{PATH}:
-<<<<<<< HEAD
         - "C:\\WINDOWS\\system32"
         - "C:\\WINDOWS"
         - "C:\\WINDOWS\\System32\\Wbem"
@@ -3434,13 +3380,6 @@ events:
         - "C:\\WINDOWS\\System32\\OpenSSH\\"
         - "C:\\Program Files (x86)\\NVIDIA Corporation\\PhysX\\Common"
         - "C:\\Program Files\\Git\\cmd"
-=======
-        - "C:\\Windows\\system32"
-        - "C:\\Windows"
-        - "C:\\Windows\\System32\\Wbem"
-        - "C:\\Windows\\System32\\WindowsPowerShell\\v1.0\\"
-        - "C:\\Windows\\System32\\OpenSSH\\"
->>>>>>> origin/frontend_branch
         - "C:\\Program Files\\Microsoft SQL Server\\170\\Tools\\Binn\\"
         - "C:\\Program Files\\Microsoft SQL Server\\Client SDK\\ODBC\\170\\Tools\\Binn\\"
         - "C:\\Program Files\\dotnet\\"
@@ -3816,7 +3755,6 @@ events:
         - "C:/vcpkg/installed/x64-windows/debug"
         - "C:/vcpkg/installed/x64-windows"
       ENV{PATH}:
-<<<<<<< HEAD
         - "C:\\WINDOWS\\system32"
         - "C:\\WINDOWS"
         - "C:\\WINDOWS\\System32\\Wbem"
@@ -3824,13 +3762,6 @@ events:
         - "C:\\WINDOWS\\System32\\OpenSSH\\"
         - "C:\\Program Files (x86)\\NVIDIA Corporation\\PhysX\\Common"
         - "C:\\Program Files\\Git\\cmd"
-=======
-        - "C:\\Windows\\system32"
-        - "C:\\Windows"
-        - "C:\\Windows\\System32\\Wbem"
-        - "C:\\Windows\\System32\\WindowsPowerShell\\v1.0\\"
-        - "C:\\Windows\\System32\\OpenSSH\\"
->>>>>>> origin/frontend_branch
         - "C:\\Program Files\\Microsoft SQL Server\\170\\Tools\\Binn\\"
         - "C:\\Program Files\\Microsoft SQL Server\\Client SDK\\ODBC\\170\\Tools\\Binn\\"
         - "C:\\Program Files\\dotnet\\"
@@ -4126,7 +4057,6 @@ events:
         - "C:/vcpkg/installed/x64-windows/debug"
         - "C:/vcpkg/installed/x64-windows"
       ENV{PATH}:
-<<<<<<< HEAD
         - "C:\\WINDOWS\\system32"
         - "C:\\WINDOWS"
         - "C:\\WINDOWS\\System32\\Wbem"
@@ -4134,13 +4064,6 @@ events:
         - "C:\\WINDOWS\\System32\\OpenSSH\\"
         - "C:\\Program Files (x86)\\NVIDIA Corporation\\PhysX\\Common"
         - "C:\\Program Files\\Git\\cmd"
-=======
-        - "C:\\Windows\\system32"
-        - "C:\\Windows"
-        - "C:\\Windows\\System32\\Wbem"
-        - "C:\\Windows\\System32\\WindowsPowerShell\\v1.0\\"
-        - "C:\\Windows\\System32\\OpenSSH\\"
->>>>>>> origin/frontend_branch
         - "C:\\Program Files\\Microsoft SQL Server\\170\\Tools\\Binn\\"
         - "C:\\Program Files\\Microsoft SQL Server\\Client SDK\\ODBC\\170\\Tools\\Binn\\"
         - "C:\\Program Files\\dotnet\\"
@@ -4759,7 +4682,6 @@ events:
         - "C:/vcpkg/installed/x64-windows/debug"
         - "C:/vcpkg/installed/x64-windows"
       ENV{PATH}:
-<<<<<<< HEAD
         - "C:\\WINDOWS\\system32"
         - "C:\\WINDOWS"
         - "C:\\WINDOWS\\System32\\Wbem"
@@ -4767,13 +4689,6 @@ events:
         - "C:\\WINDOWS\\System32\\OpenSSH\\"
         - "C:\\Program Files (x86)\\NVIDIA Corporation\\PhysX\\Common"
         - "C:\\Program Files\\Git\\cmd"
-=======
-        - "C:\\Windows\\system32"
-        - "C:\\Windows"
-        - "C:\\Windows\\System32\\Wbem"
-        - "C:\\Windows\\System32\\WindowsPowerShell\\v1.0\\"
-        - "C:\\Windows\\System32\\OpenSSH\\"
->>>>>>> origin/frontend_branch
         - "C:\\Program Files\\Microsoft SQL Server\\170\\Tools\\Binn\\"
         - "C:\\Program Files\\Microsoft SQL Server\\Client SDK\\ODBC\\170\\Tools\\Binn\\"
         - "C:\\Program Files\\dotnet\\"
@@ -4809,13 +4724,8 @@ events:
     checks:
       - "Detecting CXX compiler ABI info"
     directories:
-<<<<<<< HEAD
       source: "C:/Projects/ASL/Speak-well/build/CMakeFiles/CMakeScratch/TryCompile-iwfwxt"
       binary: "C:/Projects/ASL/Speak-well/build/CMakeFiles/CMakeScratch/TryCompile-iwfwxt"
-=======
-      source: "C:/Projects/Horizon/build/CMakeFiles/CMakeScratch/TryCompile-o7vypt"
-      binary: "C:/Projects/Horizon/build/CMakeFiles/CMakeScratch/TryCompile-o7vypt"
->>>>>>> origin/frontend_branch
     cmakeVariables:
       CMAKE_CXX_FLAGS: "/DWIN32 /D_WINDOWS /W3 /GR /EHsc"
       CMAKE_CXX_FLAGS_DEBUG: "/MDd /Zi /Ob0 /Od /RTC1"
@@ -4830,7 +4740,6 @@ events:
       variable: "CMAKE_CXX_ABI_COMPILED"
       cached: true
       stdout: |
-<<<<<<< HEAD
         Change Dir: 'C:/Projects/ASL/Speak-well/build/CMakeFiles/CMakeScratch/TryCompile-iwfwxt'
         
         Run Build Command(s): "C:/Program Files/Microsoft Visual Studio/18/Community/MSBuild/Current/Bin/amd64/MSBuild.exe" cmTC_926f9.vcxproj /p:Configuration=Debug /p:Platform=x64 /p:VisualStudioVersion=18.0 /v:n
@@ -4858,45 +4767,12 @@ events:
           Deleting file "cmTC_926f9.dir\\Debug\\cmTC_926f9.tlog\\unsuccessfulbuild".
           Touching "cmTC_926f9.dir\\Debug\\cmTC_926f9.tlog\\cmTC_926f9.lastbuildstate".
         Done Building Project "C:\\Projects\\ASL\\Speak-well\\build\\CMakeFiles\\CMakeScratch\\TryCompile-iwfwxt\\cmTC_926f9.vcxproj" (default targets).
-=======
-        Change Dir: 'C:/Projects/Horizon/build/CMakeFiles/CMakeScratch/TryCompile-o7vypt'
-        
-        Run Build Command(s): "C:/Program Files/Microsoft Visual Studio/18/Community/MSBuild/Current/Bin/amd64/MSBuild.exe" cmTC_03a26.vcxproj /p:Configuration=Debug /p:Platform=x64 /p:VisualStudioVersion=18.0 /v:n
-        MSBuild version 18.0.5+e22287bf1 for .NET Framework
-        Build started 4/27/2026 6:43:25 PM.
-        
-        Project "C:\\Projects\\Horizon\\build\\CMakeFiles\\CMakeScratch\\TryCompile-o7vypt\\cmTC_03a26.vcxproj" on node 1 (default targets).
-        PrepareForBuild:
-          Structured output is enabled. The formatting of compiler diagnostics will reflect the error hierarchy. See https://aka.ms/cpp/structured-output for more details.
-          Creating directory "C:\\Projects\\Horizon\\build\\CMakeFiles\\CMakeScratch\\TryCompile-o7vypt\\Debug\\".
-          Creating directory "cmTC_03a26.dir\\Debug\\cmTC_03a26.tlog\\".
-        InitializeBuildStatus:
-          Creating "cmTC_03a26.dir\\Debug\\cmTC_03a26.tlog\\unsuccessfulbuild" because "AlwaysCreate" was specified.
-          Touching "cmTC_03a26.dir\\Debug\\cmTC_03a26.tlog\\unsuccessfulbuild".
-        ClCompile:
-          C:\\Program Files\\Microsoft Visual Studio\\18\\Community\\VC\\Tools\\MSVC\\14.50.35717\\bin\\HostX64\\x64\\CL.exe /c /Zi /W3 /WX- /diagnostics:column /Od /Ob0 /D _MBCS /D WIN32 /D _WINDOWS /D _MBCS /D "CMAKE_INTDIR=\\"Debug\\"" /EHsc /RTC1 /MDd /GR /Fo"cmTC_03a26.dir\\Debug\\\\" /Fd"cmTC_03a26.dir\\Debug\\vc145.pdb" /external:W3 /TP /errorReport:queue "C:\\Program Files\\CMake\\share\\cmake-4.3\\Modules\\CMakeCXXCompilerABI.cpp"
-          Microsoft (R) C/C++ Optimizing Compiler Version 19.50.35723 for x64
-          Copyright (C) Microsoft Corporation.  All rights reserved.
-          cl /c /Zi /W3 /WX- /diagnostics:column /Od /Ob0 /D _MBCS /D WIN32 /D _WINDOWS /D _MBCS /D "CMAKE_INTDIR=\\"Debug\\"" /EHsc /RTC1 /MDd /GR /Fo"cmTC_03a26.dir\\Debug\\\\" /Fd"cmTC_03a26.dir\\Debug\\vc145.pdb" /external:W3 /TP /errorReport:queue "C:\\Program Files\\CMake\\share\\cmake-4.3\\Modules\\CMakeCXXCompilerABI.cpp"
-          CMakeCXXCompilerABI.cpp
-        Link:
-          C:\\Program Files\\Microsoft Visual Studio\\18\\Community\\VC\\Tools\\MSVC\\14.50.35717\\bin\\HostX64\\x64\\link.exe /OUT:"C:\\Projects\\Horizon\\build\\CMakeFiles\\CMakeScratch\\TryCompile-o7vypt\\Debug\\cmTC_03a26.exe" /INCREMENTAL /ILK:"cmTC_03a26.dir\\Debug\\cmTC_03a26.ilk" /NOLOGO kernel32.lib user32.lib gdi32.lib winspool.lib shell32.lib ole32.lib oleaut32.lib uuid.lib comdlg32.lib advapi32.lib /MANIFEST /MANIFESTUAC:"level='asInvoker' uiAccess='false'" /manifest:embed /DEBUG /PDB:"C:/Projects/Horizon/build/CMakeFiles/CMakeScratch/TryCompile-o7vypt/Debug/cmTC_03a26.pdb" /SUBSYSTEM:CONSOLE /TLBID:1 /IMPLIB:"C:/Projects/Horizon/build/CMakeFiles/CMakeScratch/TryCompile-o7vypt/Debug/cmTC_03a26.lib" /MACHINE:X64  /machine:x64 cmTC_03a26.dir\\Debug\\CMakeCXXCompilerABI.obj
-          cmTC_03a26.vcxproj -> C:\\Projects\\Horizon\\build\\CMakeFiles\\CMakeScratch\\TryCompile-o7vypt\\Debug\\cmTC_03a26.exe
-        FinalizeBuildStatus:
-          Deleting file "cmTC_03a26.dir\\Debug\\cmTC_03a26.tlog\\unsuccessfulbuild".
-          Touching "cmTC_03a26.dir\\Debug\\cmTC_03a26.tlog\\cmTC_03a26.lastbuildstate".
-        Done Building Project "C:\\Projects\\Horizon\\build\\CMakeFiles\\CMakeScratch\\TryCompile-o7vypt\\cmTC_03a26.vcxproj" (default targets).
->>>>>>> origin/frontend_branch
         
         Build succeeded.
             0 Warning(s)
             0 Error(s)
         
-<<<<<<< HEAD
         Time Elapsed 00:00:00.53
-=======
-        Time Elapsed 00:00:05.70
->>>>>>> origin/frontend_branch
         
       exitCode: 0
   -
@@ -4935,13 +4811,8 @@ events:
     checks:
       - "Looking for C++ include any"
     directories:
-<<<<<<< HEAD
       source: "C:/Projects/ASL/Speak-well/build/CMakeFiles/CMakeScratch/TryCompile-c0bqfc"
       binary: "C:/Projects/ASL/Speak-well/build/CMakeFiles/CMakeScratch/TryCompile-c0bqfc"
-=======
-      source: "C:/Projects/Horizon/build/CMakeFiles/CMakeScratch/TryCompile-uqho04"
-      binary: "C:/Projects/Horizon/build/CMakeFiles/CMakeScratch/TryCompile-uqho04"
->>>>>>> origin/frontend_branch
     cmakeVariables:
       CMAKE_CXX_FLAGS: "/DWIN32 /D_WINDOWS /W3 /GR /EHsc"
       CMAKE_CXX_FLAGS_DEBUG: "/MDd /Zi /Ob0 /Od /RTC1"
@@ -4955,7 +4826,6 @@ events:
       variable: "HAS_ANY"
       cached: true
       stdout: |
-<<<<<<< HEAD
         Change Dir: 'C:/Projects/ASL/Speak-well/build/CMakeFiles/CMakeScratch/TryCompile-c0bqfc'
         
         Run Build Command(s): "C:/Program Files/Microsoft Visual Studio/18/Community/MSBuild/Current/Bin/amd64/MSBuild.exe" cmTC_a6275.vcxproj /p:Configuration=Debug /p:Platform=x64 /p:VisualStudioVersion=18.0 /v:n
@@ -4990,51 +4860,11 @@ events:
         "C:\\Projects\\ASL\\Speak-well\\build\\CMakeFiles\\CMakeScratch\\TryCompile-c0bqfc\\cmTC_a6275.vcxproj" (default target) (1) ->
         (ClCompile target) -> 
           C:\\Program Files\\Microsoft Visual Studio\\18\\Community\\VC\\Tools\\MSVC\\14.50.35717\\include\\any(12): warning STL4038: The contents of <any> are available only with C++17 or later. [C:\\Projects\\ASL\\Speak-well\\build\\CMakeFiles\\CMakeScratch\\TryCompile-c0bqfc\\cmTC_a6275.vcxproj]
-=======
-        Change Dir: 'C:/Projects/Horizon/build/CMakeFiles/CMakeScratch/TryCompile-uqho04'
-        
-        Run Build Command(s): "C:/Program Files/Microsoft Visual Studio/18/Community/MSBuild/Current/Bin/amd64/MSBuild.exe" cmTC_cf150.vcxproj /p:Configuration=Debug /p:Platform=x64 /p:VisualStudioVersion=18.0 /v:n
-        MSBuild version 18.0.5+e22287bf1 for .NET Framework
-        Build started 4/27/2026 6:43:33 PM.
-        
-        Project "C:\\Projects\\Horizon\\build\\CMakeFiles\\CMakeScratch\\TryCompile-uqho04\\cmTC_cf150.vcxproj" on node 1 (default targets).
-        PrepareForBuild:
-          Structured output is enabled. The formatting of compiler diagnostics will reflect the error hierarchy. See https://aka.ms/cpp/structured-output for more details.
-          Creating directory "C:\\Projects\\Horizon\\build\\CMakeFiles\\CMakeScratch\\TryCompile-uqho04\\Debug\\".
-          Creating directory "cmTC_cf150.dir\\Debug\\cmTC_cf150.tlog\\".
-        InitializeBuildStatus:
-          Creating "cmTC_cf150.dir\\Debug\\cmTC_cf150.tlog\\unsuccessfulbuild" because "AlwaysCreate" was specified.
-          Touching "cmTC_cf150.dir\\Debug\\cmTC_cf150.tlog\\unsuccessfulbuild".
-        ClCompile:
-          C:\\Program Files\\Microsoft Visual Studio\\18\\Community\\VC\\Tools\\MSVC\\14.50.35717\\bin\\HostX64\\x64\\CL.exe /c /Zi /W3 /WX- /diagnostics:column /Od /Ob0 /D _MBCS /D WIN32 /D _WINDOWS /D _MBCS /D "CMAKE_INTDIR=\\"Debug\\"" /EHsc /RTC1 /MDd /GR /Fo"cmTC_cf150.dir\\Debug\\\\" /Fd"cmTC_cf150.dir\\Debug\\vc145.pdb" /external:W3 /TP /errorReport:queue "C:\\Projects\\Horizon\\build\\CMakeFiles\\CMakeScratch\\TryCompile-uqho04\\CheckIncludeFile.cxx"
-          Microsoft (R) C/C++ Optimizing Compiler Version 19.50.35723 for x64
-          Copyright (C) Microsoft Corporation.  All rights reserved.
-          cl /c /Zi /W3 /WX- /diagnostics:column /Od /Ob0 /D _MBCS /D WIN32 /D _WINDOWS /D _MBCS /D "CMAKE_INTDIR=\\"Debug\\"" /EHsc /RTC1 /MDd /GR /Fo"cmTC_cf150.dir\\Debug\\\\" /Fd"cmTC_cf150.dir\\Debug\\vc145.pdb" /external:W3 /TP /errorReport:queue "C:\\Projects\\Horizon\\build\\CMakeFiles\\CMakeScratch\\TryCompile-uqho04\\CheckIncludeFile.cxx"
-          CheckIncludeFile.cxx
-        C:\\Program Files\\Microsoft Visual Studio\\18\\Community\\VC\\Tools\\MSVC\\14.50.35717\\include\\any(12): warning STL4038: The contents of <any> are available only with C++17 or later. [C:\\Projects\\Horizon\\build\\CMakeFiles\\CMakeScratch\\TryCompile-uqho04\\cmTC_cf150.vcxproj]
-        Link:
-          C:\\Program Files\\Microsoft Visual Studio\\18\\Community\\VC\\Tools\\MSVC\\14.50.35717\\bin\\HostX64\\x64\\link.exe /OUT:"C:\\Projects\\Horizon\\build\\CMakeFiles\\CMakeScratch\\TryCompile-uqho04\\Debug\\cmTC_cf150.exe" /INCREMENTAL /ILK:"cmTC_cf150.dir\\Debug\\cmTC_cf150.ilk" /NOLOGO kernel32.lib user32.lib gdi32.lib winspool.lib shell32.lib ole32.lib oleaut32.lib uuid.lib comdlg32.lib advapi32.lib /MANIFEST /MANIFESTUAC:"level='asInvoker' uiAccess='false'" /manifest:embed /DEBUG /PDB:"C:/Projects/Horizon/build/CMakeFiles/CMakeScratch/TryCompile-uqho04/Debug/cmTC_cf150.pdb" /SUBSYSTEM:CONSOLE /TLBID:1 /IMPLIB:"C:/Projects/Horizon/build/CMakeFiles/CMakeScratch/TryCompile-uqho04/Debug/cmTC_cf150.lib" /MACHINE:X64  /machine:x64 cmTC_cf150.dir\\Debug\\CheckIncludeFile.obj
-          cmTC_cf150.vcxproj -> C:\\Projects\\Horizon\\build\\CMakeFiles\\CMakeScratch\\TryCompile-uqho04\\Debug\\cmTC_cf150.exe
-        FinalizeBuildStatus:
-          Deleting file "cmTC_cf150.dir\\Debug\\cmTC_cf150.tlog\\unsuccessfulbuild".
-          Touching "cmTC_cf150.dir\\Debug\\cmTC_cf150.tlog\\cmTC_cf150.lastbuildstate".
-        Done Building Project "C:\\Projects\\Horizon\\build\\CMakeFiles\\CMakeScratch\\TryCompile-uqho04\\cmTC_cf150.vcxproj" (default targets).
-        
-        Build succeeded.
-        
-        "C:\\Projects\\Horizon\\build\\CMakeFiles\\CMakeScratch\\TryCompile-uqho04\\cmTC_cf150.vcxproj" (default target) (1) ->
-        (ClCompile target) -> 
-          C:\\Program Files\\Microsoft Visual Studio\\18\\Community\\VC\\Tools\\MSVC\\14.50.35717\\include\\any(12): warning STL4038: The contents of <any> are available only with C++17 or later. [C:\\Projects\\Horizon\\build\\CMakeFiles\\CMakeScratch\\TryCompile-uqho04\\cmTC_cf150.vcxproj]
->>>>>>> origin/frontend_branch
         
             1 Warning(s)
             0 Error(s)
         
-<<<<<<< HEAD
         Time Elapsed 00:00:00.63
-=======
-        Time Elapsed 00:00:05.80
->>>>>>> origin/frontend_branch
         
       exitCode: 0
   -
@@ -5045,13 +4875,8 @@ events:
     checks:
       - "Looking for C++ include string_view"
     directories:
-<<<<<<< HEAD
       source: "C:/Projects/ASL/Speak-well/build/CMakeFiles/CMakeScratch/TryCompile-5lnmyp"
       binary: "C:/Projects/ASL/Speak-well/build/CMakeFiles/CMakeScratch/TryCompile-5lnmyp"
-=======
-      source: "C:/Projects/Horizon/build/CMakeFiles/CMakeScratch/TryCompile-ceptja"
-      binary: "C:/Projects/Horizon/build/CMakeFiles/CMakeScratch/TryCompile-ceptja"
->>>>>>> origin/frontend_branch
     cmakeVariables:
       CMAKE_CXX_FLAGS: "/DWIN32 /D_WINDOWS /W3 /GR /EHsc"
       CMAKE_CXX_FLAGS_DEBUG: "/MDd /Zi /Ob0 /Od /RTC1"
@@ -5065,7 +4890,6 @@ events:
       variable: "HAS_STRING_VIEW"
       cached: true
       stdout: |
-<<<<<<< HEAD
         Change Dir: 'C:/Projects/ASL/Speak-well/build/CMakeFiles/CMakeScratch/TryCompile-5lnmyp'
         
         Run Build Command(s): "C:/Program Files/Microsoft Visual Studio/18/Community/MSBuild/Current/Bin/amd64/MSBuild.exe" cmTC_673ca.vcxproj /p:Configuration=Debug /p:Platform=x64 /p:VisualStudioVersion=18.0 /v:n
@@ -5100,51 +4924,11 @@ events:
         "C:\\Projects\\ASL\\Speak-well\\build\\CMakeFiles\\CMakeScratch\\TryCompile-5lnmyp\\cmTC_673ca.vcxproj" (default target) (1) ->
         (ClCompile target) -> 
           C:\\Program Files\\Microsoft Visual Studio\\18\\Community\\VC\\Tools\\MSVC\\14.50.35717\\include\\string_view(12): warning STL4038: The contents of <string_view> are available only with C++17 or later. [C:\\Projects\\ASL\\Speak-well\\build\\CMakeFiles\\CMakeScratch\\TryCompile-5lnmyp\\cmTC_673ca.vcxproj]
-=======
-        Change Dir: 'C:/Projects/Horizon/build/CMakeFiles/CMakeScratch/TryCompile-ceptja'
-        
-        Run Build Command(s): "C:/Program Files/Microsoft Visual Studio/18/Community/MSBuild/Current/Bin/amd64/MSBuild.exe" cmTC_6ce63.vcxproj /p:Configuration=Debug /p:Platform=x64 /p:VisualStudioVersion=18.0 /v:n
-        MSBuild version 18.0.5+e22287bf1 for .NET Framework
-        Build started 4/27/2026 6:43:42 PM.
-        
-        Project "C:\\Projects\\Horizon\\build\\CMakeFiles\\CMakeScratch\\TryCompile-ceptja\\cmTC_6ce63.vcxproj" on node 1 (default targets).
-        PrepareForBuild:
-          Structured output is enabled. The formatting of compiler diagnostics will reflect the error hierarchy. See https://aka.ms/cpp/structured-output for more details.
-          Creating directory "C:\\Projects\\Horizon\\build\\CMakeFiles\\CMakeScratch\\TryCompile-ceptja\\Debug\\".
-          Creating directory "cmTC_6ce63.dir\\Debug\\cmTC_6ce63.tlog\\".
-        InitializeBuildStatus:
-          Creating "cmTC_6ce63.dir\\Debug\\cmTC_6ce63.tlog\\unsuccessfulbuild" because "AlwaysCreate" was specified.
-          Touching "cmTC_6ce63.dir\\Debug\\cmTC_6ce63.tlog\\unsuccessfulbuild".
-        ClCompile:
-          C:\\Program Files\\Microsoft Visual Studio\\18\\Community\\VC\\Tools\\MSVC\\14.50.35717\\bin\\HostX64\\x64\\CL.exe /c /Zi /W3 /WX- /diagnostics:column /Od /Ob0 /D _MBCS /D WIN32 /D _WINDOWS /D _MBCS /D "CMAKE_INTDIR=\\"Debug\\"" /EHsc /RTC1 /MDd /GR /Fo"cmTC_6ce63.dir\\Debug\\\\" /Fd"cmTC_6ce63.dir\\Debug\\vc145.pdb" /external:W3 /TP /errorReport:queue "C:\\Projects\\Horizon\\build\\CMakeFiles\\CMakeScratch\\TryCompile-ceptja\\CheckIncludeFile.cxx"
-          Microsoft (R) C/C++ Optimizing Compiler Version 19.50.35723 for x64
-          Copyright (C) Microsoft Corporation.  All rights reserved.
-          cl /c /Zi /W3 /WX- /diagnostics:column /Od /Ob0 /D _MBCS /D WIN32 /D _WINDOWS /D _MBCS /D "CMAKE_INTDIR=\\"Debug\\"" /EHsc /RTC1 /MDd /GR /Fo"cmTC_6ce63.dir\\Debug\\\\" /Fd"cmTC_6ce63.dir\\Debug\\vc145.pdb" /external:W3 /TP /errorReport:queue "C:\\Projects\\Horizon\\build\\CMakeFiles\\CMakeScratch\\TryCompile-ceptja\\CheckIncludeFile.cxx"
-          CheckIncludeFile.cxx
-        C:\\Program Files\\Microsoft Visual Studio\\18\\Community\\VC\\Tools\\MSVC\\14.50.35717\\include\\string_view(12): warning STL4038: The contents of <string_view> are available only with C++17 or later. [C:\\Projects\\Horizon\\build\\CMakeFiles\\CMakeScratch\\TryCompile-ceptja\\cmTC_6ce63.vcxproj]
-        Link:
-          C:\\Program Files\\Microsoft Visual Studio\\18\\Community\\VC\\Tools\\MSVC\\14.50.35717\\bin\\HostX64\\x64\\link.exe /OUT:"C:\\Projects\\Horizon\\build\\CMakeFiles\\CMakeScratch\\TryCompile-ceptja\\Debug\\cmTC_6ce63.exe" /INCREMENTAL /ILK:"cmTC_6ce63.dir\\Debug\\cmTC_6ce63.ilk" /NOLOGO kernel32.lib user32.lib gdi32.lib winspool.lib shell32.lib ole32.lib oleaut32.lib uuid.lib comdlg32.lib advapi32.lib /MANIFEST /MANIFESTUAC:"level='asInvoker' uiAccess='false'" /manifest:embed /DEBUG /PDB:"C:/Projects/Horizon/build/CMakeFiles/CMakeScratch/TryCompile-ceptja/Debug/cmTC_6ce63.pdb" /SUBSYSTEM:CONSOLE /TLBID:1 /IMPLIB:"C:/Projects/Horizon/build/CMakeFiles/CMakeScratch/TryCompile-ceptja/Debug/cmTC_6ce63.lib" /MACHINE:X64  /machine:x64 cmTC_6ce63.dir\\Debug\\CheckIncludeFile.obj
-          cmTC_6ce63.vcxproj -> C:\\Projects\\Horizon\\build\\CMakeFiles\\CMakeScratch\\TryCompile-ceptja\\Debug\\cmTC_6ce63.exe
-        FinalizeBuildStatus:
-          Deleting file "cmTC_6ce63.dir\\Debug\\cmTC_6ce63.tlog\\unsuccessfulbuild".
-          Touching "cmTC_6ce63.dir\\Debug\\cmTC_6ce63.tlog\\cmTC_6ce63.lastbuildstate".
-        Done Building Project "C:\\Projects\\Horizon\\build\\CMakeFiles\\CMakeScratch\\TryCompile-ceptja\\cmTC_6ce63.vcxproj" (default targets).
-        
-        Build succeeded.
-        
-        "C:\\Projects\\Horizon\\build\\CMakeFiles\\CMakeScratch\\TryCompile-ceptja\\cmTC_6ce63.vcxproj" (default target) (1) ->
-        (ClCompile target) -> 
-          C:\\Program Files\\Microsoft Visual Studio\\18\\Community\\VC\\Tools\\MSVC\\14.50.35717\\include\\string_view(12): warning STL4038: The contents of <string_view> are available only with C++17 or later. [C:\\Projects\\Horizon\\build\\CMakeFiles\\CMakeScratch\\TryCompile-ceptja\\cmTC_6ce63.vcxproj]
->>>>>>> origin/frontend_branch
         
             1 Warning(s)
             0 Error(s)
         
-<<<<<<< HEAD
         Time Elapsed 00:00:00.68
-=======
-        Time Elapsed 00:00:05.77
->>>>>>> origin/frontend_branch
         
       exitCode: 0
   -
@@ -5155,13 +4939,8 @@ events:
     checks:
       - "Looking for C++ include coroutine"
     directories:
-<<<<<<< HEAD
       source: "C:/Projects/ASL/Speak-well/build/CMakeFiles/CMakeScratch/TryCompile-lteyrf"
       binary: "C:/Projects/ASL/Speak-well/build/CMakeFiles/CMakeScratch/TryCompile-lteyrf"
-=======
-      source: "C:/Projects/Horizon/build/CMakeFiles/CMakeScratch/TryCompile-lch9o1"
-      binary: "C:/Projects/Horizon/build/CMakeFiles/CMakeScratch/TryCompile-lch9o1"
->>>>>>> origin/frontend_branch
     cmakeVariables:
       CMAKE_CXX_FLAGS: "/DWIN32 /D_WINDOWS /W3 /GR /EHsc"
       CMAKE_CXX_FLAGS_DEBUG: "/MDd /Zi /Ob0 /Od /RTC1"
@@ -5175,7 +4954,6 @@ events:
       variable: "HAS_COROUTINE"
       cached: true
       stdout: |
-<<<<<<< HEAD
         Change Dir: 'C:/Projects/ASL/Speak-well/build/CMakeFiles/CMakeScratch/TryCompile-lteyrf'
         
         Run Build Command(s): "C:/Program Files/Microsoft Visual Studio/18/Community/MSBuild/Current/Bin/amd64/MSBuild.exe" cmTC_1fb72.vcxproj /p:Configuration=Debug /p:Platform=x64 /p:VisualStudioVersion=18.0 /v:n
@@ -5210,51 +4988,11 @@ events:
         "C:\\Projects\\ASL\\Speak-well\\build\\CMakeFiles\\CMakeScratch\\TryCompile-lteyrf\\cmTC_1fb72.vcxproj" (default target) (1) ->
         (ClCompile target) -> 
           C:\\Program Files\\Microsoft Visual Studio\\18\\Community\\VC\\Tools\\MSVC\\14.50.35717\\include\\coroutine(17): warning STL4038: The contents of <coroutine> are available only with C++20 or later or /await:strict. [C:\\Projects\\ASL\\Speak-well\\build\\CMakeFiles\\CMakeScratch\\TryCompile-lteyrf\\cmTC_1fb72.vcxproj]
-=======
-        Change Dir: 'C:/Projects/Horizon/build/CMakeFiles/CMakeScratch/TryCompile-lch9o1'
-        
-        Run Build Command(s): "C:/Program Files/Microsoft Visual Studio/18/Community/MSBuild/Current/Bin/amd64/MSBuild.exe" cmTC_7eeec.vcxproj /p:Configuration=Debug /p:Platform=x64 /p:VisualStudioVersion=18.0 /v:n
-        MSBuild version 18.0.5+e22287bf1 for .NET Framework
-        Build started 4/27/2026 6:43:49 PM.
-        
-        Project "C:\\Projects\\Horizon\\build\\CMakeFiles\\CMakeScratch\\TryCompile-lch9o1\\cmTC_7eeec.vcxproj" on node 1 (default targets).
-        PrepareForBuild:
-          Structured output is enabled. The formatting of compiler diagnostics will reflect the error hierarchy. See https://aka.ms/cpp/structured-output for more details.
-          Creating directory "C:\\Projects\\Horizon\\build\\CMakeFiles\\CMakeScratch\\TryCompile-lch9o1\\Debug\\".
-          Creating directory "cmTC_7eeec.dir\\Debug\\cmTC_7eeec.tlog\\".
-        InitializeBuildStatus:
-          Creating "cmTC_7eeec.dir\\Debug\\cmTC_7eeec.tlog\\unsuccessfulbuild" because "AlwaysCreate" was specified.
-          Touching "cmTC_7eeec.dir\\Debug\\cmTC_7eeec.tlog\\unsuccessfulbuild".
-        ClCompile:
-          C:\\Program Files\\Microsoft Visual Studio\\18\\Community\\VC\\Tools\\MSVC\\14.50.35717\\bin\\HostX64\\x64\\CL.exe /c /Zi /W3 /WX- /diagnostics:column /Od /Ob0 /D _MBCS /D WIN32 /D _WINDOWS /D _MBCS /D "CMAKE_INTDIR=\\"Debug\\"" /EHsc /RTC1 /MDd /GR /Fo"cmTC_7eeec.dir\\Debug\\\\" /Fd"cmTC_7eeec.dir\\Debug\\vc145.pdb" /external:W3 /TP /errorReport:queue "C:\\Projects\\Horizon\\build\\CMakeFiles\\CMakeScratch\\TryCompile-lch9o1\\CheckIncludeFile.cxx"
-          Microsoft (R) C/C++ Optimizing Compiler Version 19.50.35723 for x64
-          Copyright (C) Microsoft Corporation.  All rights reserved.
-          cl /c /Zi /W3 /WX- /diagnostics:column /Od /Ob0 /D _MBCS /D WIN32 /D _WINDOWS /D _MBCS /D "CMAKE_INTDIR=\\"Debug\\"" /EHsc /RTC1 /MDd /GR /Fo"cmTC_7eeec.dir\\Debug\\\\" /Fd"cmTC_7eeec.dir\\Debug\\vc145.pdb" /external:W3 /TP /errorReport:queue "C:\\Projects\\Horizon\\build\\CMakeFiles\\CMakeScratch\\TryCompile-lch9o1\\CheckIncludeFile.cxx"
-          CheckIncludeFile.cxx
-        C:\\Program Files\\Microsoft Visual Studio\\18\\Community\\VC\\Tools\\MSVC\\14.50.35717\\include\\coroutine(17): warning STL4038: The contents of <coroutine> are available only with C++20 or later or /await:strict. [C:\\Projects\\Horizon\\build\\CMakeFiles\\CMakeScratch\\TryCompile-lch9o1\\cmTC_7eeec.vcxproj]
-        Link:
-          C:\\Program Files\\Microsoft Visual Studio\\18\\Community\\VC\\Tools\\MSVC\\14.50.35717\\bin\\HostX64\\x64\\link.exe /OUT:"C:\\Projects\\Horizon\\build\\CMakeFiles\\CMakeScratch\\TryCompile-lch9o1\\Debug\\cmTC_7eeec.exe" /INCREMENTAL /ILK:"cmTC_7eeec.dir\\Debug\\cmTC_7eeec.ilk" /NOLOGO kernel32.lib user32.lib gdi32.lib winspool.lib shell32.lib ole32.lib oleaut32.lib uuid.lib comdlg32.lib advapi32.lib /MANIFEST /MANIFESTUAC:"level='asInvoker' uiAccess='false'" /manifest:embed /DEBUG /PDB:"C:/Projects/Horizon/build/CMakeFiles/CMakeScratch/TryCompile-lch9o1/Debug/cmTC_7eeec.pdb" /SUBSYSTEM:CONSOLE /TLBID:1 /IMPLIB:"C:/Projects/Horizon/build/CMakeFiles/CMakeScratch/TryCompile-lch9o1/Debug/cmTC_7eeec.lib" /MACHINE:X64  /machine:x64 cmTC_7eeec.dir\\Debug\\CheckIncludeFile.obj
-          cmTC_7eeec.vcxproj -> C:\\Projects\\Horizon\\build\\CMakeFiles\\CMakeScratch\\TryCompile-lch9o1\\Debug\\cmTC_7eeec.exe
-        FinalizeBuildStatus:
-          Deleting file "cmTC_7eeec.dir\\Debug\\cmTC_7eeec.tlog\\unsuccessfulbuild".
-          Touching "cmTC_7eeec.dir\\Debug\\cmTC_7eeec.tlog\\cmTC_7eeec.lastbuildstate".
-        Done Building Project "C:\\Projects\\Horizon\\build\\CMakeFiles\\CMakeScratch\\TryCompile-lch9o1\\cmTC_7eeec.vcxproj" (default targets).
-        
-        Build succeeded.
-        
-        "C:\\Projects\\Horizon\\build\\CMakeFiles\\CMakeScratch\\TryCompile-lch9o1\\cmTC_7eeec.vcxproj" (default target) (1) ->
-        (ClCompile target) -> 
-          C:\\Program Files\\Microsoft Visual Studio\\18\\Community\\VC\\Tools\\MSVC\\14.50.35717\\include\\coroutine(17): warning STL4038: The contents of <coroutine> are available only with C++20 or later or /await:strict. [C:\\Projects\\Horizon\\build\\CMakeFiles\\CMakeScratch\\TryCompile-lch9o1\\cmTC_7eeec.vcxproj]
->>>>>>> origin/frontend_branch
         
             1 Warning(s)
             0 Error(s)
         
-<<<<<<< HEAD
         Time Elapsed 00:00:00.63
-=======
-        Time Elapsed 00:00:05.33
->>>>>>> origin/frontend_branch
         
       exitCode: 0
   -
@@ -5852,7 +5590,6 @@ events:
         - "C:/vcpkg/installed/x64-windows/debug"
         - "C:/vcpkg/installed/x64-windows"
       ENV{PATH}:
-<<<<<<< HEAD
         - "C:\\WINDOWS\\system32"
         - "C:\\WINDOWS"
         - "C:\\WINDOWS\\System32\\Wbem"
@@ -5860,13 +5597,6 @@ events:
         - "C:\\WINDOWS\\System32\\OpenSSH\\"
         - "C:\\Program Files (x86)\\NVIDIA Corporation\\PhysX\\Common"
         - "C:\\Program Files\\Git\\cmd"
-=======
-        - "C:\\Windows\\system32"
-        - "C:\\Windows"
-        - "C:\\Windows\\System32\\Wbem"
-        - "C:\\Windows\\System32\\WindowsPowerShell\\v1.0\\"
-        - "C:\\Windows\\System32\\OpenSSH\\"
->>>>>>> origin/frontend_branch
         - "C:\\Program Files\\Microsoft SQL Server\\170\\Tools\\Binn\\"
         - "C:\\Program Files\\Microsoft SQL Server\\Client SDK\\ODBC\\170\\Tools\\Binn\\"
         - "C:\\Program Files\\dotnet\\"
@@ -6384,7 +6114,6 @@ events:
         - "C:/vcpkg/installed/x64-windows/debug"
         - "C:/vcpkg/installed/x64-windows"
       ENV{PATH}:
-<<<<<<< HEAD
         - "C:\\WINDOWS\\system32"
         - "C:\\WINDOWS"
         - "C:\\WINDOWS\\System32\\Wbem"
@@ -6392,13 +6121,6 @@ events:
         - "C:\\WINDOWS\\System32\\OpenSSH\\"
         - "C:\\Program Files (x86)\\NVIDIA Corporation\\PhysX\\Common"
         - "C:\\Program Files\\Git\\cmd"
-=======
-        - "C:\\Windows\\system32"
-        - "C:\\Windows"
-        - "C:\\Windows\\System32\\Wbem"
-        - "C:\\Windows\\System32\\WindowsPowerShell\\v1.0\\"
-        - "C:\\Windows\\System32\\OpenSSH\\"
->>>>>>> origin/frontend_branch
         - "C:\\Program Files\\Microsoft SQL Server\\170\\Tools\\Binn\\"
         - "C:\\Program Files\\Microsoft SQL Server\\Client SDK\\ODBC\\170\\Tools\\Binn\\"
         - "C:\\Program Files\\dotnet\\"
@@ -6765,7 +6487,6 @@ events:
         - "C:/vcpkg/installed/x64-windows/debug"
         - "C:/vcpkg/installed/x64-windows"
       ENV{PATH}:
-<<<<<<< HEAD
         - "C:\\WINDOWS\\system32"
         - "C:\\WINDOWS"
         - "C:\\WINDOWS\\System32\\Wbem"
@@ -6773,13 +6494,6 @@ events:
         - "C:\\WINDOWS\\System32\\OpenSSH\\"
         - "C:\\Program Files (x86)\\NVIDIA Corporation\\PhysX\\Common"
         - "C:\\Program Files\\Git\\cmd"
-=======
-        - "C:\\Windows\\system32"
-        - "C:\\Windows"
-        - "C:\\Windows\\System32\\Wbem"
-        - "C:\\Windows\\System32\\WindowsPowerShell\\v1.0\\"
-        - "C:\\Windows\\System32\\OpenSSH\\"
->>>>>>> origin/frontend_branch
         - "C:\\Program Files\\Microsoft SQL Server\\170\\Tools\\Binn\\"
         - "C:\\Program Files\\Microsoft SQL Server\\Client SDK\\ODBC\\170\\Tools\\Binn\\"
         - "C:\\Program Files\\dotnet\\"
@@ -6965,7 +6679,6 @@ events:
         - "C:/vcpkg/installed/x64-windows/debug"
         - "C:/vcpkg/installed/x64-windows"
       ENV{PATH}:
-<<<<<<< HEAD
         - "C:\\WINDOWS\\system32"
         - "C:\\WINDOWS"
         - "C:\\WINDOWS\\System32\\Wbem"
@@ -6973,13 +6686,6 @@ events:
         - "C:\\WINDOWS\\System32\\OpenSSH\\"
         - "C:\\Program Files (x86)\\NVIDIA Corporation\\PhysX\\Common"
         - "C:\\Program Files\\Git\\cmd"
-=======
-        - "C:\\Windows\\system32"
-        - "C:\\Windows"
-        - "C:\\Windows\\System32\\Wbem"
-        - "C:\\Windows\\System32\\WindowsPowerShell\\v1.0\\"
-        - "C:\\Windows\\System32\\OpenSSH\\"
->>>>>>> origin/frontend_branch
         - "C:\\Program Files\\Microsoft SQL Server\\170\\Tools\\Binn\\"
         - "C:\\Program Files\\Microsoft SQL Server\\Client SDK\\ODBC\\170\\Tools\\Binn\\"
         - "C:\\Program Files\\dotnet\\"
@@ -7045,7 +6751,6 @@ events:
         - "C:/vcpkg/installed/x64-windows/debug"
         - "C:/vcpkg/installed/x64-windows"
       ENV{PATH}:
-<<<<<<< HEAD
         - "C:\\WINDOWS\\system32"
         - "C:\\WINDOWS"
         - "C:\\WINDOWS\\System32\\Wbem"
@@ -7053,13 +6758,6 @@ events:
         - "C:\\WINDOWS\\System32\\OpenSSH\\"
         - "C:\\Program Files (x86)\\NVIDIA Corporation\\PhysX\\Common"
         - "C:\\Program Files\\Git\\cmd"
-=======
-        - "C:\\Windows\\system32"
-        - "C:\\Windows"
-        - "C:\\Windows\\System32\\Wbem"
-        - "C:\\Windows\\System32\\WindowsPowerShell\\v1.0\\"
-        - "C:\\Windows\\System32\\OpenSSH\\"
->>>>>>> origin/frontend_branch
         - "C:\\Program Files\\Microsoft SQL Server\\170\\Tools\\Binn\\"
         - "C:\\Program Files\\Microsoft SQL Server\\Client SDK\\ODBC\\170\\Tools\\Binn\\"
         - "C:\\Program Files\\dotnet\\"
@@ -7126,7 +6824,6 @@ events:
         - "C:/vcpkg/installed/x64-windows/debug"
         - "C:/vcpkg/installed/x64-windows"
       ENV{PATH}:
-<<<<<<< HEAD
         - "C:\\WINDOWS\\system32"
         - "C:\\WINDOWS"
         - "C:\\WINDOWS\\System32\\Wbem"
@@ -7134,13 +6831,6 @@ events:
         - "C:\\WINDOWS\\System32\\OpenSSH\\"
         - "C:\\Program Files (x86)\\NVIDIA Corporation\\PhysX\\Common"
         - "C:\\Program Files\\Git\\cmd"
-=======
-        - "C:\\Windows\\system32"
-        - "C:\\Windows"
-        - "C:\\Windows\\System32\\Wbem"
-        - "C:\\Windows\\System32\\WindowsPowerShell\\v1.0\\"
-        - "C:\\Windows\\System32\\OpenSSH\\"
->>>>>>> origin/frontend_branch
         - "C:\\Program Files\\Microsoft SQL Server\\170\\Tools\\Binn\\"
         - "C:\\Program Files\\Microsoft SQL Server\\Client SDK\\ODBC\\170\\Tools\\Binn\\"
         - "C:\\Program Files\\dotnet\\"
@@ -7213,7 +6903,6 @@ events:
         - "C:/vcpkg/installed/x64-windows/debug"
         - "C:/vcpkg/installed/x64-windows"
       ENV{PATH}:
-<<<<<<< HEAD
         - "C:\\WINDOWS\\system32"
         - "C:\\WINDOWS"
         - "C:\\WINDOWS\\System32\\Wbem"
@@ -7221,13 +6910,6 @@ events:
         - "C:\\WINDOWS\\System32\\OpenSSH\\"
         - "C:\\Program Files (x86)\\NVIDIA Corporation\\PhysX\\Common"
         - "C:\\Program Files\\Git\\cmd"
-=======
-        - "C:\\Windows\\system32"
-        - "C:\\Windows"
-        - "C:\\Windows\\System32\\Wbem"
-        - "C:\\Windows\\System32\\WindowsPowerShell\\v1.0\\"
-        - "C:\\Windows\\System32\\OpenSSH\\"
->>>>>>> origin/frontend_branch
         - "C:\\Program Files\\Microsoft SQL Server\\170\\Tools\\Binn\\"
         - "C:\\Program Files\\Microsoft SQL Server\\Client SDK\\ODBC\\170\\Tools\\Binn\\"
         - "C:\\Program Files\\dotnet\\"
@@ -7298,7 +6980,6 @@ events:
         - "C:/vcpkg/installed/x64-windows/debug"
         - "C:/vcpkg/installed/x64-windows"
       ENV{PATH}:
-<<<<<<< HEAD
         - "C:\\WINDOWS\\system32"
         - "C:\\WINDOWS"
         - "C:\\WINDOWS\\System32\\Wbem"
@@ -7306,13 +6987,6 @@ events:
         - "C:\\WINDOWS\\System32\\OpenSSH\\"
         - "C:\\Program Files (x86)\\NVIDIA Corporation\\PhysX\\Common"
         - "C:\\Program Files\\Git\\cmd"
-=======
-        - "C:\\Windows\\system32"
-        - "C:\\Windows"
-        - "C:\\Windows\\System32\\Wbem"
-        - "C:\\Windows\\System32\\WindowsPowerShell\\v1.0\\"
-        - "C:\\Windows\\System32\\OpenSSH\\"
->>>>>>> origin/frontend_branch
         - "C:\\Program Files\\Microsoft SQL Server\\170\\Tools\\Binn\\"
         - "C:\\Program Files\\Microsoft SQL Server\\Client SDK\\ODBC\\170\\Tools\\Binn\\"
         - "C:\\Program Files\\dotnet\\"
@@ -7385,7 +7059,6 @@ events:
         - "C:/vcpkg/installed/x64-windows/debug"
         - "C:/vcpkg/installed/x64-windows"
       ENV{PATH}:
-<<<<<<< HEAD
         - "C:\\WINDOWS\\system32"
         - "C:\\WINDOWS"
         - "C:\\WINDOWS\\System32\\Wbem"
@@ -7393,13 +7066,6 @@ events:
         - "C:\\WINDOWS\\System32\\OpenSSH\\"
         - "C:\\Program Files (x86)\\NVIDIA Corporation\\PhysX\\Common"
         - "C:\\Program Files\\Git\\cmd"
-=======
-        - "C:\\Windows\\system32"
-        - "C:\\Windows"
-        - "C:\\Windows\\System32\\Wbem"
-        - "C:\\Windows\\System32\\WindowsPowerShell\\v1.0\\"
-        - "C:\\Windows\\System32\\OpenSSH\\"
->>>>>>> origin/frontend_branch
         - "C:\\Program Files\\Microsoft SQL Server\\170\\Tools\\Binn\\"
         - "C:\\Program Files\\Microsoft SQL Server\\Client SDK\\ODBC\\170\\Tools\\Binn\\"
         - "C:\\Program Files\\dotnet\\"
@@ -7474,7 +7140,6 @@ events:
         - "C:/vcpkg/installed/x64-windows/debug"
         - "C:/vcpkg/installed/x64-windows"
       ENV{PATH}:
-<<<<<<< HEAD
         - "C:\\WINDOWS\\system32"
         - "C:\\WINDOWS"
         - "C:\\WINDOWS\\System32\\Wbem"
@@ -7482,13 +7147,6 @@ events:
         - "C:\\WINDOWS\\System32\\OpenSSH\\"
         - "C:\\Program Files (x86)\\NVIDIA Corporation\\PhysX\\Common"
         - "C:\\Program Files\\Git\\cmd"
-=======
-        - "C:\\Windows\\system32"
-        - "C:\\Windows"
-        - "C:\\Windows\\System32\\Wbem"
-        - "C:\\Windows\\System32\\WindowsPowerShell\\v1.0\\"
-        - "C:\\Windows\\System32\\OpenSSH\\"
->>>>>>> origin/frontend_branch
         - "C:\\Program Files\\Microsoft SQL Server\\170\\Tools\\Binn\\"
         - "C:\\Program Files\\Microsoft SQL Server\\Client SDK\\ODBC\\170\\Tools\\Binn\\"
         - "C:\\Program Files\\dotnet\\"
@@ -7555,7 +7213,6 @@ events:
         - "C:/vcpkg/installed/x64-windows/debug"
         - "C:/vcpkg/installed/x64-windows"
       ENV{PATH}:
-<<<<<<< HEAD
         - "C:\\WINDOWS\\system32"
         - "C:\\WINDOWS"
         - "C:\\WINDOWS\\System32\\Wbem"
@@ -7563,13 +7220,6 @@ events:
         - "C:\\WINDOWS\\System32\\OpenSSH\\"
         - "C:\\Program Files (x86)\\NVIDIA Corporation\\PhysX\\Common"
         - "C:\\Program Files\\Git\\cmd"
-=======
-        - "C:\\Windows\\system32"
-        - "C:\\Windows"
-        - "C:\\Windows\\System32\\Wbem"
-        - "C:\\Windows\\System32\\WindowsPowerShell\\v1.0\\"
-        - "C:\\Windows\\System32\\OpenSSH\\"
->>>>>>> origin/frontend_branch
         - "C:\\Program Files\\Microsoft SQL Server\\170\\Tools\\Binn\\"
         - "C:\\Program Files\\Microsoft SQL Server\\Client SDK\\ODBC\\170\\Tools\\Binn\\"
         - "C:\\Program Files\\dotnet\\"
@@ -7704,7 +7354,6 @@ events:
         - "C:/vcpkg/installed/x64-windows/debug"
         - "C:/vcpkg/installed/x64-windows"
       ENV{PATH}:
-<<<<<<< HEAD
         - "C:\\WINDOWS\\system32"
         - "C:\\WINDOWS"
         - "C:\\WINDOWS\\System32\\Wbem"
@@ -7712,13 +7361,6 @@ events:
         - "C:\\WINDOWS\\System32\\OpenSSH\\"
         - "C:\\Program Files (x86)\\NVIDIA Corporation\\PhysX\\Common"
         - "C:\\Program Files\\Git\\cmd"
-=======
-        - "C:\\Windows\\system32"
-        - "C:\\Windows"
-        - "C:\\Windows\\System32\\Wbem"
-        - "C:\\Windows\\System32\\WindowsPowerShell\\v1.0\\"
-        - "C:\\Windows\\System32\\OpenSSH\\"
->>>>>>> origin/frontend_branch
         - "C:\\Program Files\\Microsoft SQL Server\\170\\Tools\\Binn\\"
         - "C:\\Program Files\\Microsoft SQL Server\\Client SDK\\ODBC\\170\\Tools\\Binn\\"
         - "C:\\Program Files\\dotnet\\"
@@ -7765,13 +7407,8 @@ events:
     checks:
       - "Performing Test CMAKE_HAVE_LIBC_PTHREAD"
     directories:
-<<<<<<< HEAD
       source: "C:/Projects/ASL/Speak-well/build/CMakeFiles/CMakeScratch/TryCompile-mgjjrc"
       binary: "C:/Projects/ASL/Speak-well/build/CMakeFiles/CMakeScratch/TryCompile-mgjjrc"
-=======
-      source: "C:/Projects/Horizon/build/CMakeFiles/CMakeScratch/TryCompile-1v2gff"
-      binary: "C:/Projects/Horizon/build/CMakeFiles/CMakeScratch/TryCompile-1v2gff"
->>>>>>> origin/frontend_branch
     cmakeVariables:
       CMAKE_CXX_FLAGS: "/DWIN32 /D_WINDOWS /W3 /GR /EHsc"
       CMAKE_CXX_FLAGS_DEBUG: "/MDd /Zi /Ob0 /Od /RTC1"
@@ -7786,7 +7423,6 @@ events:
       variable: "CMAKE_HAVE_LIBC_PTHREAD"
       cached: true
       stdout: |
-<<<<<<< HEAD
         Change Dir: 'C:/Projects/ASL/Speak-well/build/CMakeFiles/CMakeScratch/TryCompile-mgjjrc'
         
         Run Build Command(s): "C:/Program Files/Microsoft Visual Studio/18/Community/MSBuild/Current/Bin/amd64/MSBuild.exe" cmTC_47177.vcxproj /p:Configuration=Debug /p:Platform=x64 /p:VisualStudioVersion=18.0 /v:n
@@ -7801,28 +7437,11 @@ events:
         InitializeBuildStatus:
           Creating "cmTC_47177.dir\\Debug\\cmTC_47177.tlog\\unsuccessfulbuild" because "AlwaysCreate" was specified.
           Touching "cmTC_47177.dir\\Debug\\cmTC_47177.tlog\\unsuccessfulbuild".
-=======
-        Change Dir: 'C:/Projects/Horizon/build/CMakeFiles/CMakeScratch/TryCompile-1v2gff'
-        
-        Run Build Command(s): "C:/Program Files/Microsoft Visual Studio/18/Community/MSBuild/Current/Bin/amd64/MSBuild.exe" cmTC_b3b9f.vcxproj /p:Configuration=Debug /p:Platform=x64 /p:VisualStudioVersion=18.0 /v:n
-        MSBuild version 18.0.5+e22287bf1 for .NET Framework
-        Build started 4/27/2026 6:43:57 PM.
-        
-        Project "C:\\Projects\\Horizon\\build\\CMakeFiles\\CMakeScratch\\TryCompile-1v2gff\\cmTC_b3b9f.vcxproj" on node 1 (default targets).
-        PrepareForBuild:
-          Structured output is enabled. The formatting of compiler diagnostics will reflect the error hierarchy. See https://aka.ms/cpp/structured-output for more details.
-          Creating directory "C:\\Projects\\Horizon\\build\\CMakeFiles\\CMakeScratch\\TryCompile-1v2gff\\Debug\\".
-          Creating directory "cmTC_b3b9f.dir\\Debug\\cmTC_b3b9f.tlog\\".
-        InitializeBuildStatus:
-          Creating "cmTC_b3b9f.dir\\Debug\\cmTC_b3b9f.tlog\\unsuccessfulbuild" because "AlwaysCreate" was specified.
-          Touching "cmTC_b3b9f.dir\\Debug\\cmTC_b3b9f.tlog\\unsuccessfulbuild".
->>>>>>> origin/frontend_branch
         ComputeStdModulesCompileInputs:
           Reading library manifest file 'C:\\Program Files\\Microsoft Visual Studio\\18\\Community\\VC\\Tools\\MSVC\\14.50.35717\\modules\\modules.json' which provides data for library 'microsoft/STL'.
           Adding module source 'C:\\Program Files\\Microsoft Visual Studio\\18\\Community\\VC\\Tools\\MSVC\\14.50.35717\\modules\\std.ixx' from library 'microsoft/STL' to be built with this project.
           Adding module source 'C:\\Program Files\\Microsoft Visual Studio\\18\\Community\\VC\\Tools\\MSVC\\14.50.35717\\modules\\std.compat.ixx' from library 'microsoft/STL' to be built with this project.
         MakeDirsForCl:
-<<<<<<< HEAD
           Creating directory "C:\\Projects\\ASL\\Speak-well\\build\\CMakeFiles\\CMakeScratch\\TryCompile-mgjjrc\\cmTC_47177.dir\\Debug\\microsoft\\STL".
         SetModuleDependencies:
           Creating directory "cmTC_47177.dir\\Debug\\cmTC_47177_MD.tlog\\".
@@ -7860,57 +7479,11 @@ events:
         "C:\\Projects\\ASL\\Speak-well\\build\\CMakeFiles\\CMakeScratch\\TryCompile-mgjjrc\\cmTC_47177.vcxproj" (default target) (1) ->
         (ClCompile target) -> 
           C:\\Projects\\ASL\\Speak-well\\build\\CMakeFiles\\CMakeScratch\\TryCompile-mgjjrc\\src.cxx(1,10): error C1083: Cannot open include file: 'pthread.h': No such file or directory [C:\\Projects\\ASL\\Speak-well\\build\\CMakeFiles\\CMakeScratch\\TryCompile-mgjjrc\\cmTC_47177.vcxproj]
-=======
-          Creating directory "C:\\Projects\\Horizon\\build\\CMakeFiles\\CMakeScratch\\TryCompile-1v2gff\\cmTC_b3b9f.dir\\Debug\\microsoft\\STL".
-        SetModuleDependencies:
-          Creating directory "cmTC_b3b9f.dir\\Debug\\cmTC_b3b9f_MD.tlog\\".
-          Scanning sources for module dependencies...
-          C:\\Program Files\\Microsoft Visual Studio\\18\\Community\\VC\\Tools\\MSVC\\14.50.35717\\bin\\HostX64\\x64\\CL.exe /c /Zi /W3 /WX- /diagnostics:column /FS /Od /Ob0 /D _MBCS /D WIN32 /D _WINDOWS /D CMAKE_HAVE_LIBC_PTHREAD /D _MBCS /D "CMAKE_INTDIR=\\"Debug\\"" /EHsc /RTC1 /MDd /GR /std:c++20 /ifcOutput "cmTC_b3b9f.dir\\Debug\\\\" /scanDependencies "cmTC_b3b9f.dir\\Debug\\\\" /Fo"cmTC_b3b9f.dir\\Debug\\\\" /Fd"cmTC_b3b9f.dir\\Debug\\vc145.pdb" /external:W3 /TP /errorReport:queue "C:\\Projects\\Horizon\\build\\CMakeFiles\\CMakeScratch\\TryCompile-1v2gff\\src.cxx"
-          Microsoft (R) C/C++ Optimizing Compiler Version 19.50.35723 for x64
-        C:\\Projects\\Horizon\\build\\CMakeFiles\\CMakeScratch\\TryCompile-1v2gff\\src.cxx(1,10): fatal  error C1083: Cannot open include file: 'pthread.h': No such file or directory [C:\\Projects\\Horizon\\build\\CMakeFiles\\CMakeScratch\\TryCompile-1v2gff\\cmTC_b3b9f.vcxproj]
-        C:\\Projects\\Horizon\\build\\CMakeFiles\\CMakeScratch\\TryCompile-1v2gff\\src.cxx(1,10): fatal  error C1083: Cannot open include file: 'pthread.h': No such file or directory [C:\\Projects\\Horizon\\build\\CMakeFiles\\CMakeScratch\\TryCompile-1v2gff\\cmTC_b3b9f.vcxproj]
-          Copyright (C) Microsoft Corporation.  All rights reserved.
-          cl /c /Zi /W3 /WX- /diagnostics:column /FS /Od /Ob0 /D _MBCS /D WIN32 /D _WINDOWS /D CMAKE_HAVE_LIBC_PTHREAD /D _MBCS /D "CMAKE_INTDIR=\\"Debug\\"" /EHsc /RTC1 /MDd /GR /std:c++20 /ifcOutput "cmTC_b3b9f.dir\\Debug\\\\" /scanDependencies "cmTC_b3b9f.dir\\Debug\\\\" /Fo"cmTC_b3b9f.dir\\Debug\\\\" /Fd"cmTC_b3b9f.dir\\Debug\\vc145.pdb" /external:W3 /TP /errorReport:queue "C:\\Projects\\Horizon\\build\\CMakeFiles\\CMakeScratch\\TryCompile-1v2gff\\src.cxx"
-          src.cxx
-        C:\\Projects\\Horizon\\build\\CMakeFiles\\CMakeScratch\\TryCompile-1v2gff\\src.cxx(1,10): error C1083: Cannot open include file: 'pthread.h': No such file or directory [C:\\Projects\\Horizon\\build\\CMakeFiles\\CMakeScratch\\TryCompile-1v2gff\\cmTC_b3b9f.vcxproj]
-        C:\\Program Files\\Microsoft Visual Studio\\18\\Community\\MSBuild\\Microsoft\\VC\\v180\\Microsoft.CppCommon.targets(533,5): warning MSB8074: Cannot read Module Dependencies file cmTC_b3b9f.dir\\Debug\\src.cxx.module.json: Expecting element 'root' from namespace ''.. Encountered 'None'  with name '', namespace ''.  The build order might be incorrect. [C:\\Projects\\Horizon\\build\\CMakeFiles\\CMakeScratch\\TryCompile-1v2gff\\cmTC_b3b9f.vcxproj]
-        ClCompile:
-          Compiling...
-          C:\\Program Files\\Microsoft Visual Studio\\18\\Community\\VC\\Tools\\MSVC\\14.50.35717\\bin\\HostX64\\x64\\CL.exe /c /Zi /W3 /WX- /diagnostics:column /FS /Od /Ob0 /D _MBCS /D WIN32 /D _WINDOWS /D CMAKE_HAVE_LIBC_PTHREAD /D _MBCS /D "CMAKE_INTDIR=\\"Debug\\"" /EHsc /RTC1 /MDd /GR /std:c++20 /ifcOutput "cmTC_b3b9f.dir\\Debug\\\\" /Fo"cmTC_b3b9f.dir\\Debug\\\\" /Fd"cmTC_b3b9f.dir\\Debug\\vc145.pdb" /sourceDependencies "cmTC_b3b9f.dir\\Debug\\.d.json" /external:W3 /TP /errorReport:queue "C:\\Projects\\Horizon\\build\\CMakeFiles\\CMakeScratch\\TryCompile-1v2gff\\src.cxx"
-          Microsoft (R) C/C++ Optimizing Compiler Version 19.50.35723 for x64
-          Copyright (C) Microsoft Corporation.  All rights reserved.
-          cl /c /Zi /W3 /WX- /diagnostics:column /FS /Od /Ob0 /D _MBCS /D WIN32 /D _WINDOWS /D CMAKE_HAVE_LIBC_PTHREAD /D _MBCS /D "CMAKE_INTDIR=\\"Debug\\"" /EHsc /RTC1 /MDd /GR /std:c++20 /ifcOutput "cmTC_b3b9f.dir\\Debug\\\\" /Fo"cmTC_b3b9f.dir\\Debug\\\\" /Fd"cmTC_b3b9f.dir\\Debug\\vc145.pdb" /sourceDependencies "cmTC_b3b9f.dir\\Debug\\.d.json" /external:W3 /TP /errorReport:queue "C:\\Projects\\Horizon\\build\\CMakeFiles\\CMakeScratch\\TryCompile-1v2gff\\src.cxx"
-          src.cxx
-        C:\\Projects\\Horizon\\build\\CMakeFiles\\CMakeScratch\\TryCompile-1v2gff\\src.cxx(1,10): error C1083: Cannot open include file: 'pthread.h': No such file or directory [C:\\Projects\\Horizon\\build\\CMakeFiles\\CMakeScratch\\TryCompile-1v2gff\\cmTC_b3b9f.vcxproj]
-        Done Building Project "C:\\Projects\\Horizon\\build\\CMakeFiles\\CMakeScratch\\TryCompile-1v2gff\\cmTC_b3b9f.vcxproj" (default targets) -- FAILED.
-        
-        Build FAILED.
-        
-        "C:\\Projects\\Horizon\\build\\CMakeFiles\\CMakeScratch\\TryCompile-1v2gff\\cmTC_b3b9f.vcxproj" (default target) (1) ->
-        (SetModuleDependencies target) -> 
-          C:\\Program Files\\Microsoft Visual Studio\\18\\Community\\MSBuild\\Microsoft\\VC\\v180\\Microsoft.CppCommon.targets(533,5): warning MSB8074: Cannot read Module Dependencies file cmTC_b3b9f.dir\\Debug\\src.cxx.module.json: Expecting element 'root' from namespace ''.. Encountered 'None'  with name '', namespace ''.  The build order might be incorrect. [C:\\Projects\\Horizon\\build\\CMakeFiles\\CMakeScratch\\TryCompile-1v2gff\\cmTC_b3b9f.vcxproj]
-        
-        
-        "C:\\Projects\\Horizon\\build\\CMakeFiles\\CMakeScratch\\TryCompile-1v2gff\\cmTC_b3b9f.vcxproj" (default target) (1) ->
-        (SetModuleDependencies target) -> 
-          C:\\Projects\\Horizon\\build\\CMakeFiles\\CMakeScratch\\TryCompile-1v2gff\\src.cxx(1,10): fatal  error C1083: Cannot open include file: 'pthread.h': No such file or directory [C:\\Projects\\Horizon\\build\\CMakeFiles\\CMakeScratch\\TryCompile-1v2gff\\cmTC_b3b9f.vcxproj]
-          C:\\Projects\\Horizon\\build\\CMakeFiles\\CMakeScratch\\TryCompile-1v2gff\\src.cxx(1,10): fatal  error C1083: Cannot open include file: 'pthread.h': No such file or directory [C:\\Projects\\Horizon\\build\\CMakeFiles\\CMakeScratch\\TryCompile-1v2gff\\cmTC_b3b9f.vcxproj]
-          C:\\Projects\\Horizon\\build\\CMakeFiles\\CMakeScratch\\TryCompile-1v2gff\\src.cxx(1,10): error C1083: Cannot open include file: 'pthread.h': No such file or directory [C:\\Projects\\Horizon\\build\\CMakeFiles\\CMakeScratch\\TryCompile-1v2gff\\cmTC_b3b9f.vcxproj]
-        
-        
-        "C:\\Projects\\Horizon\\build\\CMakeFiles\\CMakeScratch\\TryCompile-1v2gff\\cmTC_b3b9f.vcxproj" (default target) (1) ->
-        (ClCompile target) -> 
-          C:\\Projects\\Horizon\\build\\CMakeFiles\\CMakeScratch\\TryCompile-1v2gff\\src.cxx(1,10): error C1083: Cannot open include file: 'pthread.h': No such file or directory [C:\\Projects\\Horizon\\build\\CMakeFiles\\CMakeScratch\\TryCompile-1v2gff\\cmTC_b3b9f.vcxproj]
->>>>>>> origin/frontend_branch
         
             1 Warning(s)
-            4 Error(s)
+            3 Error(s)
         
-<<<<<<< HEAD
         Time Elapsed 00:00:00.97
-=======
-        Time Elapsed 00:00:05.03
->>>>>>> origin/frontend_branch
         
       exitCode: 1
   -
@@ -7932,13 +7505,8 @@ events:
     checks:
       - "Looking for pthread_create in pthreads"
     directories:
-<<<<<<< HEAD
       source: "C:/Projects/ASL/Speak-well/build/CMakeFiles/CMakeScratch/TryCompile-9x0n8y"
       binary: "C:/Projects/ASL/Speak-well/build/CMakeFiles/CMakeScratch/TryCompile-9x0n8y"
-=======
-      source: "C:/Projects/Horizon/build/CMakeFiles/CMakeScratch/TryCompile-g3hsgx"
-      binary: "C:/Projects/Horizon/build/CMakeFiles/CMakeScratch/TryCompile-g3hsgx"
->>>>>>> origin/frontend_branch
     cmakeVariables:
       CMAKE_CXX_FLAGS: "/DWIN32 /D_WINDOWS /W3 /GR /EHsc"
       CMAKE_CXX_FLAGS_DEBUG: "/MDd /Zi /Ob0 /Od /RTC1"
@@ -7953,7 +7521,6 @@ events:
       variable: "CMAKE_HAVE_PTHREADS_CREATE"
       cached: true
       stdout: |
-<<<<<<< HEAD
         Change Dir: 'C:/Projects/ASL/Speak-well/build/CMakeFiles/CMakeScratch/TryCompile-9x0n8y'
         
         Run Build Command(s): "C:/Program Files/Microsoft Visual Studio/18/Community/MSBuild/Current/Bin/amd64/MSBuild.exe" cmTC_01d7e.vcxproj /p:Configuration=Debug /p:Platform=x64 /p:VisualStudioVersion=18.0 /v:n
@@ -7968,28 +7535,11 @@ events:
         InitializeBuildStatus:
           Creating "cmTC_01d7e.dir\\Debug\\cmTC_01d7e.tlog\\unsuccessfulbuild" because "AlwaysCreate" was specified.
           Touching "cmTC_01d7e.dir\\Debug\\cmTC_01d7e.tlog\\unsuccessfulbuild".
-=======
-        Change Dir: 'C:/Projects/Horizon/build/CMakeFiles/CMakeScratch/TryCompile-g3hsgx'
-        
-        Run Build Command(s): "C:/Program Files/Microsoft Visual Studio/18/Community/MSBuild/Current/Bin/amd64/MSBuild.exe" cmTC_ca04d.vcxproj /p:Configuration=Debug /p:Platform=x64 /p:VisualStudioVersion=18.0 /v:n
-        MSBuild version 18.0.5+e22287bf1 for .NET Framework
-        Build started 4/27/2026 6:44:04 PM.
-        
-        Project "C:\\Projects\\Horizon\\build\\CMakeFiles\\CMakeScratch\\TryCompile-g3hsgx\\cmTC_ca04d.vcxproj" on node 1 (default targets).
-        PrepareForBuild:
-          Structured output is enabled. The formatting of compiler diagnostics will reflect the error hierarchy. See https://aka.ms/cpp/structured-output for more details.
-          Creating directory "C:\\Projects\\Horizon\\build\\CMakeFiles\\CMakeScratch\\TryCompile-g3hsgx\\Debug\\".
-          Creating directory "cmTC_ca04d.dir\\Debug\\cmTC_ca04d.tlog\\".
-        InitializeBuildStatus:
-          Creating "cmTC_ca04d.dir\\Debug\\cmTC_ca04d.tlog\\unsuccessfulbuild" because "AlwaysCreate" was specified.
-          Touching "cmTC_ca04d.dir\\Debug\\cmTC_ca04d.tlog\\unsuccessfulbuild".
->>>>>>> origin/frontend_branch
         ComputeStdModulesCompileInputs:
           Reading library manifest file 'C:\\Program Files\\Microsoft Visual Studio\\18\\Community\\VC\\Tools\\MSVC\\14.50.35717\\modules\\modules.json' which provides data for library 'microsoft/STL'.
           Adding module source 'C:\\Program Files\\Microsoft Visual Studio\\18\\Community\\VC\\Tools\\MSVC\\14.50.35717\\modules\\std.ixx' from library 'microsoft/STL' to be built with this project.
           Adding module source 'C:\\Program Files\\Microsoft Visual Studio\\18\\Community\\VC\\Tools\\MSVC\\14.50.35717\\modules\\std.compat.ixx' from library 'microsoft/STL' to be built with this project.
         MakeDirsForCl:
-<<<<<<< HEAD
           Creating directory "C:\\Projects\\ASL\\Speak-well\\build\\CMakeFiles\\CMakeScratch\\TryCompile-9x0n8y\\cmTC_01d7e.dir\\Debug\\microsoft\\STL".
         SetModuleDependencies:
           Creating directory "cmTC_01d7e.dir\\Debug\\cmTC_01d7e_MD.tlog\\".
@@ -8016,43 +7566,11 @@ events:
         "C:\\Projects\\ASL\\Speak-well\\build\\CMakeFiles\\CMakeScratch\\TryCompile-9x0n8y\\cmTC_01d7e.vcxproj" (default target) (1) ->
         (Link target) -> 
           LINK : fatal error LNK1104: cannot open file 'pthreads.lib' [C:\\Projects\\ASL\\Speak-well\\build\\CMakeFiles\\CMakeScratch\\TryCompile-9x0n8y\\cmTC_01d7e.vcxproj]
-=======
-          Creating directory "C:\\Projects\\Horizon\\build\\CMakeFiles\\CMakeScratch\\TryCompile-g3hsgx\\cmTC_ca04d.dir\\Debug\\microsoft\\STL".
-        SetModuleDependencies:
-          Creating directory "cmTC_ca04d.dir\\Debug\\cmTC_ca04d_MD.tlog\\".
-          Scanning sources for module dependencies...
-          C:\\Program Files\\Microsoft Visual Studio\\18\\Community\\VC\\Tools\\MSVC\\14.50.35717\\bin\\HostX64\\x64\\CL.exe /c /Zi /W3 /WX- /diagnostics:column /FS /Od /Ob0 /D _MBCS /D WIN32 /D _WINDOWS /D CHECK_FUNCTION_EXISTS=pthread_create /D _MBCS /D "CMAKE_INTDIR=\\"Debug\\"" /EHsc /RTC1 /MDd /GR /std:c++20 /ifcOutput "cmTC_ca04d.dir\\Debug\\\\" /scanDependencies "cmTC_ca04d.dir\\Debug\\\\" /Fo"cmTC_ca04d.dir\\Debug\\\\" /Fd"cmTC_ca04d.dir\\Debug\\vc145.pdb" /external:W3 /TP /errorReport:queue "C:\\Projects\\Horizon\\build\\CMakeFiles\\CMakeScratch\\TryCompile-g3hsgx\\CheckFunctionExists.cxx"
-          Microsoft (R) C/C++ Optimizing Compiler Version 19.50.35723 for x64
-          Copyright (C) Microsoft Corporation.  All rights reserved.
-          cl /c /Zi /W3 /WX- /diagnostics:column /FS /Od /Ob0 /D _MBCS /D WIN32 /D _WINDOWS /D CHECK_FUNCTION_EXISTS=pthread_create /D _MBCS /D "CMAKE_INTDIR=\\"Debug\\"" /EHsc /RTC1 /MDd /GR /std:c++20 /ifcOutput "cmTC_ca04d.dir\\Debug\\\\" /scanDependencies "cmTC_ca04d.dir\\Debug\\\\" /Fo"cmTC_ca04d.dir\\Debug\\\\" /Fd"cmTC_ca04d.dir\\Debug\\vc145.pdb" /external:W3 /TP /errorReport:queue "C:\\Projects\\Horizon\\build\\CMakeFiles\\CMakeScratch\\TryCompile-g3hsgx\\CheckFunctionExists.cxx"
-          CheckFunctionExists.cxx
-        ClCompile:
-          Compiling...
-          C:\\Program Files\\Microsoft Visual Studio\\18\\Community\\VC\\Tools\\MSVC\\14.50.35717\\bin\\HostX64\\x64\\CL.exe /c /Zi /W3 /WX- /diagnostics:column /FS /Od /Ob0 /D _MBCS /D WIN32 /D _WINDOWS /D CHECK_FUNCTION_EXISTS=pthread_create /D _MBCS /D "CMAKE_INTDIR=\\"Debug\\"" /EHsc /RTC1 /MDd /GR /std:c++20 /ifcOutput "cmTC_ca04d.dir\\Debug\\\\" /Fo"cmTC_ca04d.dir\\Debug\\\\" /Fd"cmTC_ca04d.dir\\Debug\\vc145.pdb" /sourceDependencies "cmTC_ca04d.dir\\Debug\\.d.json" /external:W3 /TP /errorReport:queue "C:\\Projects\\Horizon\\build\\CMakeFiles\\CMakeScratch\\TryCompile-g3hsgx\\CheckFunctionExists.cxx"
-          Microsoft (R) C/C++ Optimizing Compiler Version 19.50.35723 for x64
-          Copyright (C) Microsoft Corporation.  All rights reserved.
-          cl /c /Zi /W3 /WX- /diagnostics:column /FS /Od /Ob0 /D _MBCS /D WIN32 /D _WINDOWS /D CHECK_FUNCTION_EXISTS=pthread_create /D _MBCS /D "CMAKE_INTDIR=\\"Debug\\"" /EHsc /RTC1 /MDd /GR /std:c++20 /ifcOutput "cmTC_ca04d.dir\\Debug\\\\" /Fo"cmTC_ca04d.dir\\Debug\\\\" /Fd"cmTC_ca04d.dir\\Debug\\vc145.pdb" /sourceDependencies "cmTC_ca04d.dir\\Debug\\.d.json" /external:W3 /TP /errorReport:queue "C:\\Projects\\Horizon\\build\\CMakeFiles\\CMakeScratch\\TryCompile-g3hsgx\\CheckFunctionExists.cxx"
-          CheckFunctionExists.cxx
-        Link:
-          C:\\Program Files\\Microsoft Visual Studio\\18\\Community\\VC\\Tools\\MSVC\\14.50.35717\\bin\\HostX64\\x64\\link.exe /OUT:"C:\\Projects\\Horizon\\build\\CMakeFiles\\CMakeScratch\\TryCompile-g3hsgx\\Debug\\cmTC_ca04d.exe" /INCREMENTAL /ILK:"cmTC_ca04d.dir\\Debug\\cmTC_ca04d.ilk" /NOLOGO pthreads.lib kernel32.lib user32.lib gdi32.lib winspool.lib shell32.lib ole32.lib oleaut32.lib uuid.lib comdlg32.lib advapi32.lib /MANIFEST /MANIFESTUAC:"level='asInvoker' uiAccess='false'" /manifest:embed /DEBUG /PDB:"C:/Projects/Horizon/build/CMakeFiles/CMakeScratch/TryCompile-g3hsgx/Debug/cmTC_ca04d.pdb" /SUBSYSTEM:CONSOLE /TLBID:1 /IMPLIB:"C:/Projects/Horizon/build/CMakeFiles/CMakeScratch/TryCompile-g3hsgx/Debug/cmTC_ca04d.lib" /MACHINE:X64  /machine:x64 cmTC_ca04d.dir\\Debug\\CheckFunctionExists.obj
-        LINK : fatal error LNK1104: cannot open file 'pthreads.lib' [C:\\Projects\\Horizon\\build\\CMakeFiles\\CMakeScratch\\TryCompile-g3hsgx\\cmTC_ca04d.vcxproj]
-        Done Building Project "C:\\Projects\\Horizon\\build\\CMakeFiles\\CMakeScratch\\TryCompile-g3hsgx\\cmTC_ca04d.vcxproj" (default targets) -- FAILED.
-        
-        Build FAILED.
-        
-        "C:\\Projects\\Horizon\\build\\CMakeFiles\\CMakeScratch\\TryCompile-g3hsgx\\cmTC_ca04d.vcxproj" (default target) (1) ->
-        (Link target) -> 
-          LINK : fatal error LNK1104: cannot open file 'pthreads.lib' [C:\\Projects\\Horizon\\build\\CMakeFiles\\CMakeScratch\\TryCompile-g3hsgx\\cmTC_ca04d.vcxproj]
->>>>>>> origin/frontend_branch
         
             0 Warning(s)
             1 Error(s)
         
-<<<<<<< HEAD
         Time Elapsed 00:00:00.66
-=======
-        Time Elapsed 00:00:05.65
->>>>>>> origin/frontend_branch
         
       exitCode: 1
   -
@@ -8074,13 +7592,8 @@ events:
     checks:
       - "Looking for pthread_create in pthread"
     directories:
-<<<<<<< HEAD
       source: "C:/Projects/ASL/Speak-well/build/CMakeFiles/CMakeScratch/TryCompile-fqxgs6"
       binary: "C:/Projects/ASL/Speak-well/build/CMakeFiles/CMakeScratch/TryCompile-fqxgs6"
-=======
-      source: "C:/Projects/Horizon/build/CMakeFiles/CMakeScratch/TryCompile-n4m79f"
-      binary: "C:/Projects/Horizon/build/CMakeFiles/CMakeScratch/TryCompile-n4m79f"
->>>>>>> origin/frontend_branch
     cmakeVariables:
       CMAKE_CXX_FLAGS: "/DWIN32 /D_WINDOWS /W3 /GR /EHsc"
       CMAKE_CXX_FLAGS_DEBUG: "/MDd /Zi /Ob0 /Od /RTC1"
@@ -8095,7 +7608,6 @@ events:
       variable: "CMAKE_HAVE_PTHREAD_CREATE"
       cached: true
       stdout: |
-<<<<<<< HEAD
         Change Dir: 'C:/Projects/ASL/Speak-well/build/CMakeFiles/CMakeScratch/TryCompile-fqxgs6'
         
         Run Build Command(s): "C:/Program Files/Microsoft Visual Studio/18/Community/MSBuild/Current/Bin/amd64/MSBuild.exe" cmTC_17e3c.vcxproj /p:Configuration=Debug /p:Platform=x64 /p:VisualStudioVersion=18.0 /v:n
@@ -8110,28 +7622,11 @@ events:
         InitializeBuildStatus:
           Creating "cmTC_17e3c.dir\\Debug\\cmTC_17e3c.tlog\\unsuccessfulbuild" because "AlwaysCreate" was specified.
           Touching "cmTC_17e3c.dir\\Debug\\cmTC_17e3c.tlog\\unsuccessfulbuild".
-=======
-        Change Dir: 'C:/Projects/Horizon/build/CMakeFiles/CMakeScratch/TryCompile-n4m79f'
-        
-        Run Build Command(s): "C:/Program Files/Microsoft Visual Studio/18/Community/MSBuild/Current/Bin/amd64/MSBuild.exe" cmTC_988d6.vcxproj /p:Configuration=Debug /p:Platform=x64 /p:VisualStudioVersion=18.0 /v:n
-        MSBuild version 18.0.5+e22287bf1 for .NET Framework
-        Build started 4/27/2026 6:44:12 PM.
-        
-        Project "C:\\Projects\\Horizon\\build\\CMakeFiles\\CMakeScratch\\TryCompile-n4m79f\\cmTC_988d6.vcxproj" on node 1 (default targets).
-        PrepareForBuild:
-          Structured output is enabled. The formatting of compiler diagnostics will reflect the error hierarchy. See https://aka.ms/cpp/structured-output for more details.
-          Creating directory "C:\\Projects\\Horizon\\build\\CMakeFiles\\CMakeScratch\\TryCompile-n4m79f\\Debug\\".
-          Creating directory "cmTC_988d6.dir\\Debug\\cmTC_988d6.tlog\\".
-        InitializeBuildStatus:
-          Creating "cmTC_988d6.dir\\Debug\\cmTC_988d6.tlog\\unsuccessfulbuild" because "AlwaysCreate" was specified.
-          Touching "cmTC_988d6.dir\\Debug\\cmTC_988d6.tlog\\unsuccessfulbuild".
->>>>>>> origin/frontend_branch
         ComputeStdModulesCompileInputs:
           Reading library manifest file 'C:\\Program Files\\Microsoft Visual Studio\\18\\Community\\VC\\Tools\\MSVC\\14.50.35717\\modules\\modules.json' which provides data for library 'microsoft/STL'.
           Adding module source 'C:\\Program Files\\Microsoft Visual Studio\\18\\Community\\VC\\Tools\\MSVC\\14.50.35717\\modules\\std.ixx' from library 'microsoft/STL' to be built with this project.
           Adding module source 'C:\\Program Files\\Microsoft Visual Studio\\18\\Community\\VC\\Tools\\MSVC\\14.50.35717\\modules\\std.compat.ixx' from library 'microsoft/STL' to be built with this project.
         MakeDirsForCl:
-<<<<<<< HEAD
           Creating directory "C:\\Projects\\ASL\\Speak-well\\build\\CMakeFiles\\CMakeScratch\\TryCompile-fqxgs6\\cmTC_17e3c.dir\\Debug\\microsoft\\STL".
         SetModuleDependencies:
           Creating directory "cmTC_17e3c.dir\\Debug\\cmTC_17e3c_MD.tlog\\".
@@ -8158,43 +7653,11 @@ events:
         "C:\\Projects\\ASL\\Speak-well\\build\\CMakeFiles\\CMakeScratch\\TryCompile-fqxgs6\\cmTC_17e3c.vcxproj" (default target) (1) ->
         (Link target) -> 
           LINK : fatal error LNK1104: cannot open file 'pthread.lib' [C:\\Projects\\ASL\\Speak-well\\build\\CMakeFiles\\CMakeScratch\\TryCompile-fqxgs6\\cmTC_17e3c.vcxproj]
-=======
-          Creating directory "C:\\Projects\\Horizon\\build\\CMakeFiles\\CMakeScratch\\TryCompile-n4m79f\\cmTC_988d6.dir\\Debug\\microsoft\\STL".
-        SetModuleDependencies:
-          Creating directory "cmTC_988d6.dir\\Debug\\cmTC_988d6_MD.tlog\\".
-          Scanning sources for module dependencies...
-          C:\\Program Files\\Microsoft Visual Studio\\18\\Community\\VC\\Tools\\MSVC\\14.50.35717\\bin\\HostX64\\x64\\CL.exe /c /Zi /W3 /WX- /diagnostics:column /FS /Od /Ob0 /D _MBCS /D WIN32 /D _WINDOWS /D CHECK_FUNCTION_EXISTS=pthread_create /D _MBCS /D "CMAKE_INTDIR=\\"Debug\\"" /EHsc /RTC1 /MDd /GR /std:c++20 /ifcOutput "cmTC_988d6.dir\\Debug\\\\" /scanDependencies "cmTC_988d6.dir\\Debug\\\\" /Fo"cmTC_988d6.dir\\Debug\\\\" /Fd"cmTC_988d6.dir\\Debug\\vc145.pdb" /external:W3 /TP /errorReport:queue "C:\\Projects\\Horizon\\build\\CMakeFiles\\CMakeScratch\\TryCompile-n4m79f\\CheckFunctionExists.cxx"
-          Microsoft (R) C/C++ Optimizing Compiler Version 19.50.35723 for x64
-          Copyright (C) Microsoft Corporation.  All rights reserved.
-          cl /c /Zi /W3 /WX- /diagnostics:column /FS /Od /Ob0 /D _MBCS /D WIN32 /D _WINDOWS /D CHECK_FUNCTION_EXISTS=pthread_create /D _MBCS /D "CMAKE_INTDIR=\\"Debug\\"" /EHsc /RTC1 /MDd /GR /std:c++20 /ifcOutput "cmTC_988d6.dir\\Debug\\\\" /scanDependencies "cmTC_988d6.dir\\Debug\\\\" /Fo"cmTC_988d6.dir\\Debug\\\\" /Fd"cmTC_988d6.dir\\Debug\\vc145.pdb" /external:W3 /TP /errorReport:queue "C:\\Projects\\Horizon\\build\\CMakeFiles\\CMakeScratch\\TryCompile-n4m79f\\CheckFunctionExists.cxx"
-          CheckFunctionExists.cxx
-        ClCompile:
-          Compiling...
-          C:\\Program Files\\Microsoft Visual Studio\\18\\Community\\VC\\Tools\\MSVC\\14.50.35717\\bin\\HostX64\\x64\\CL.exe /c /Zi /W3 /WX- /diagnostics:column /FS /Od /Ob0 /D _MBCS /D WIN32 /D _WINDOWS /D CHECK_FUNCTION_EXISTS=pthread_create /D _MBCS /D "CMAKE_INTDIR=\\"Debug\\"" /EHsc /RTC1 /MDd /GR /std:c++20 /ifcOutput "cmTC_988d6.dir\\Debug\\\\" /Fo"cmTC_988d6.dir\\Debug\\\\" /Fd"cmTC_988d6.dir\\Debug\\vc145.pdb" /sourceDependencies "cmTC_988d6.dir\\Debug\\.d.json" /external:W3 /TP /errorReport:queue "C:\\Projects\\Horizon\\build\\CMakeFiles\\CMakeScratch\\TryCompile-n4m79f\\CheckFunctionExists.cxx"
-          Microsoft (R) C/C++ Optimizing Compiler Version 19.50.35723 for x64
-          Copyright (C) Microsoft Corporation.  All rights reserved.
-          cl /c /Zi /W3 /WX- /diagnostics:column /FS /Od /Ob0 /D _MBCS /D WIN32 /D _WINDOWS /D CHECK_FUNCTION_EXISTS=pthread_create /D _MBCS /D "CMAKE_INTDIR=\\"Debug\\"" /EHsc /RTC1 /MDd /GR /std:c++20 /ifcOutput "cmTC_988d6.dir\\Debug\\\\" /Fo"cmTC_988d6.dir\\Debug\\\\" /Fd"cmTC_988d6.dir\\Debug\\vc145.pdb" /sourceDependencies "cmTC_988d6.dir\\Debug\\.d.json" /external:W3 /TP /errorReport:queue "C:\\Projects\\Horizon\\build\\CMakeFiles\\CMakeScratch\\TryCompile-n4m79f\\CheckFunctionExists.cxx"
-          CheckFunctionExists.cxx
-        Link:
-          C:\\Program Files\\Microsoft Visual Studio\\18\\Community\\VC\\Tools\\MSVC\\14.50.35717\\bin\\HostX64\\x64\\link.exe /OUT:"C:\\Projects\\Horizon\\build\\CMakeFiles\\CMakeScratch\\TryCompile-n4m79f\\Debug\\cmTC_988d6.exe" /INCREMENTAL /ILK:"cmTC_988d6.dir\\Debug\\cmTC_988d6.ilk" /NOLOGO pthread.lib kernel32.lib user32.lib gdi32.lib winspool.lib shell32.lib ole32.lib oleaut32.lib uuid.lib comdlg32.lib advapi32.lib /MANIFEST /MANIFESTUAC:"level='asInvoker' uiAccess='false'" /manifest:embed /DEBUG /PDB:"C:/Projects/Horizon/build/CMakeFiles/CMakeScratch/TryCompile-n4m79f/Debug/cmTC_988d6.pdb" /SUBSYSTEM:CONSOLE /TLBID:1 /IMPLIB:"C:/Projects/Horizon/build/CMakeFiles/CMakeScratch/TryCompile-n4m79f/Debug/cmTC_988d6.lib" /MACHINE:X64  /machine:x64 cmTC_988d6.dir\\Debug\\CheckFunctionExists.obj
-        LINK : fatal error LNK1104: cannot open file 'pthread.lib' [C:\\Projects\\Horizon\\build\\CMakeFiles\\CMakeScratch\\TryCompile-n4m79f\\cmTC_988d6.vcxproj]
-        Done Building Project "C:\\Projects\\Horizon\\build\\CMakeFiles\\CMakeScratch\\TryCompile-n4m79f\\cmTC_988d6.vcxproj" (default targets) -- FAILED.
-        
-        Build FAILED.
-        
-        "C:\\Projects\\Horizon\\build\\CMakeFiles\\CMakeScratch\\TryCompile-n4m79f\\cmTC_988d6.vcxproj" (default target) (1) ->
-        (Link target) -> 
-          LINK : fatal error LNK1104: cannot open file 'pthread.lib' [C:\\Projects\\Horizon\\build\\CMakeFiles\\CMakeScratch\\TryCompile-n4m79f\\cmTC_988d6.vcxproj]
->>>>>>> origin/frontend_branch
         
             0 Warning(s)
             1 Error(s)
         
-<<<<<<< HEAD
         Time Elapsed 00:00:00.72
-=======
-        Time Elapsed 00:00:05.75
->>>>>>> origin/frontend_branch
         
       exitCode: 1
   -
@@ -8324,7 +7787,6 @@ events:
         - "C:/vcpkg/installed/x64-windows/debug"
         - "C:/vcpkg/installed/x64-windows"
       ENV{PATH}:
-<<<<<<< HEAD
         - "C:\\WINDOWS\\system32"
         - "C:\\WINDOWS"
         - "C:\\WINDOWS\\System32\\Wbem"
@@ -8332,13 +7794,6 @@ events:
         - "C:\\WINDOWS\\System32\\OpenSSH\\"
         - "C:\\Program Files (x86)\\NVIDIA Corporation\\PhysX\\Common"
         - "C:\\Program Files\\Git\\cmd"
-=======
-        - "C:\\Windows\\system32"
-        - "C:\\Windows"
-        - "C:\\Windows\\System32\\Wbem"
-        - "C:\\Windows\\System32\\WindowsPowerShell\\v1.0\\"
-        - "C:\\Windows\\System32\\OpenSSH\\"
->>>>>>> origin/frontend_branch
         - "C:\\Program Files\\Microsoft SQL Server\\170\\Tools\\Binn\\"
         - "C:\\Program Files\\Microsoft SQL Server\\Client SDK\\ODBC\\170\\Tools\\Binn\\"
         - "C:\\Program Files\\dotnet\\"
@@ -8403,7 +7858,6 @@ events:
         - "C:/vcpkg/installed/x64-windows/debug"
         - "C:/vcpkg/installed/x64-windows"
       ENV{PATH}:
-<<<<<<< HEAD
         - "C:\\WINDOWS\\system32"
         - "C:\\WINDOWS"
         - "C:\\WINDOWS\\System32\\Wbem"
@@ -8411,13 +7865,6 @@ events:
         - "C:\\WINDOWS\\System32\\OpenSSH\\"
         - "C:\\Program Files (x86)\\NVIDIA Corporation\\PhysX\\Common"
         - "C:\\Program Files\\Git\\cmd"
-=======
-        - "C:\\Windows\\system32"
-        - "C:\\Windows"
-        - "C:\\Windows\\System32\\Wbem"
-        - "C:\\Windows\\System32\\WindowsPowerShell\\v1.0\\"
-        - "C:\\Windows\\System32\\OpenSSH\\"
->>>>>>> origin/frontend_branch
         - "C:\\Program Files\\Microsoft SQL Server\\170\\Tools\\Binn\\"
         - "C:\\Program Files\\Microsoft SQL Server\\Client SDK\\ODBC\\170\\Tools\\Binn\\"
         - "C:\\Program Files\\dotnet\\"
@@ -8483,7 +7930,6 @@ events:
         - "C:/vcpkg/installed/x64-windows/debug"
         - "C:/vcpkg/installed/x64-windows"
       ENV{PATH}:
-<<<<<<< HEAD
         - "C:\\WINDOWS\\system32"
         - "C:\\WINDOWS"
         - "C:\\WINDOWS\\System32\\Wbem"
@@ -8491,13 +7937,6 @@ events:
         - "C:\\WINDOWS\\System32\\OpenSSH\\"
         - "C:\\Program Files (x86)\\NVIDIA Corporation\\PhysX\\Common"
         - "C:\\Program Files\\Git\\cmd"
-=======
-        - "C:\\Windows\\system32"
-        - "C:\\Windows"
-        - "C:\\Windows\\System32\\Wbem"
-        - "C:\\Windows\\System32\\WindowsPowerShell\\v1.0\\"
-        - "C:\\Windows\\System32\\OpenSSH\\"
->>>>>>> origin/frontend_branch
         - "C:\\Program Files\\Microsoft SQL Server\\170\\Tools\\Binn\\"
         - "C:\\Program Files\\Microsoft SQL Server\\Client SDK\\ODBC\\170\\Tools\\Binn\\"
         - "C:\\Program Files\\dotnet\\"
@@ -8565,7 +8004,6 @@ events:
         - "C:/vcpkg/installed/x64-windows/debug"
         - "C:/vcpkg/installed/x64-windows"
       ENV{PATH}:
-<<<<<<< HEAD
         - "C:\\WINDOWS\\system32"
         - "C:\\WINDOWS"
         - "C:\\WINDOWS\\System32\\Wbem"
@@ -8573,13 +8011,6 @@ events:
         - "C:\\WINDOWS\\System32\\OpenSSH\\"
         - "C:\\Program Files (x86)\\NVIDIA Corporation\\PhysX\\Common"
         - "C:\\Program Files\\Git\\cmd"
-=======
-        - "C:\\Windows\\system32"
-        - "C:\\Windows"
-        - "C:\\Windows\\System32\\Wbem"
-        - "C:\\Windows\\System32\\WindowsPowerShell\\v1.0\\"
-        - "C:\\Windows\\System32\\OpenSSH\\"
->>>>>>> origin/frontend_branch
         - "C:\\Program Files\\Microsoft SQL Server\\170\\Tools\\Binn\\"
         - "C:\\Program Files\\Microsoft SQL Server\\Client SDK\\ODBC\\170\\Tools\\Binn\\"
         - "C:\\Program Files\\dotnet\\"
@@ -8795,7 +8226,6 @@ events:
         - "C:/vcpkg/installed/x64-windows/debug"
         - "C:/vcpkg/installed/x64-windows"
       ENV{PATH}:
-<<<<<<< HEAD
         - "C:\\WINDOWS\\system32"
         - "C:\\WINDOWS"
         - "C:\\WINDOWS\\System32\\Wbem"
@@ -8803,13 +8233,6 @@ events:
         - "C:\\WINDOWS\\System32\\OpenSSH\\"
         - "C:\\Program Files (x86)\\NVIDIA Corporation\\PhysX\\Common"
         - "C:\\Program Files\\Git\\cmd"
-=======
-        - "C:\\Windows\\system32"
-        - "C:\\Windows"
-        - "C:\\Windows\\System32\\Wbem"
-        - "C:\\Windows\\System32\\WindowsPowerShell\\v1.0\\"
-        - "C:\\Windows\\System32\\OpenSSH\\"
->>>>>>> origin/frontend_branch
         - "C:\\Program Files\\Microsoft SQL Server\\170\\Tools\\Binn\\"
         - "C:\\Program Files\\Microsoft SQL Server\\Client SDK\\ODBC\\170\\Tools\\Binn\\"
         - "C:\\Program Files\\dotnet\\"
@@ -8995,7 +8418,6 @@ events:
         - "C:/vcpkg/installed/x64-windows/debug"
         - "C:/vcpkg/installed/x64-windows"
       ENV{PATH}:
-<<<<<<< HEAD
         - "C:\\WINDOWS\\system32"
         - "C:\\WINDOWS"
         - "C:\\WINDOWS\\System32\\Wbem"
@@ -9003,13 +8425,6 @@ events:
         - "C:\\WINDOWS\\System32\\OpenSSH\\"
         - "C:\\Program Files (x86)\\NVIDIA Corporation\\PhysX\\Common"
         - "C:\\Program Files\\Git\\cmd"
-=======
-        - "C:\\Windows\\system32"
-        - "C:\\Windows"
-        - "C:\\Windows\\System32\\Wbem"
-        - "C:\\Windows\\System32\\WindowsPowerShell\\v1.0\\"
-        - "C:\\Windows\\System32\\OpenSSH\\"
->>>>>>> origin/frontend_branch
         - "C:\\Program Files\\Microsoft SQL Server\\170\\Tools\\Binn\\"
         - "C:\\Program Files\\Microsoft SQL Server\\Client SDK\\ODBC\\170\\Tools\\Binn\\"
         - "C:\\Program Files\\dotnet\\"
@@ -9225,7 +8640,6 @@ events:
         - "C:/vcpkg/installed/x64-windows/debug"
         - "C:/vcpkg/installed/x64-windows"
       ENV{PATH}:
-<<<<<<< HEAD
         - "C:\\WINDOWS\\system32"
         - "C:\\WINDOWS"
         - "C:\\WINDOWS\\System32\\Wbem"
@@ -9233,13 +8647,6 @@ events:
         - "C:\\WINDOWS\\System32\\OpenSSH\\"
         - "C:\\Program Files (x86)\\NVIDIA Corporation\\PhysX\\Common"
         - "C:\\Program Files\\Git\\cmd"
-=======
-        - "C:\\Windows\\system32"
-        - "C:\\Windows"
-        - "C:\\Windows\\System32\\Wbem"
-        - "C:\\Windows\\System32\\WindowsPowerShell\\v1.0\\"
-        - "C:\\Windows\\System32\\OpenSSH\\"
->>>>>>> origin/frontend_branch
         - "C:\\Program Files\\Microsoft SQL Server\\170\\Tools\\Binn\\"
         - "C:\\Program Files\\Microsoft SQL Server\\Client SDK\\ODBC\\170\\Tools\\Binn\\"
         - "C:\\Program Files\\dotnet\\"
@@ -9426,7 +8833,6 @@ events:
         - "C:/vcpkg/installed/x64-windows/debug"
         - "C:/vcpkg/installed/x64-windows"
       ENV{PATH}:
-<<<<<<< HEAD
         - "C:\\WINDOWS\\system32"
         - "C:\\WINDOWS"
         - "C:\\WINDOWS\\System32\\Wbem"
@@ -9434,13 +8840,6 @@ events:
         - "C:\\WINDOWS\\System32\\OpenSSH\\"
         - "C:\\Program Files (x86)\\NVIDIA Corporation\\PhysX\\Common"
         - "C:\\Program Files\\Git\\cmd"
-=======
-        - "C:\\Windows\\system32"
-        - "C:\\Windows"
-        - "C:\\Windows\\System32\\Wbem"
-        - "C:\\Windows\\System32\\WindowsPowerShell\\v1.0\\"
-        - "C:\\Windows\\System32\\OpenSSH\\"
->>>>>>> origin/frontend_branch
         - "C:\\Program Files\\Microsoft SQL Server\\170\\Tools\\Binn\\"
         - "C:\\Program Files\\Microsoft SQL Server\\Client SDK\\ODBC\\170\\Tools\\Binn\\"
         - "C:\\Program Files\\dotnet\\"
@@ -9631,7 +9030,6 @@ events:
         - "C:/vcpkg/installed/x64-windows/debug"
         - "C:/vcpkg/installed/x64-windows"
       ENV{PATH}:
-<<<<<<< HEAD
         - "C:\\WINDOWS\\system32"
         - "C:\\WINDOWS"
         - "C:\\WINDOWS\\System32\\Wbem"
@@ -9639,13 +9037,6 @@ events:
         - "C:\\WINDOWS\\System32\\OpenSSH\\"
         - "C:\\Program Files (x86)\\NVIDIA Corporation\\PhysX\\Common"
         - "C:\\Program Files\\Git\\cmd"
-=======
-        - "C:\\Windows\\system32"
-        - "C:\\Windows"
-        - "C:\\Windows\\System32\\Wbem"
-        - "C:\\Windows\\System32\\WindowsPowerShell\\v1.0\\"
-        - "C:\\Windows\\System32\\OpenSSH\\"
->>>>>>> origin/frontend_branch
         - "C:\\Program Files\\Microsoft SQL Server\\170\\Tools\\Binn\\"
         - "C:\\Program Files\\Microsoft SQL Server\\Client SDK\\ODBC\\170\\Tools\\Binn\\"
         - "C:\\Program Files\\dotnet\\"
@@ -9836,7 +9227,6 @@ events:
         - "C:/vcpkg/installed/x64-windows/debug"
         - "C:/vcpkg/installed/x64-windows"
       ENV{PATH}:
-<<<<<<< HEAD
         - "C:\\WINDOWS\\system32"
         - "C:\\WINDOWS"
         - "C:\\WINDOWS\\System32\\Wbem"
@@ -9844,13 +9234,6 @@ events:
         - "C:\\WINDOWS\\System32\\OpenSSH\\"
         - "C:\\Program Files (x86)\\NVIDIA Corporation\\PhysX\\Common"
         - "C:\\Program Files\\Git\\cmd"
-=======
-        - "C:\\Windows\\system32"
-        - "C:\\Windows"
-        - "C:\\Windows\\System32\\Wbem"
-        - "C:\\Windows\\System32\\WindowsPowerShell\\v1.0\\"
-        - "C:\\Windows\\System32\\OpenSSH\\"
->>>>>>> origin/frontend_branch
         - "C:\\Program Files\\Microsoft SQL Server\\170\\Tools\\Binn\\"
         - "C:\\Program Files\\Microsoft SQL Server\\Client SDK\\ODBC\\170\\Tools\\Binn\\"
         - "C:\\Program Files\\dotnet\\"
@@ -9895,13 +9278,8 @@ events:
     checks:
       - "Looking for C++ include filesystem"
     directories:
-<<<<<<< HEAD
       source: "C:/Projects/ASL/Speak-well/build/CMakeFiles/CMakeScratch/TryCompile-1u1dn2"
       binary: "C:/Projects/ASL/Speak-well/build/CMakeFiles/CMakeScratch/TryCompile-1u1dn2"
-=======
-      source: "C:/Projects/Horizon/build/CMakeFiles/CMakeScratch/TryCompile-t83nxm"
-      binary: "C:/Projects/Horizon/build/CMakeFiles/CMakeScratch/TryCompile-t83nxm"
->>>>>>> origin/frontend_branch
     cmakeVariables:
       CMAKE_CXX_FLAGS: "/DWIN32 /D_WINDOWS /W3 /GR /EHsc"
       CMAKE_CXX_FLAGS_DEBUG: "/MDd /Zi /Ob0 /Od /RTC1"
@@ -9916,7 +9294,6 @@ events:
       variable: "_CXX_FILESYSTEM_HAVE_HEADER"
       cached: true
       stdout: |
-<<<<<<< HEAD
         Change Dir: 'C:/Projects/ASL/Speak-well/build/CMakeFiles/CMakeScratch/TryCompile-1u1dn2'
         
         Run Build Command(s): "C:/Program Files/Microsoft Visual Studio/18/Community/MSBuild/Current/Bin/amd64/MSBuild.exe" cmTC_6e063.vcxproj /p:Configuration=Debug /p:Platform=x64 /p:VisualStudioVersion=18.0 /v:n
@@ -9944,45 +9321,12 @@ events:
           Deleting file "cmTC_6e063.dir\\Debug\\cmTC_6e063.tlog\\unsuccessfulbuild".
           Touching "cmTC_6e063.dir\\Debug\\cmTC_6e063.tlog\\cmTC_6e063.lastbuildstate".
         Done Building Project "C:\\Projects\\ASL\\Speak-well\\build\\CMakeFiles\\CMakeScratch\\TryCompile-1u1dn2\\cmTC_6e063.vcxproj" (default targets).
-=======
-        Change Dir: 'C:/Projects/Horizon/build/CMakeFiles/CMakeScratch/TryCompile-t83nxm'
-        
-        Run Build Command(s): "C:/Program Files/Microsoft Visual Studio/18/Community/MSBuild/Current/Bin/amd64/MSBuild.exe" cmTC_011b1.vcxproj /p:Configuration=Debug /p:Platform=x64 /p:VisualStudioVersion=18.0 /v:n
-        MSBuild version 18.0.5+e22287bf1 for .NET Framework
-        Build started 4/27/2026 6:44:20 PM.
-        
-        Project "C:\\Projects\\Horizon\\build\\CMakeFiles\\CMakeScratch\\TryCompile-t83nxm\\cmTC_011b1.vcxproj" on node 1 (default targets).
-        PrepareForBuild:
-          Structured output is enabled. The formatting of compiler diagnostics will reflect the error hierarchy. See https://aka.ms/cpp/structured-output for more details.
-          Creating directory "C:\\Projects\\Horizon\\build\\CMakeFiles\\CMakeScratch\\TryCompile-t83nxm\\Debug\\".
-          Creating directory "cmTC_011b1.dir\\Debug\\cmTC_011b1.tlog\\".
-        InitializeBuildStatus:
-          Creating "cmTC_011b1.dir\\Debug\\cmTC_011b1.tlog\\unsuccessfulbuild" because "AlwaysCreate" was specified.
-          Touching "cmTC_011b1.dir\\Debug\\cmTC_011b1.tlog\\unsuccessfulbuild".
-        ClCompile:
-          C:\\Program Files\\Microsoft Visual Studio\\18\\Community\\VC\\Tools\\MSVC\\14.50.35717\\bin\\HostX64\\x64\\CL.exe /c /Zi /W3 /WX- /diagnostics:column /Od /Ob0 /D _MBCS /D WIN32 /D _WINDOWS /D _MBCS /D "CMAKE_INTDIR=\\"Debug\\"" /EHsc /RTC1 /MDd /GR /std:c++17 /Fo"cmTC_011b1.dir\\Debug\\\\" /Fd"cmTC_011b1.dir\\Debug\\vc145.pdb" /external:W3 /TP /errorReport:queue "C:\\Projects\\Horizon\\build\\CMakeFiles\\CMakeScratch\\TryCompile-t83nxm\\CheckIncludeFile.cxx"
-          Microsoft (R) C/C++ Optimizing Compiler Version 19.50.35723 for x64
-          Copyright (C) Microsoft Corporation.  All rights reserved.
-          cl /c /Zi /W3 /WX- /diagnostics:column /Od /Ob0 /D _MBCS /D WIN32 /D _WINDOWS /D _MBCS /D "CMAKE_INTDIR=\\"Debug\\"" /EHsc /RTC1 /MDd /GR /std:c++17 /Fo"cmTC_011b1.dir\\Debug\\\\" /Fd"cmTC_011b1.dir\\Debug\\vc145.pdb" /external:W3 /TP /errorReport:queue "C:\\Projects\\Horizon\\build\\CMakeFiles\\CMakeScratch\\TryCompile-t83nxm\\CheckIncludeFile.cxx"
-          CheckIncludeFile.cxx
-        Link:
-          C:\\Program Files\\Microsoft Visual Studio\\18\\Community\\VC\\Tools\\MSVC\\14.50.35717\\bin\\HostX64\\x64\\link.exe /OUT:"C:\\Projects\\Horizon\\build\\CMakeFiles\\CMakeScratch\\TryCompile-t83nxm\\Debug\\cmTC_011b1.exe" /INCREMENTAL /ILK:"cmTC_011b1.dir\\Debug\\cmTC_011b1.ilk" /NOLOGO kernel32.lib user32.lib gdi32.lib winspool.lib shell32.lib ole32.lib oleaut32.lib uuid.lib comdlg32.lib advapi32.lib /MANIFEST /MANIFESTUAC:"level='asInvoker' uiAccess='false'" /manifest:embed /DEBUG /PDB:"C:/Projects/Horizon/build/CMakeFiles/CMakeScratch/TryCompile-t83nxm/Debug/cmTC_011b1.pdb" /SUBSYSTEM:CONSOLE /TLBID:1 /IMPLIB:"C:/Projects/Horizon/build/CMakeFiles/CMakeScratch/TryCompile-t83nxm/Debug/cmTC_011b1.lib" /MACHINE:X64  /machine:x64 cmTC_011b1.dir\\Debug\\CheckIncludeFile.obj
-          cmTC_011b1.vcxproj -> C:\\Projects\\Horizon\\build\\CMakeFiles\\CMakeScratch\\TryCompile-t83nxm\\Debug\\cmTC_011b1.exe
-        FinalizeBuildStatus:
-          Deleting file "cmTC_011b1.dir\\Debug\\cmTC_011b1.tlog\\unsuccessfulbuild".
-          Touching "cmTC_011b1.dir\\Debug\\cmTC_011b1.tlog\\cmTC_011b1.lastbuildstate".
-        Done Building Project "C:\\Projects\\Horizon\\build\\CMakeFiles\\CMakeScratch\\TryCompile-t83nxm\\cmTC_011b1.vcxproj" (default targets).
->>>>>>> origin/frontend_branch
         
         Build succeeded.
             0 Warning(s)
             0 Error(s)
         
-<<<<<<< HEAD
         Time Elapsed 00:00:01.59
-=======
-        Time Elapsed 00:00:09.05
->>>>>>> origin/frontend_branch
         
       exitCode: 0
   -
@@ -10001,13 +9345,8 @@ events:
     checks:
       - "Performing Test CXX_FILESYSTEM_NO_LINK_NEEDED"
     directories:
-<<<<<<< HEAD
       source: "C:/Projects/ASL/Speak-well/build/CMakeFiles/CMakeScratch/TryCompile-4nwzz2"
       binary: "C:/Projects/ASL/Speak-well/build/CMakeFiles/CMakeScratch/TryCompile-4nwzz2"
-=======
-      source: "C:/Projects/Horizon/build/CMakeFiles/CMakeScratch/TryCompile-419hos"
-      binary: "C:/Projects/Horizon/build/CMakeFiles/CMakeScratch/TryCompile-419hos"
->>>>>>> origin/frontend_branch
     cmakeVariables:
       CMAKE_CXX_FLAGS: "/DWIN32 /D_WINDOWS /W3 /GR /EHsc"
       CMAKE_CXX_FLAGS_DEBUG: "/MDd /Zi /Ob0 /Od /RTC1"
@@ -10022,7 +9361,6 @@ events:
       variable: "CXX_FILESYSTEM_NO_LINK_NEEDED_COMPILED"
       cached: true
       stdout: |
-<<<<<<< HEAD
         Change Dir: 'C:/Projects/ASL/Speak-well/build/CMakeFiles/CMakeScratch/TryCompile-4nwzz2'
         
         Run Build Command(s): "C:/Program Files/Microsoft Visual Studio/18/Community/MSBuild/Current/Bin/amd64/MSBuild.exe" cmTC_9bea5.vcxproj /p:Configuration=Debug /p:Platform=x64 /p:VisualStudioVersion=18.0 /v:n
@@ -10050,56 +9388,19 @@ events:
           Deleting file "cmTC_9bea5.dir\\Debug\\cmTC_9bea5.tlog\\unsuccessfulbuild".
           Touching "cmTC_9bea5.dir\\Debug\\cmTC_9bea5.tlog\\cmTC_9bea5.lastbuildstate".
         Done Building Project "C:\\Projects\\ASL\\Speak-well\\build\\CMakeFiles\\CMakeScratch\\TryCompile-4nwzz2\\cmTC_9bea5.vcxproj" (default targets).
-=======
-        Change Dir: 'C:/Projects/Horizon/build/CMakeFiles/CMakeScratch/TryCompile-419hos'
-        
-        Run Build Command(s): "C:/Program Files/Microsoft Visual Studio/18/Community/MSBuild/Current/Bin/amd64/MSBuild.exe" cmTC_8a7ab.vcxproj /p:Configuration=Debug /p:Platform=x64 /p:VisualStudioVersion=18.0 /v:n
-        MSBuild version 18.0.5+e22287bf1 for .NET Framework
-        Build started 4/27/2026 6:44:31 PM.
-        
-        Project "C:\\Projects\\Horizon\\build\\CMakeFiles\\CMakeScratch\\TryCompile-419hos\\cmTC_8a7ab.vcxproj" on node 1 (default targets).
-        PrepareForBuild:
-          Structured output is enabled. The formatting of compiler diagnostics will reflect the error hierarchy. See https://aka.ms/cpp/structured-output for more details.
-          Creating directory "C:\\Projects\\Horizon\\build\\CMakeFiles\\CMakeScratch\\TryCompile-419hos\\Debug\\".
-          Creating directory "cmTC_8a7ab.dir\\Debug\\cmTC_8a7ab.tlog\\".
-        InitializeBuildStatus:
-          Creating "cmTC_8a7ab.dir\\Debug\\cmTC_8a7ab.tlog\\unsuccessfulbuild" because "AlwaysCreate" was specified.
-          Touching "cmTC_8a7ab.dir\\Debug\\cmTC_8a7ab.tlog\\unsuccessfulbuild".
-        ClCompile:
-          C:\\Program Files\\Microsoft Visual Studio\\18\\Community\\VC\\Tools\\MSVC\\14.50.35717\\bin\\HostX64\\x64\\CL.exe /c /Zi /W3 /WX- /diagnostics:column /Od /Ob0 /D _MBCS /D WIN32 /D _WINDOWS /D CXX_FILESYSTEM_NO_LINK_NEEDED /D _MBCS /D "CMAKE_INTDIR=\\"Debug\\"" /EHsc /RTC1 /MDd /GR /std:c++17 /Fo"cmTC_8a7ab.dir\\Debug\\\\" /Fd"cmTC_8a7ab.dir\\Debug\\vc145.pdb" /external:W3 /TP /errorReport:queue "C:\\Projects\\Horizon\\build\\CMakeFiles\\CMakeScratch\\TryCompile-419hos\\src.cxx"
-          Microsoft (R) C/C++ Optimizing Compiler Version 19.50.35723 for x64
-          Copyright (C) Microsoft Corporation.  All rights reserved.
-          cl /c /Zi /W3 /WX- /diagnostics:column /Od /Ob0 /D _MBCS /D WIN32 /D _WINDOWS /D CXX_FILESYSTEM_NO_LINK_NEEDED /D _MBCS /D "CMAKE_INTDIR=\\"Debug\\"" /EHsc /RTC1 /MDd /GR /std:c++17 /Fo"cmTC_8a7ab.dir\\Debug\\\\" /Fd"cmTC_8a7ab.dir\\Debug\\vc145.pdb" /external:W3 /TP /errorReport:queue "C:\\Projects\\Horizon\\build\\CMakeFiles\\CMakeScratch\\TryCompile-419hos\\src.cxx"
-          src.cxx
-        Link:
-          C:\\Program Files\\Microsoft Visual Studio\\18\\Community\\VC\\Tools\\MSVC\\14.50.35717\\bin\\HostX64\\x64\\link.exe /OUT:"C:\\Projects\\Horizon\\build\\CMakeFiles\\CMakeScratch\\TryCompile-419hos\\Debug\\cmTC_8a7ab.exe" /INCREMENTAL /ILK:"cmTC_8a7ab.dir\\Debug\\cmTC_8a7ab.ilk" /NOLOGO kernel32.lib user32.lib gdi32.lib winspool.lib shell32.lib ole32.lib oleaut32.lib uuid.lib comdlg32.lib advapi32.lib /MANIFEST /MANIFESTUAC:"level='asInvoker' uiAccess='false'" /manifest:embed /DEBUG /PDB:"C:/Projects/Horizon/build/CMakeFiles/CMakeScratch/TryCompile-419hos/Debug/cmTC_8a7ab.pdb" /SUBSYSTEM:CONSOLE /TLBID:1 /IMPLIB:"C:/Projects/Horizon/build/CMakeFiles/CMakeScratch/TryCompile-419hos/Debug/cmTC_8a7ab.lib" /MACHINE:X64  /machine:x64 cmTC_8a7ab.dir\\Debug\\src.obj
-          cmTC_8a7ab.vcxproj -> C:\\Projects\\Horizon\\build\\CMakeFiles\\CMakeScratch\\TryCompile-419hos\\Debug\\cmTC_8a7ab.exe
-        FinalizeBuildStatus:
-          Deleting file "cmTC_8a7ab.dir\\Debug\\cmTC_8a7ab.tlog\\unsuccessfulbuild".
-          Touching "cmTC_8a7ab.dir\\Debug\\cmTC_8a7ab.tlog\\cmTC_8a7ab.lastbuildstate".
-        Done Building Project "C:\\Projects\\Horizon\\build\\CMakeFiles\\CMakeScratch\\TryCompile-419hos\\cmTC_8a7ab.vcxproj" (default targets).
->>>>>>> origin/frontend_branch
         
         Build succeeded.
             0 Warning(s)
             0 Error(s)
         
-<<<<<<< HEAD
         Time Elapsed 00:00:01.46
-=======
-        Time Elapsed 00:00:09.26
->>>>>>> origin/frontend_branch
         
       exitCode: 0
     runResult:
       variable: "CXX_FILESYSTEM_NO_LINK_NEEDED_EXITCODE"
       cached: true
       stdout: |
-<<<<<<< HEAD
         C:/Projects/ASL/Speak-well/build
-=======
-        C:/Projects/Horizon
->>>>>>> origin/frontend_branch
       stderr: |
       exitCode: 0
   -
@@ -10225,7 +9526,6 @@ events:
         - "C:/vcpkg/installed/x64-windows/debug"
         - "C:/vcpkg/installed/x64-windows"
       ENV{PATH}:
-<<<<<<< HEAD
         - "C:\\WINDOWS\\system32"
         - "C:\\WINDOWS"
         - "C:\\WINDOWS\\System32\\Wbem"
@@ -10233,13 +9533,6 @@ events:
         - "C:\\WINDOWS\\System32\\OpenSSH\\"
         - "C:\\Program Files (x86)\\NVIDIA Corporation\\PhysX\\Common"
         - "C:\\Program Files\\Git\\cmd"
-=======
-        - "C:\\Windows\\system32"
-        - "C:\\Windows"
-        - "C:\\Windows\\System32\\Wbem"
-        - "C:\\Windows\\System32\\WindowsPowerShell\\v1.0\\"
-        - "C:\\Windows\\System32\\OpenSSH\\"
->>>>>>> origin/frontend_branch
         - "C:\\Program Files\\Microsoft SQL Server\\170\\Tools\\Binn\\"
         - "C:\\Program Files\\Microsoft SQL Server\\Client SDK\\ODBC\\170\\Tools\\Binn\\"
         - "C:\\Program Files\\dotnet\\"
@@ -10603,7 +9896,6 @@ events:
         - "C:/vcpkg/installed/x64-windows/debug"
         - "C:/vcpkg/installed/x64-windows"
       ENV{PATH}:
-<<<<<<< HEAD
         - "C:\\WINDOWS\\system32"
         - "C:\\WINDOWS"
         - "C:\\WINDOWS\\System32\\Wbem"
@@ -10611,13 +9903,6 @@ events:
         - "C:\\WINDOWS\\System32\\OpenSSH\\"
         - "C:\\Program Files (x86)\\NVIDIA Corporation\\PhysX\\Common"
         - "C:\\Program Files\\Git\\cmd"
-=======
-        - "C:\\Windows\\system32"
-        - "C:\\Windows"
-        - "C:\\Windows\\System32\\Wbem"
-        - "C:\\Windows\\System32\\WindowsPowerShell\\v1.0\\"
-        - "C:\\Windows\\System32\\OpenSSH\\"
->>>>>>> origin/frontend_branch
         - "C:\\Program Files\\Microsoft SQL Server\\170\\Tools\\Binn\\"
         - "C:\\Program Files\\Microsoft SQL Server\\Client SDK\\ODBC\\170\\Tools\\Binn\\"
         - "C:\\Program Files\\dotnet\\"

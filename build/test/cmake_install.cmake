@@ -1,8 +1,4 @@
-<<<<<<< HEAD
 # Install script for directory: C:/Projects/ASL/Speak-well/test
-=======
-# Install script for directory: C:/Projects/Horizon/test
->>>>>>> origin/frontend_branch
 
 # Set the install prefix
 if(NOT DEFINED CMAKE_INSTALL_PREFIX)
@@ -39,10 +35,6 @@ endif()
 string(REPLACE ";" "\n" CMAKE_INSTALL_MANIFEST_CONTENT
        "${CMAKE_INSTALL_MANIFEST_FILES}")
 if(CMAKE_INSTALL_LOCAL_ONLY)
-<<<<<<< HEAD
   file(WRITE "C:/Projects/ASL/Speak-well/build/test/install_local_manifest.txt"
-=======
-  file(WRITE "C:/Projects/Horizon/build/test/install_local_manifest.txt"
->>>>>>> origin/frontend_branch
      "${CMAKE_INSTALL_MANIFEST_CONTENT}")
 endif()

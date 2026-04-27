@@ -1,8 +1,4 @@
-<<<<<<< HEAD
 # Install script for directory: C:/Projects/ASL/Speak-well
-=======
-# Install script for directory: C:/Projects/Horizon
->>>>>>> origin/frontend_branch
 
 # Set the install prefix
 if(NOT DEFINED CMAKE_INSTALL_PREFIX)
@@ -38,22 +34,14 @@ endif()
 
 if(NOT CMAKE_INSTALL_LOCAL_ONLY)
   # Include the install script for each subdirectory.
-<<<<<<< HEAD
   include("C:/Projects/ASL/Speak-well/build/test/cmake_install.cmake")
-=======
-  include("C:/Projects/Horizon/build/test/cmake_install.cmake")
->>>>>>> origin/frontend_branch
 
 endif()
 
 string(REPLACE ";" "\n" CMAKE_INSTALL_MANIFEST_CONTENT
        "${CMAKE_INSTALL_MANIFEST_FILES}")
 if(CMAKE_INSTALL_LOCAL_ONLY)
-<<<<<<< HEAD
   file(WRITE "C:/Projects/ASL/Speak-well/build/install_local_manifest.txt"
-=======
-  file(WRITE "C:/Projects/Horizon/build/install_local_manifest.txt"
->>>>>>> origin/frontend_branch
      "${CMAKE_INSTALL_MANIFEST_CONTENT}")
 endif()
 if(CMAKE_INSTALL_COMPONENT)
@@ -69,10 +57,6 @@ else()
 endif()
 
 if(NOT CMAKE_INSTALL_LOCAL_ONLY)
-<<<<<<< HEAD
   file(WRITE "C:/Projects/ASL/Speak-well/build/${CMAKE_INSTALL_MANIFEST}"
-=======
-  file(WRITE "C:/Projects/Horizon/build/${CMAKE_INSTALL_MANIFEST}"
->>>>>>> origin/frontend_branch
      "${CMAKE_INSTALL_MANIFEST_CONTENT}")
 endif()

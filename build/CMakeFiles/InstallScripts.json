@@ -1,13 +1,8 @@
 {
 	"InstallScripts" : 
 	[
-<<<<<<< HEAD
 		"C:/Projects/ASL/Speak-well/build/cmake_install.cmake",
 		"C:/Projects/ASL/Speak-well/build/test/cmake_install.cmake"
-=======
-		"C:/Projects/Horizon/build/cmake_install.cmake",
-		"C:/Projects/Horizon/build/test/cmake_install.cmake"
->>>>>>> origin/frontend_branch
 	],
 	"Parallel" : false
 }

@@ -1,12 +1,6 @@
-<<<<<<< HEAD
 ^C:\PROJECTS\ASL\SPEAK-WELL\CMAKELISTS.TXT
 setlocal
 "C:\Program Files\CMake\bin\cmake.exe" -SC:/Projects/ASL/Speak-well -BC:/Projects/ASL/Speak-well/build --check-stamp-file C:/Projects/ASL/Speak-well/build/CMakeFiles/generate.stamp
-=======
-^C:\PROJECTS\HORIZON\CMAKELISTS.TXT
-setlocal
-"C:\Program Files\CMake\bin\cmake.exe" -SC:/Projects/Horizon -BC:/Projects/Horizon/build --check-stamp-file C:/Projects/Horizon/build/CMakeFiles/generate.stamp
->>>>>>> origin/frontend_branch
 if %errorlevel% neq 0 goto :cmEnd
 :cmEnd
 endlocal & call :cmErrorLevel %errorlevel% & goto :cmDone

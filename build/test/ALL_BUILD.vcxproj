@@ -25,11 +25,7 @@
     </ProjectConfiguration>
   </ItemGroup>
   <PropertyGroup Label="Globals">
-<<<<<<< HEAD
     <ProjectGuid>{23D900A4-CA38-36CD-94C3-E85878C368FE}</ProjectGuid>
-=======
-    <ProjectGuid>{84309E32-765F-33DC-803C-94EE1F062860}</ProjectGuid>
->>>>>>> origin/frontend_branch
     <Keyword>Win32Proj</Keyword>
     <WindowsTargetPlatformVersion>10.0.26100.0</WindowsTargetPlatformVersion>
     <Platform>x64</Platform>
@@ -112,19 +108,11 @@
     </Midl>
   </ItemDefinitionGroup>
   <ItemGroup>
-<<<<<<< HEAD
     <CustomBuild Include="C:\Projects\ASL\Speak-well\test\CMakeLists.txt">
       <UseUtf8Encoding>Always</UseUtf8Encoding>
       <Message Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">Building Custom Rule C:/Projects/ASL/Speak-well/test/CMakeLists.txt</Message>
       <Command Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">setlocal
 "C:\Program Files\CMake\bin\cmake.exe" -SC:/Projects/ASL/Speak-well -BC:/Projects/ASL/Speak-well/build --check-stamp-file C:/Projects/ASL/Speak-well/build/test/CMakeFiles/generate.stamp
-=======
-    <CustomBuild Include="C:\Projects\Horizon\test\CMakeLists.txt">
-      <UseUtf8Encoding>Always</UseUtf8Encoding>
-      <Message Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">Building Custom Rule C:/Projects/Horizon/test/CMakeLists.txt</Message>
-      <Command Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">setlocal
-"C:\Program Files\CMake\bin\cmake.exe" -SC:/Projects/Horizon -BC:/Projects/Horizon/build --check-stamp-file C:/Projects/Horizon/build/test/CMakeFiles/generate.stamp
->>>>>>> origin/frontend_branch
 if %errorlevel% neq 0 goto :cmEnd
 :cmEnd
 endlocal &amp; call :cmErrorLevel %errorlevel% &amp; goto :cmDone
@@ -133,19 +121,11 @@ exit /b %1
 :cmDone
 if %errorlevel% neq 0 goto :VCEnd</Command>
       <AdditionalInputs Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">%(AdditionalInputs)</AdditionalInputs>
-<<<<<<< HEAD
       <Outputs Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">C:\Projects\ASL\Speak-well\build\test\CMakeFiles\generate.stamp</Outputs>
       <LinkObjects Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">false</LinkObjects>
       <Message Condition="'$(Configuration)|$(Platform)'=='Release|x64'">Building Custom Rule C:/Projects/ASL/Speak-well/test/CMakeLists.txt</Message>
       <Command Condition="'$(Configuration)|$(Platform)'=='Release|x64'">setlocal
 "C:\Program Files\CMake\bin\cmake.exe" -SC:/Projects/ASL/Speak-well -BC:/Projects/ASL/Speak-well/build --check-stamp-file C:/Projects/ASL/Speak-well/build/test/CMakeFiles/generate.stamp
-=======
-      <Outputs Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">C:\Projects\Horizon\build\test\CMakeFiles\generate.stamp</Outputs>
-      <LinkObjects Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">false</LinkObjects>
-      <Message Condition="'$(Configuration)|$(Platform)'=='Release|x64'">Building Custom Rule C:/Projects/Horizon/test/CMakeLists.txt</Message>
-      <Command Condition="'$(Configuration)|$(Platform)'=='Release|x64'">setlocal
-"C:\Program Files\CMake\bin\cmake.exe" -SC:/Projects/Horizon -BC:/Projects/Horizon/build --check-stamp-file C:/Projects/Horizon/build/test/CMakeFiles/generate.stamp
->>>>>>> origin/frontend_branch
 if %errorlevel% neq 0 goto :cmEnd
 :cmEnd
 endlocal &amp; call :cmErrorLevel %errorlevel% &amp; goto :cmDone
@@ -154,19 +134,11 @@ exit /b %1
 :cmDone
 if %errorlevel% neq 0 goto :VCEnd</Command>
       <AdditionalInputs Condition="'$(Configuration)|$(Platform)'=='Release|x64'">%(AdditionalInputs)</AdditionalInputs>
-<<<<<<< HEAD
       <Outputs Condition="'$(Configuration)|$(Platform)'=='Release|x64'">C:\Projects\ASL\Speak-well\build\test\CMakeFiles\generate.stamp</Outputs>
       <LinkObjects Condition="'$(Configuration)|$(Platform)'=='Release|x64'">false</LinkObjects>
       <Message Condition="'$(Configuration)|$(Platform)'=='MinSizeRel|x64'">Building Custom Rule C:/Projects/ASL/Speak-well/test/CMakeLists.txt</Message>
       <Command Condition="'$(Configuration)|$(Platform)'=='MinSizeRel|x64'">setlocal
 "C:\Program Files\CMake\bin\cmake.exe" -SC:/Projects/ASL/Speak-well -BC:/Projects/ASL/Speak-well/build --check-stamp-file C:/Projects/ASL/Speak-well/build/test/CMakeFiles/generate.stamp
-=======
-      <Outputs Condition="'$(Configuration)|$(Platform)'=='Release|x64'">C:\Projects\Horizon\build\test\CMakeFiles\generate.stamp</Outputs>
-      <LinkObjects Condition="'$(Configuration)|$(Platform)'=='Release|x64'">false</LinkObjects>
-      <Message Condition="'$(Configuration)|$(Platform)'=='MinSizeRel|x64'">Building Custom Rule C:/Projects/Horizon/test/CMakeLists.txt</Message>
-      <Command Condition="'$(Configuration)|$(Platform)'=='MinSizeRel|x64'">setlocal
-"C:\Program Files\CMake\bin\cmake.exe" -SC:/Projects/Horizon -BC:/Projects/Horizon/build --check-stamp-file C:/Projects/Horizon/build/test/CMakeFiles/generate.stamp
->>>>>>> origin/frontend_branch
 if %errorlevel% neq 0 goto :cmEnd
 :cmEnd
 endlocal &amp; call :cmErrorLevel %errorlevel% &amp; goto :cmDone
@@ -175,19 +147,11 @@ exit /b %1
 :cmDone
 if %errorlevel% neq 0 goto :VCEnd</Command>
       <AdditionalInputs Condition="'$(Configuration)|$(Platform)'=='MinSizeRel|x64'">%(AdditionalInputs)</AdditionalInputs>
-<<<<<<< HEAD
       <Outputs Condition="'$(Configuration)|$(Platform)'=='MinSizeRel|x64'">C:\Projects\ASL\Speak-well\build\test\CMakeFiles\generate.stamp</Outputs>
       <LinkObjects Condition="'$(Configuration)|$(Platform)'=='MinSizeRel|x64'">false</LinkObjects>
       <Message Condition="'$(Configuration)|$(Platform)'=='RelWithDebInfo|x64'">Building Custom Rule C:/Projects/ASL/Speak-well/test/CMakeLists.txt</Message>
       <Command Condition="'$(Configuration)|$(Platform)'=='RelWithDebInfo|x64'">setlocal
 "C:\Program Files\CMake\bin\cmake.exe" -SC:/Projects/ASL/Speak-well -BC:/Projects/ASL/Speak-well/build --check-stamp-file C:/Projects/ASL/Speak-well/build/test/CMakeFiles/generate.stamp
-=======
-      <Outputs Condition="'$(Configuration)|$(Platform)'=='MinSizeRel|x64'">C:\Projects\Horizon\build\test\CMakeFiles\generate.stamp</Outputs>
-      <LinkObjects Condition="'$(Configuration)|$(Platform)'=='MinSizeRel|x64'">false</LinkObjects>
-      <Message Condition="'$(Configuration)|$(Platform)'=='RelWithDebInfo|x64'">Building Custom Rule C:/Projects/Horizon/test/CMakeLists.txt</Message>
-      <Command Condition="'$(Configuration)|$(Platform)'=='RelWithDebInfo|x64'">setlocal
-"C:\Program Files\CMake\bin\cmake.exe" -SC:/Projects/Horizon -BC:/Projects/Horizon/build --check-stamp-file C:/Projects/Horizon/build/test/CMakeFiles/generate.stamp
->>>>>>> origin/frontend_branch
 if %errorlevel% neq 0 goto :cmEnd
 :cmEnd
 endlocal &amp; call :cmErrorLevel %errorlevel% &amp; goto :cmDone
@@ -196,11 +160,7 @@ exit /b %1
 :cmDone
 if %errorlevel% neq 0 goto :VCEnd</Command>
       <AdditionalInputs Condition="'$(Configuration)|$(Platform)'=='RelWithDebInfo|x64'">%(AdditionalInputs)</AdditionalInputs>
-<<<<<<< HEAD
       <Outputs Condition="'$(Configuration)|$(Platform)'=='RelWithDebInfo|x64'">C:\Projects\ASL\Speak-well\build\test\CMakeFiles\generate.stamp</Outputs>
-=======
-      <Outputs Condition="'$(Configuration)|$(Platform)'=='RelWithDebInfo|x64'">C:\Projects\Horizon\build\test\CMakeFiles\generate.stamp</Outputs>
->>>>>>> origin/frontend_branch
       <LinkObjects Condition="'$(Configuration)|$(Platform)'=='RelWithDebInfo|x64'">false</LinkObjects>
     </CustomBuild>
   </ItemGroup>
@@ -208,24 +168,14 @@ if %errorlevel% neq 0 goto :VCEnd</Command>
   </ItemGroup>
   <ItemGroup />
   <ItemGroup>
-<<<<<<< HEAD
     <ProjectReference Include="C:\Projects\ASL\Speak-well\build\ZERO_CHECK.vcxproj">
       <Project>{0F73CFBE-6786-358C-9F11-C47121FC020F}</Project>
-=======
-    <ProjectReference Include="C:\Projects\Horizon\build\ZERO_CHECK.vcxproj">
-      <Project>{C312EE33-93AF-3C90-88CB-718BF497EF33}</Project>
->>>>>>> origin/frontend_branch
       <Name>ZERO_CHECK</Name>
       <ReferenceOutputAssembly>false</ReferenceOutputAssembly>
       <CopyToOutputDirectory>Never</CopyToOutputDirectory>
     </ProjectReference>
-<<<<<<< HEAD
     <ProjectReference Include="C:\Projects\ASL\Speak-well\build\test\MyBackendApp_test.vcxproj">
       <Project>{F4DBEA01-D2E9-3954-9AF2-EC746322D10E}</Project>
-=======
-    <ProjectReference Include="C:\Projects\Horizon\build\test\MyBackendApp_test.vcxproj">
-      <Project>{DD38CF24-DBA7-3BE6-83C5-FF2E802E78ED}</Project>
->>>>>>> origin/frontend_branch
       <Name>MyBackendApp_test</Name>
     </ProjectReference>
   </ItemGroup>

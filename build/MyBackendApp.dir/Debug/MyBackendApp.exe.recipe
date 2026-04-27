@@ -2,17 +2,10 @@
 <Project>
   <ProjectOutputs>
     <ProjectOutput>
-<<<<<<< HEAD
       <FullPath>C:\Projects\ASL\Speak-well\build\x64\Debug\ZERO_CHECK</FullPath>
     </ProjectOutput>
     <ProjectOutput>
       <FullPath>C:\Projects\ASL\Speak-well\build\Debug\MyBackendApp.exe</FullPath>
-=======
-      <FullPath>C:\Projects\Horizon\build\x64\Debug\ZERO_CHECK</FullPath>
-    </ProjectOutput>
-    <ProjectOutput>
-      <FullPath>C:\Projects\Horizon\build\Debug\MyBackendApp.exe</FullPath>
->>>>>>> origin/frontend_branch
     </ProjectOutput>
   </ProjectOutputs>
   <ContentFiles />

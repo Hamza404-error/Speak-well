@@ -1,13 +1,5 @@
-<<<<<<< HEAD
 C:/Projects/ASL/Speak-well/build/CMakeFiles/MyBackendApp.dir
 C:/Projects/ASL/Speak-well/build/CMakeFiles/ALL_BUILD.dir
 C:/Projects/ASL/Speak-well/build/CMakeFiles/ZERO_CHECK.dir
 C:/Projects/ASL/Speak-well/build/test/CMakeFiles/MyBackendApp_test.dir
 C:/Projects/ASL/Speak-well/build/test/CMakeFiles/ALL_BUILD.dir
-=======
-C:/Projects/Horizon/build/CMakeFiles/MyBackendApp.dir
-C:/Projects/Horizon/build/CMakeFiles/ALL_BUILD.dir
-C:/Projects/Horizon/build/CMakeFiles/ZERO_CHECK.dir
-C:/Projects/Horizon/build/test/CMakeFiles/MyBackendApp_test.dir
-C:/Projects/Horizon/build/test/CMakeFiles/ALL_BUILD.dir
->>>>>>> origin/frontend_branch

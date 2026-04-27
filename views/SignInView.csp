@@ -1,0 +1,189 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>SignHorizon – Sign Up</title>
+  <link href="https://fonts.googleapis.com/css2?family=Sora:wght@300;400;500;600;700;800&display=swap" rel="stylesheet" />
+  <style>
+    :root {
+      --teal:         #1b6b6e;
+      --teal-dark:    #124b4d;
+      --teal-light:   #2a9ea3;
+      --teal-pale:    #e6f4f4;
+      --white:        #ffffff;
+      --off-white:    #f7f9f9;
+      --gray-200:     #e2e6e6;
+      --gray-500:     #7a8a8b;
+      --dark:         #0e1c1d;
+      --font-b:       'Sora', sans-serif;
+      --radius-sm:    8px;
+      --radius:       14px;
+      --radius-lg:    20px;
+      --shadow-md:    0 6px 24px rgba(14,28,29,.11);
+      --transition:   .3s cubic-bezier(.4,0,.2,1);
+    }
+
+    * { box-sizing: border-box; margin: 0; padding: 0; }
+    
+    body {
+      font-family: var(--font-b);
+      background: var(--off-white);
+      color: var(--dark);
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      min-height: 100vh;
+      padding: 20px;
+    }
+
+    .logo {
+      font-size: 26px; font-weight: 800; color: var(--teal-dark);
+      text-decoration: none; margin-bottom: 32px; letter-spacing: -.3px;
+    }
+    .logo span { color: var(--teal-light); }
+
+    .auth-card {
+      background: var(--white);
+      border: 1.5px solid var(--gray-200);
+      border-radius: var(--radius-lg);
+      padding: 40px;
+      width: 100%;
+      max-width: 440px;
+      box-shadow: var(--shadow-md);
+    }
+
+    .auth-header { text-align: center; margin-bottom: 28px; }
+    .auth-header h1 { font-size: 24px; font-weight: 700; margin-bottom: 8px; }
+    .auth-header p { font-size: 14px; color: var(--gray-500); }
+
+    .form-group { margin-bottom: 20px; }
+    .form-group label {
+      display: block; font-size: 13px; font-weight: 600;
+      margin-bottom: 8px; color: var(--dark);
+    }
+    
+    .form-control {
+      width: 100%; padding: 12px 16px; font-family: var(--font-b);
+      font-size: 14px; border: 1.5px solid var(--gray-200);
+      border-radius: var(--radius-sm); outline: none;
+      transition: border-color var(--transition);
+    }
+    .form-control:focus { border-color: var(--teal); }
+
+    /* إخفاء قسم الكود والزر النهائي في البداية */
+    #verificationSection, #finalSubmitBtn {
+      display: none;
+      opacity: 0;
+      transform: translateY(10px);
+      transition: all var(--transition);
+    }
+    #finalSubmitBtn a {
+      background: var(--teal); 
+      color: var(--white); 
+      border: none;
+      border-radius: var(--radius);
+      text-decoration: none; 
+      text-align: center;
+    }
+
+    /* كلاس الإظهار */
+    .show-verification {
+      display: block !important;
+      opacity: 1 !important;
+      transform: translateY(0) !important;
+    }
+
+    .btn-action {
+      width: 100%; padding: 14px; margin-top: 10px;
+      background: var(--teal); color: var(--white); border: none;
+      border-radius: var(--radius); font-size: 15px; font-weight: 700;
+      cursor: pointer; 
+      transition: background var(--transition), transform var(--transition);
+    }
+    .btn-action:hover { background: var(--teal-dark); transform: translateY(-2px); }
+    
+    .auth-footer { text-align: center; margin-top: 24px; font-size: 13px; color: var(--gray-500); }
+    .auth-footer a { color: var(--teal); text-decoration: none; font-weight: 600; }
+  </style>
+</head>
+<body>
+
+  <a href="/" class="logo">Sign<span>Horizon</span></a>
+
+  <div class="auth-card">
+    <div class="auth-header">
+      <h1>Create an Account</h1>
+      <p>Fill your details to receive a verification code.</p>
+    </div>
+
+    <form id="signUpForm" onsubmit="handleSignUp(event)">
+      <div id="initialFields">
+        <div class="form-group">
+          <label for="name">Full Name</label>
+          <input type="text" id="name" name="name" class="form-control" placeholder="John Doe" required />
+        </div>
+
+        <div class="form-group">
+          <label for="email">Email Address</label>
+          <input type="email" id="email" name="email" class="form-control" placeholder="john@example.com" required />
+        </div>
+
+        <div class="form-group">
+          <label for="password">Password</label>
+          <input type="password" id="password" name="password" class="form-control" placeholder="••••••••" required minlength="8" />
+        </div>
+
+        <button type="button" class="btn-action" id="okBtn" onclick="requestVerification()">OK</button>
+      </div>
+
+      <div id="verificationSection" class="form-group" style="margin-top: 20px;">
+        <label for="code">Verification Code</label>
+        <input type="text" id="code" name="code" class="form-control" placeholder="Enter 6-digit code" pattern="\d{6}" />
+        <p style="font-size: 11px; color: var(--teal); margin-top: 8px;" id="statusMsg"></p>
+      </div>
+
+      <button type="submit" id="finalSubmitBtn" class="btn-action"><a href="/">Verify & Sign Up</a></button>
+    </form>
+
+    <div class="auth-footer">
+      Already have an account? <a href="/login">Sign in</a>
+    </div>
+  </div>
+
+  <script>
+    let generatedCode = null;
+
+    function requestVerification() {
+      const email = document.getElementById('email').value;
+      const name = document.getElementById('name').value;
+      const pass = document.getElementById('password').value;
+
+      // التأكد من مليء البيانات
+      if (!email || !name || pass.length < 8) {
+        alert('Please fill all fields correctly before proceeding.');
+        return;
+      }
+
+      // 1. توليد رقم عشوائي من 6 أرقام
+      generatedCode = Math.floor(100000 + Math.random() * 900000).toString();
+      
+      // 2. محاكاة الإرسال (هنا يجب ربط الـ API الخاص بـ Drogon مستقبلاً)
+      console.log(`%c [SYSTEM] Verification Code for ${email}: ${generatedCode}`, "color: #1b6b6e; font-weight: bold; font-size: 14px;");
+      alert(`A verification code has been sent to ${email}\n(Check console for the code in this demo)`);
+
+      // 3. إظهار خانة الكود وإخفاء زر OK
+      document.getElementById('okBtn').style.display = 'none';
+      document.getElementById('verificationSection').classList.add('show-verification');
+      document.getElementById('finalSubmitBtn').classList.add('show-verification');
+      document.getElementById('statusMsg').innerText = `Code sent to ${email}. Valid for 10 minutes.`;
+      
+      // تعطيل الحقول الأساسية لمنع التغيير أثناء التحقق
+      document.getElementById('name').readOnly = true;
+      document.getElementById('email').readOnly = true;
+      document.getElementById('password').readOnly = true;
+    }
+  </script>
+</body>
+</html>
