@@ -45,6 +45,7 @@ int main() {
         auto resp = drogon::HttpResponse::newHttpViewResponse("SignInView");
         callback(resp);
     });
+<<<<<<< HEAD
     drogon::app().registerHandler("/translate",
     [](const drogon::HttpRequestPtr &,
        std::function<void(const drogon::HttpResponsePtr &)> &&callback) {
@@ -53,6 +54,16 @@ int main() {
         callback(resp);
     });
 
+=======
+
+    drogon::app().registerHandler("/dictionary",
+    [](const drogon::HttpRequestPtr &,
+       std::function<void(const drogon::HttpResponsePtr &)> &&callback) {
+        
+        auto resp = drogon::HttpResponse::newHttpViewResponse("DictionaryView");
+        callback(resp);
+    });
+>>>>>>> origin/frontend_branch
     // ... باقي الكود (addListener و run) ...
     std::cout << "Server is running... Open http://127.0.0.1:8080 in your browser." << std::endl;
     drogon::app().addListener("127.0.0.1", 8080);

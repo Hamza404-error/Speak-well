@@ -1,6 +1,7 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
 <Project ToolsVersion="18.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
   <ItemGroup>
+<<<<<<< HEAD
     <ClCompile Include="C:\Projects\ASL\Speak-well\main.cc">
       <Filter>Source Files</Filter>
     </ClCompile>
@@ -20,10 +21,26 @@
       <Filter>Source Files</Filter>
     </ClCompile>
     <ClCompile Include="C:\Projects\ASL\Speak-well\build\TranslateView.cc">
+=======
+    <ClCompile Include="C:\Projects\Horizon\main.cc">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="C:\Projects\Horizon\build\DictionaryView.cc">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="C:\Projects\Horizon\build\HomeView.cc">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="C:\Projects\Horizon\build\LearnView.cc">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="C:\Projects\Horizon\build\LessonsView.cc">
+>>>>>>> origin/frontend_branch
       <Filter>Source Files</Filter>
     </ClCompile>
   </ItemGroup>
   <ItemGroup>
+<<<<<<< HEAD
     <CustomBuild Include="C:\Projects\ASL\Speak-well\build\CMakeFiles\cd86ab54237829555bf1e0f26bcb5c5e\HomeView.h.rule">
       <Filter>CMake Rules</Filter>
     </CustomBuild>
@@ -50,6 +67,28 @@
     </Filter>
     <Filter Include="Source Files">
       <UniqueIdentifier>{C9D85B9D-8D87-34F6-AA82-EFDE2EE1BED3}</UniqueIdentifier>
+=======
+    <CustomBuild Include="C:\Projects\Horizon\build\CMakeFiles\e42e83ba34389ab52ae0b34783e8d1d9\DictionaryView.h.rule">
+      <Filter>CMake Rules</Filter>
+    </CustomBuild>
+    <CustomBuild Include="C:\Projects\Horizon\build\CMakeFiles\e42e83ba34389ab52ae0b34783e8d1d9\HomeView.h.rule">
+      <Filter>CMake Rules</Filter>
+    </CustomBuild>
+    <CustomBuild Include="C:\Projects\Horizon\build\CMakeFiles\e42e83ba34389ab52ae0b34783e8d1d9\LearnView.h.rule">
+      <Filter>CMake Rules</Filter>
+    </CustomBuild>
+    <CustomBuild Include="C:\Projects\Horizon\build\CMakeFiles\e42e83ba34389ab52ae0b34783e8d1d9\LessonsView.h.rule">
+      <Filter>CMake Rules</Filter>
+    </CustomBuild>
+    <CustomBuild Include="C:\Projects\Horizon\CMakeLists.txt" />
+  </ItemGroup>
+  <ItemGroup>
+    <Filter Include="CMake Rules">
+      <UniqueIdentifier>{E3B13508-4898-35CF-A17A-4286EECB1007}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Source Files">
+      <UniqueIdentifier>{2F6A8C8D-2826-33A9-B1F4-5A33900D8FA6}</UniqueIdentifier>
+>>>>>>> origin/frontend_branch
     </Filter>
   </ItemGroup>
 </Project>

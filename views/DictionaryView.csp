@@ -1,0 +1,438 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Clarified Horizon – ASL Dictionary</title>
+  <link
+    href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@700;900&family=DM+Sans:wght@300;400;500;600;700&display=swap"
+    rel="stylesheet" />
+  <style>
+    :root {
+      --teal: #1b6b6e;
+      --teal-dark: #124b4d;
+      --teal-light: #2a9ea3;
+      --teal-pale: #e6f4f4;
+      --teal-mid: #c2e4e4;
+      --gold: #c9a84c;
+      --gold-light: #e8c97e;
+      --cream: #f9f5ef;
+      --white: #ffffff;
+      --off-white: #f5f7f7;
+      --gray-100: #f1f3f3;
+      --gray-200: #e4e8e8;
+      --gray-300: #cdd3d3;
+      --gray-400: #96a3a4;
+      --gray-600: #556162;
+      --gray-700: #3a4f50;
+      --dark: #182020;
+      --green: #2e9b6a;
+      --font-display: 'Playfair Display', Georgia, serif;
+      --font-body: 'DM Sans', sans-serif;
+      --shadow-sm: 0 2px 8px rgba(14, 28, 29, .07);
+      --shadow-md: 0 8px 24px rgba(14, 28, 29, .08);
+      --shadow-lg: 0 16px 48px rgba(14, 28, 29, .12);
+      --radius: 14px;
+      --radius-lg: 20px;
+      --t: .25s cubic-bezier(.4, 0, .2, 1);
+    }
+
+    *,
+    *::before,
+    *::after {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+
+    html {
+      scroll-behavior: smooth;
+    }
+
+    body {
+      font-family: var(--font-body);
+      background: var(--off-white);
+      color: var(--dark);
+      font-size: 15px;
+      line-height: 1.6;
+      overflow-x: hidden;
+    }
+
+    /* ── NAV ── */
+    nav {
+      background: var(--white);
+      border-bottom: 1.5px solid var(--gray-200);
+      position: sticky;
+      top: 0;
+      z-index: 100;
+    }
+
+    .nav-inner {
+      max-width: 1160px;
+      margin: 0 auto;
+      padding: 0 28px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      height: 64px;
+    }
+
+    .logo {
+      font-family: var(--font-display);
+      font-size: 20px;
+      font-weight: 700;
+      color: var(--teal-dark);
+      text-decoration: none;
+      letter-spacing: -.3px;
+    }
+
+    .nav-links {
+      display: flex;
+      gap: 4px;
+      list-style: none;
+    }
+
+    .nav-links a {
+      text-decoration: none;
+      color: var(--gray-600);
+      font-size: 13px;
+      font-weight: 600;
+      letter-spacing: .09em;
+      text-transform: uppercase;
+      padding: 7px 16px;
+      border-radius: 6px;
+      transition: background var(--t), color var(--t);
+    }
+
+    .nav-links a:hover {
+      background: var(--teal-pale);
+      color: var(--teal);
+    }
+
+    .nav-links a.active {
+      color: var(--teal);
+      border-bottom: 2.5px solid var(--teal);
+      border-radius: 0;
+    }
+
+    /* ── LAYOUT ── */
+    .wrap {
+      max-width: 1160px;
+      margin: 0 auto;
+      padding: 0 28px 72px;
+    }
+
+    /* ── PAGE HEADER ── */
+    .page-header {
+      margin: 40px 0 30px;
+      text-align: center;
+    }
+
+    .page-header h1 {
+      font-family: var(--font-display);
+      font-size: clamp(32px, 5vw, 48px);
+      font-weight: 900;
+      color: var(--dark);
+      margin-bottom: 12px;
+    }
+
+    .page-header p {
+      font-size: 16px;
+      color: var(--gray-600);
+      max-width: 600px;
+      margin: 0 auto;
+    }
+
+    /* ── SEARCH & FILTER ── */
+    .toolbar {
+      display: flex;
+      justify-content: center;
+      margin-bottom: 40px;
+    }
+
+    .search-box {
+      display: flex;
+      align-items: center;
+      background: var(--white);
+      border: 1.5px solid var(--gray-200);
+      border-radius: 50px;
+      padding: 6px 12px 6px 20px;
+      width: 100%;
+      max-width: 400px;
+      box-shadow: var(--shadow-sm);
+      transition: border-color var(--t), box-shadow var(--t);
+    }
+
+    .search-box:focus-within {
+      border-color: var(--teal-light);
+      box-shadow: 0 0 0 4px var(--teal-pale);
+    }
+
+    .search-icon {
+      color: var(--gray-400);
+      font-size: 18px;
+      margin-right: 12px;
+    }
+
+    .search-input {
+      border: none;
+      outline: none;
+      background: transparent;
+      font-family: var(--font-body);
+      font-size: 15px;
+      color: var(--dark);
+      width: 100%;
+    }
+
+    .search-input::placeholder {
+      color: var(--gray-400);
+    }
+
+    /* ── DICTIONARY GRID ── */
+    .dictionary-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fill, minmax(260px, 1fr));
+      gap: 28px;
+    }
+
+    /* ── LETTER CARD ── */
+    .letter-card {
+      background: var(--white);
+      border: 1.5px solid var(--gray-200);
+      border-radius: var(--radius-lg);
+      overflow: hidden;
+      box-shadow: var(--shadow-sm);
+      transition: transform var(--t), box-shadow var(--t);
+      display: flex;
+      flex-direction: column;
+    }
+
+    .letter-card:hover {
+      transform: translateY(-4px);
+      box-shadow: var(--shadow-md);
+      border-color: var(--teal-mid);
+    }
+
+    .media-area {
+      aspect-ratio: 4/3;
+      background: linear-gradient(140deg, var(--teal-dark) 0%, var(--teal) 100%);
+      position: relative;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      overflow: hidden;
+    }
+
+    .media-placeholder {
+      font-size: 48px;
+      position: absolute;
+    }
+
+    .play-btn {
+      width: 54px;
+      height: 54px;
+      border-radius: 50%;
+      background: rgba(255, 255, 255, 0.2);
+      border: 2px solid rgba(255, 255, 255, 0.6);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      color: var(--white);
+      font-size: 18px;
+      cursor: pointer;
+      backdrop-filter: blur(4px);
+      transition: background var(--t), transform var(--t);
+      z-index: 2;
+    }
+
+    .letter-card:hover .play-btn {
+      background: rgba(255, 255, 255, 0.35);
+      transform: scale(1.05);
+    }
+
+    .letter-info {
+      padding: 20px 24px;
+      flex: 1;
+      display: flex;
+      flex-direction: column;
+    }
+
+    .letter-header {
+      display: flex;
+      justify-content: space-between;
+      align-items: flex-end;
+      margin-bottom: 12px;
+      padding-bottom: 12px;
+      border-bottom: 1.5px solid var(--gray-100);
+    }
+
+    .letter-char {
+      font-family: var(--font-display);
+      font-size: 36px;
+      font-weight: 900;
+      color: var(--teal-dark);
+      line-height: 1;
+    }
+
+    .emotion-badge {
+      font-size: 10px;
+      font-weight: 700;
+      letter-spacing: 0.1em;
+      text-transform: uppercase;
+      background: var(--gold-light);
+      color: var(--dark);
+      padding: 4px 10px;
+      border-radius: 20px;
+    }
+
+    .letter-desc {
+      font-size: 13.5px;
+      color: var(--gray-600);
+      line-height: 1.6;
+    }
+
+    /* ── ANIMATIONS ── */
+    @keyframes fadeUp {
+      from {
+        opacity: 0;
+        transform: translateY(20px);
+      }
+
+      to {
+        opacity: 1;
+        transform: translateY(0);
+      }
+    }
+
+    .page-header {
+      animation: fadeUp .5s ease both;
+    }
+
+    .toolbar {
+      animation: fadeUp .5s .1s ease both;
+    }
+
+    .dictionary-grid {
+      animation: fadeUp .5s .2s ease both;
+    }
+
+    /* ── RESPONSIVE ── */
+    @media (max-width: 600px) {
+      .dictionary-grid {
+        grid-template-columns: 1fr;
+      }
+    }
+  </style>
+</head>
+
+<body>
+
+  <!-- ── NAVBAR ── -->
+  <nav>
+    <div class="nav-inner">
+      <a href="/" class="logo">Clarified Horizon</a>
+      <ul class="nav-links">
+        <li><a href="/">HOME</a></li>
+        <li><a href="/learn">LEARN</a></li>
+        <li><a href="/dictionary" class="active">DICTIONARY</a></li>
+      </ul>
+    </div>
+  </nav>
+
+  <!-- ── PAGE ── -->
+  <div class="wrap">
+
+    <div class="page-header">
+      <h1>ASL Dictionary</h1>
+      <p>Explore the complete American Sign Language alphabet and its corresponding emotional movements.</p>
+    </div>
+
+    <div class="toolbar">
+      <div class="search-box">
+        <span class="search-icon">🔍</span>
+        <input type="text" class="search-input" placeholder="Search for a letter or emotion..." id="searchInput">
+      </div>
+    </div>
+
+    <div class="dictionary-grid" id="dictGrid">
+      <!-- Letters will be generated by JavaScript -->
+    </div>
+
+  </div>
+
+  <script>
+    // Data for the 26 letters and their emotional movement placeholders
+    const alphabetData = [
+      { letter: 'A', emotion: 'Assertive', signEmoji: '✊', desc: 'Closed fist with thumb resting on the side. Represents a strong, steady foundation.' },
+      { letter: 'B', emotion: 'Balanced', signEmoji: '✋', desc: 'Flat hand with fingers together, thumb tucked across palm. Conveys stability and calm.' },
+      { letter: 'C', emotion: 'Curious', signEmoji: '🫴', desc: 'Hand curved into a C-shape. An open, inviting posture that suggests inquiry.' },
+      { letter: 'D', emotion: 'Determined', signEmoji: '☝️', desc: 'Index finger pointing up, other fingers forming a circle with the thumb. A focused and direct gesture.' },
+      { letter: 'E', emotion: 'Eager', signEmoji: '✊', desc: 'Fingers curled inward resting on the thumb. A compact shape holding latent energy.' },
+      { letter: 'F', emotion: 'Friendly', signEmoji: '👌', desc: 'Index and thumb forming a circle, other fingers spread outward. An open and welcoming expression.' },
+      { letter: 'G', emotion: 'Gentle', signEmoji: '🤏', desc: 'Index and thumb parallel, pointing sideways. A precise, controlled, and delicate movement.' },
+      { letter: 'H', emotion: 'Honest', signEmoji: '👈', desc: 'Index and middle fingers together pointing sideways. A straightforward, level presentation.' },
+      { letter: 'I', emotion: 'Independent', signEmoji: '👆', desc: 'Pinky finger extended upward. A singular, upright stance representing individuality.' },
+      { letter: 'J', emotion: 'Joyful', signEmoji: '🤙', desc: 'Pinky finger traces a J-shape in the air. A swooping, playful, and dynamic motion.' },
+      { letter: 'K', emotion: 'Keen', signEmoji: '✌️', desc: 'Index and middle fingers up, thumb resting between them. A sharp, perceptive posture.' },
+      { letter: 'L', emotion: 'Lucid', signEmoji: '👆', desc: 'Index and thumb forming an L-shape. Clear, unambiguous, and easily recognized.' },
+      { letter: 'M', emotion: 'Mindful', signEmoji: '✊', desc: 'Three fingers tucked over the thumb. A grounded, introspective configuration.' },
+      { letter: 'N', emotion: 'Noble', signEmoji: '✊', desc: 'Two fingers tucked over the thumb. Similar to M but more elevated and refined.' },
+      { letter: 'O', emotion: 'Open', signEmoji: '👌', desc: 'Fingers and thumb curved to form an O. Represents wholeness and inclusivity.' },
+      { letter: 'P', emotion: 'Patient', signEmoji: '👇', desc: 'Middle finger dropped down, thumb resting on it (a downward K). A grounded, waiting posture.' },
+      { letter: 'Q', emotion: 'Quiet', signEmoji: '👇', desc: 'Index and thumb pointing downward. A subtle, understated, and gentle form.' },
+      { letter: 'R', emotion: 'Resilient', signEmoji: '🤞', desc: 'Index and middle fingers crossed. Shows strength through flexibility and connection.' },
+      { letter: 'S', emotion: 'Strong', signEmoji: '✊', desc: 'Fist with thumb wrapped across the front of the fingers. A solid, unyielding shape.' },
+      { letter: 'T', emotion: 'Thoughtful', signEmoji: '✊', desc: 'Thumb tucked between index and middle fingers. A secure, contemplative hold.' },
+      { letter: 'U', emotion: 'United', signEmoji: '✌️', desc: 'Index and middle fingers together pointing up. Represents solidarity and togetherness.' },
+      { letter: 'V', emotion: 'Vibrant', signEmoji: '✌️', desc: 'Index and middle fingers separated in a V-shape. An energetic, outward-facing gesture.' },
+      { letter: 'W', emotion: 'Warm', signEmoji: '🖐️', desc: 'Three fingers extended upward. An open, branching shape suggesting expansion.' },
+      { letter: 'X', emotion: 'eXpressive', signEmoji: '🪝', desc: 'Index finger hooked like a crook. An intriguing, questioning, and engaging form.' },
+      { letter: 'Y', emotion: 'Youthful', signEmoji: '🤙', desc: 'Thumb and pinky extended, other fingers curled. A relaxed, casual, and energetic sign.' },
+      { letter: 'Z', emotion: 'Zealous', signEmoji: '🫵', desc: 'Index finger traces a Z in the air. A swift, decisive, and spirited movement.' }
+    ];
+
+    const grid = document.getElementById('dictGrid');
+    const searchInput = document.getElementById('searchInput');
+
+    function renderDictionary(filterText = '') {
+      grid.innerHTML = '';
+      const filtered = alphabetData.filter(item =>
+        item.letter.toLowerCase().includes(filterText.toLowerCase()) ||
+        item.emotion.toLowerCase().includes(filterText.toLowerCase()) ||
+        item.desc.toLowerCase().includes(filterText.toLowerCase())
+      );
+
+      filtered.forEach((item, index) => {
+        const card = document.createElement('div');
+        card.className = 'letter-card';
+        card.style.animationDelay = `${index * 0.05}s`;
+
+        card.innerHTML = `
+        <div class="media-area">
+          <div class="media-placeholder">${item.signEmoji}</div>
+        </div>
+        <div class="letter-info">
+          <div class="letter-header">
+            <div class="letter-char">${item.letter}</div>
+            <div class="emotion-badge">${item.emotion}</div>
+          </div>
+          <div class="letter-desc">${item.desc}</div>
+        </div>
+      `;
+        grid.appendChild(card);
+      });
+    }
+
+    // Initial render
+    renderDictionary();
+
+    // Search functionality
+    searchInput.addEventListener('input', (e) => {
+      renderDictionary(e.target.value);
+    });
+  </script>
+
+</body>
+
+</html>

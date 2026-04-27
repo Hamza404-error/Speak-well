@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 C:\Projects\ASL\Speak-well\main.cc;C:\Projects\ASL\Speak-well\build\MyBackendApp.dir\Debug\main.obj
 C:\Projects\ASL\Speak-well\build\HomeView.cc;C:\Projects\ASL\Speak-well\build\MyBackendApp.dir\Debug\HomeView.obj
 C:\Projects\ASL\Speak-well\build\LearnView.cc;C:\Projects\ASL\Speak-well\build\MyBackendApp.dir\Debug\LearnView.obj
@@ -5,3 +6,10 @@ C:\Projects\ASL\Speak-well\build\LessonsView.cc;C:\Projects\ASL\Speak-well\build
 C:\Projects\ASL\Speak-well\build\SignInView.cc;C:\Projects\ASL\Speak-well\build\MyBackendApp.dir\Debug\SignInView.obj
 C:\Projects\ASL\Speak-well\build\SignUpView.cc;C:\Projects\ASL\Speak-well\build\MyBackendApp.dir\Debug\SignUpView.obj
 C:\Projects\ASL\Speak-well\build\TranslateView.cc;C:\Projects\ASL\Speak-well\build\MyBackendApp.dir\Debug\TranslateView.obj
+=======
+C:\Projects\Horizon\main.cc;C:\Projects\Horizon\build\MyBackendApp.dir\Debug\main.obj
+C:\Projects\Horizon\build\DictionaryView.cc;C:\Projects\Horizon\build\MyBackendApp.dir\Debug\DictionaryView.obj
+C:\Projects\Horizon\build\HomeView.cc;C:\Projects\Horizon\build\MyBackendApp.dir\Debug\HomeView.obj
+C:\Projects\Horizon\build\LearnView.cc;C:\Projects\Horizon\build\MyBackendApp.dir\Debug\LearnView.obj
+C:\Projects\Horizon\build\LessonsView.cc;C:\Projects\Horizon\build\MyBackendApp.dir\Debug\LessonsView.obj
+>>>>>>> origin/frontend_branch
