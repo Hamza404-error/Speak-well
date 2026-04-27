@@ -101,10 +101,10 @@ C:/Program Files/CMake/share/cmake-4.3/Modules/Platform/Windows-MSVC.cmake
 C:/Program Files/CMake/share/cmake-4.3/Modules/Platform/Windows.cmake
 C:/Program Files/CMake/share/cmake-4.3/Modules/Platform/WindowsPaths.cmake
 C:/Program Files/CMake/share/cmake-4.3/Modules/SelectLibraryConfigurations.cmake
-C:/Projects/MyBackendApp/CMakeLists.txt
-C:/Projects/MyBackendApp/build/CMakeFiles/4.3.0-rc1/CMakeCXXCompiler.cmake
-C:/Projects/MyBackendApp/build/CMakeFiles/4.3.0-rc1/CMakeRCCompiler.cmake
-C:/Projects/MyBackendApp/build/CMakeFiles/4.3.0-rc1/CMakeSystem.cmake
+C:/Projects/Horizon/CMakeLists.txt
+C:/Projects/Horizon/build/CMakeFiles/4.3.0-rc1/CMakeCXXCompiler.cmake
+C:/Projects/Horizon/build/CMakeFiles/4.3.0-rc1/CMakeRCCompiler.cmake
+C:/Projects/Horizon/build/CMakeFiles/4.3.0-rc1/CMakeSystem.cmake
 C:/vcpkg/installed/x64-windows/share/c-ares/c-ares-config-version.cmake
 C:/vcpkg/installed/x64-windows/share/c-ares/c-ares-config.cmake
 C:/vcpkg/installed/x64-windows/share/c-ares/c-ares-targets-debug.cmake

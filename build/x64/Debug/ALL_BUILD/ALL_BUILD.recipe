@@ -2,16 +2,16 @@
 <Project>
   <ProjectOutputs>
     <ProjectOutput>
-      <FullPath>C:\Projects\MyBackendApp\build\x64\Debug\ZERO_CHECK</FullPath>
+      <FullPath>C:\Projects\Horizon\build\x64\Debug\ZERO_CHECK</FullPath>
     </ProjectOutput>
     <ProjectOutput>
-      <FullPath>C:\Projects\MyBackendApp\build\Debug\MyBackendApp.exe</FullPath>
+      <FullPath>C:\Projects\Horizon\build\Debug\MyBackendApp.exe</FullPath>
     </ProjectOutput>
     <ProjectOutput>
-      <FullPath>C:\Projects\MyBackendApp\build\test\Debug\MyBackendApp_test.exe</FullPath>
+      <FullPath>C:\Projects\Horizon\build\test\Debug\MyBackendApp_test.exe</FullPath>
     </ProjectOutput>
     <ProjectOutput>
-      <FullPath>C:\Projects\MyBackendApp\build\x64\Debug\ALL_BUILD</FullPath>
+      <FullPath>C:\Projects\Horizon\build\x64\Debug\ALL_BUILD</FullPath>
     </ProjectOutput>
   </ProjectOutputs>
   <ContentFiles />

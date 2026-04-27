@@ -1,6 +1,6 @@
-^C:\PROJECTS\MYBACKENDAPP\BUILD\CMAKEFILES\D99B0E0DDA1401DE39ACAD01CC29AE18\GENERATE.STAMP.RULE
+^C:\PROJECTS\HORIZON\BUILD\CMAKEFILES\CA7E4309ACC77643D2C9911A7F8CD015\GENERATE.STAMP.RULE
 setlocal
-"C:\Program Files\CMake\bin\cmake.exe" -SC:/Projects/MyBackendApp -BC:/Projects/MyBackendApp/build --check-stamp-list CMakeFiles/generate.stamp.list --vs-solution-file C:/Projects/MyBackendApp/build/MyBackendApp.slnx
+"C:\Program Files\CMake\bin\cmake.exe" -SC:/Projects/Horizon -BC:/Projects/Horizon/build --check-stamp-list CMakeFiles/generate.stamp.list --vs-solution-file C:/Projects/Horizon/build/MyBackendApp.slnx
 if %errorlevel% neq 0 goto :cmEnd
 :cmEnd
 endlocal & call :cmErrorLevel %errorlevel% & goto :cmDone

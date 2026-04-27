@@ -1,8 +1,8 @@
 {
 	"InstallScripts" : 
 	[
-		"C:/Projects/MyBackendApp/build/cmake_install.cmake",
-		"C:/Projects/MyBackendApp/build/test/cmake_install.cmake"
+		"C:/Projects/Horizon/build/cmake_install.cmake",
+		"C:/Projects/Horizon/build/test/cmake_install.cmake"
 	],
 	"Parallel" : false
 }
