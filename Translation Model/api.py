@@ -6,6 +6,30 @@ import mediapipe as mp
 import numpy as np
 import base64
 import os
+import threading
+from queue import Queue
+
+tts_queue = Queue()
+
+def tts_worker():
+    # Direct Windows SAPI5 COM object bypasses pyttsx3 threading bugs
+    import pythoncom
+    import win32com.client
+    pythoncom.CoInitialize()
+    
+    speaker = win32com.client.Dispatch("SAPI.SpVoice")
+    # SAPI rates go from -10 to 10. 0 is default, -1 is slightly slower
+    speaker.Rate = -1 
+    
+    while True:
+        text = tts_queue.get()
+        if text is None:
+            break
+        speaker.Speak(text)
+        tts_queue.task_done()
+
+# Start TTS worker in background so it doesn't block video stream
+threading.Thread(target=tts_worker, daemon=True).start()
 
 from ASL import HandDetector, ASLClassifier
 from mediapipe.tasks import python
@@ -54,6 +78,7 @@ async def websocket_endpoint(websocket: WebSocket):
     await websocket.accept()
     detector.history = []
     prediction_buffer = []
+    last_spoken = ""
     try:
         while True:
             data = await websocket.receive_text()
@@ -225,6 +250,17 @@ async def websocket_endpoint(websocket: WebSocket):
                 if hasattr(detector, 'histories'):
                     detector.histories['Left'].clear()
                     detector.histories['Right'].clear()
+
+            # TTS Processing in Python Backend
+            if translation and translation != "?":
+                if translation != last_spoken:
+                    tts_queue.put(translation)
+                    last_spoken = translation
+            else:
+                if not results.hand_landmarks:
+                    last_spoken = ""  # Reset when hand drops
+                elif translation == "?":
+                    last_spoken = ""  # Reset when transitioning or recognising
 
             # Re-encode image to base64 jpeg
             _, buffer = cv2.imencode('.jpg', image, [cv2.IMWRITE_JPEG_QUALITY, 70])
