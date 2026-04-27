@@ -1,8 +1,0 @@
-================================================================================
-Linker Errors
-Generated: 2026-04-20T23:36:27.686Z
-Total Errors: 1
-================================================================================
-
-[LNK1168] (MSVC)
-cannot open C:\Projects\ASL\Speak-well\build\Debug\MyBackendApp.exe for writing [C:\Projects\ASL\Speak-well\build\MyBackendApp.vcxproj]

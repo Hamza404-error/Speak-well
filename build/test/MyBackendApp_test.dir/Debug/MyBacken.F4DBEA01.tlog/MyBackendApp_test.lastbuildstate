@@ -1,7 +1,2 @@
-<<<<<<<< HEAD:build/test/MyBackendApp_test.dir/Debug/MyBacken.F4DBEA01.tlog/MyBackendApp_test.lastbuildstate
 PlatformToolSet=v145:VCToolArchitecture=Native64Bit:VCToolsVersion=14.50.35717:VCServicingVersionCompilers=14.50.35726:TargetPlatformVersion=10.0.26100.0:VcpkgTriplet=x64-windows:
 Debug|x64|C:\Projects\ASL\Speak-well\build\test\|
-========
-PlatformToolSet=v145:VCToolArchitecture=Native64Bit:VCToolsVersion=14.50.35717:VCServicingVersionCompilers=14.50.35723:TargetPlatformVersion=10.0.26100.0:VcpkgTriplet=x64-windows:
-Debug|x64|C:\Projects\Horizon\build\test\|
->>>>>>>> frontend_branch:build/test/MyBackendApp_test.dir/Debug/MyBacken.DD38CF24.tlog/MyBackendApp_test.lastbuildstate
