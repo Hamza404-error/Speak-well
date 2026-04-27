@@ -1,6 +1,6 @@
-^C:\PROJECTS\ASL\SPEAK-WELL\BUILD\CMAKEFILES\14A69708D1272085C098E0B27489AF5F\GENERATE.STAMP.RULE
+^C:\PROJECTS\HORIZON\BUILD\CMAKEFILES\CA7E4309ACC77643D2C9911A7F8CD015\GENERATE.STAMP.RULE
 setlocal
-"C:\Program Files\CMake\bin\cmake.exe" -SC:/Projects/ASL/Speak-well -BC:/Projects/ASL/Speak-well/build --check-stamp-list CMakeFiles/generate.stamp.list --vs-solution-file C:/Projects/ASL/Speak-well/build/MyBackendApp.slnx
+"C:\Program Files\CMake\bin\cmake.exe" -SC:/Projects/Horizon -BC:/Projects/Horizon/build --check-stamp-list CMakeFiles/generate.stamp.list --vs-solution-file C:/Projects/Horizon/build/MyBackendApp.slnx
 if %errorlevel% neq 0 goto :cmEnd
 :cmEnd
 endlocal & call :cmErrorLevel %errorlevel% & goto :cmDone
