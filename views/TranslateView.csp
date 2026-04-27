@@ -402,7 +402,11 @@
         if(ws && ws.readyState === WebSocket.OPEN && video.readyState === video.HAVE_ENOUGH_DATA) {
             canvas.width = video.videoWidth;
             canvas.height = video.videoHeight;
+            // Draw flipped video to match mirror effect
+            ctx.translate(canvas.width, 0);
+            ctx.scale(-1, 1);
             ctx.drawImage(video, 0, 0, canvas.width, canvas.height);
+            ctx.setTransform(1, 0, 0, 1, 0, 0); // reset transform
             
             // Get JPEG base64
             const dataUrl = canvas.toDataURL('image/jpeg', 0.6); 
