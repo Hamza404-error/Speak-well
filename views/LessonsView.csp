@@ -1213,7 +1213,7 @@
       <a href="/" class="logo">Sign<span>Horizon</span></a>
       <ul class="nav-links">
         <li><a href="/lesson" class="active">LESSONS</a></li>
-        <li><a href="#">PRACTICE</a></li>
+        <!-- <li><a href="#">PRACTICE</a></li> -->
         <li><a href="/dictionary">DICTIONARY</a></li>
       </ul>
       <div class="nav-icons">
@@ -1236,10 +1236,10 @@
     <div class="overall-progress">
       <span class="progress-label">Overall Progress</span>
       <div class="progress-track">
-        <div class="progress-fill" style="width:22%"></div>
+        <div class="progress-fill" style="width:0%"></div>
       </div>
-      <span class="progress-pct">22%</span>
-      <span class="progress-meta">4 / 18 lessons complete</span>
+      <span class="progress-pct">0%</span>
+      <span class="progress-meta">0 / 18 lessons complete</span>
     </div>
 
     <!-- Units -->
@@ -1261,24 +1261,24 @@
         </div>
         <div class="unit-progress-mini">
           <div class="mini-track">
-            <div class="mini-fill" style="width:40%"></div>
+            <div class="mini-fill" style="width:0%"></div>
           </div>
-          <span class="mini-label">2 / 5 complete</span>
+          <span class="mini-label">0 / 5 complete</span>
         </div>
         <div class="unit-body">
           <div class="lessons-list">
 
             <!-- Lesson 1 -->
             <div class="lesson-row"
-              onclick="openLesson(this, 'Hello','Module 1: Basic Greetings','Discover the classic \'Hello\' wave sign used throughout ASL. You will learn the handshape, proper placement, and the outward arc motion that makes this greeting universally recognizable.','3 min','99%', 'https://www.youtube.com/watch?v=0FcwzMq4iWg')">
-              <div class="lesson-icon lesson-icon-complete">✅</div>
+              onclick="openLesson(this, 'Hello','Module 1: Basic Greetings','Discover the classic \'Hello\' wave sign used throughout ASL. You will learn the handshape, proper placement, and the outward arc motion that makes this greeting universally recognizable.','3 min','0%', 'https://www.youtube.com/watch?v=MbggypBmHGw')">
+              <div class="lesson-icon lesson-icon-active">▶️</div>
               <div class="lesson-info">
                 <h3>1. Hello</h3>
                 <p>The universal greeting — handshape, placement &amp; movement</p>
               </div>
               <div class="lesson-right">
                 <span class="lesson-duration">3 min</span>
-                <span class="lesson-status-icon">✅</span>
+                <span class="lesson-status-icon">🔵</span>
               </div>
             </div>
             <div class="lesson-detail">
@@ -1287,16 +1287,16 @@
             <div class="lesson-divider"></div>
 
             <!-- Lesson 2 -->
-            <div class="lesson-row"
-              onclick="openLesson(this, 'How are you?','Module 1: Basic Greetings','Learn to ask \'How are you?\' in ASL — a flowing two-part sign combining a point and an outward roll that feels natural once you practice the wrist movement.','5 min','84%', 'https://www.youtube.com/watch?v=BO3c7Y7bIe4')">
-              <div class="lesson-icon lesson-icon-complete">✅</div>
+            <div class="lesson-row locked"
+              onclick="openLesson(this, 'How are you?','Module 1: Basic Greetings','Learn to ask \'How are you?\' in ASL — a flowing two-part sign combining a point and an outward roll that feels natural once you practice the wrist movement.','5 min','0%', 'https://www.youtube.com/watch?v=1wvGNvkRtNY', 'HOW,ARE,YOU')">
+              <div class="lesson-icon lesson-icon-locked">🔒</div>
               <div class="lesson-info">
                 <h3>2. How are you?</h3>
                 <p>Asking after someone — two-part wrist roll technique</p>
               </div>
               <div class="lesson-right">
                 <span class="lesson-duration">5 min</span>
-                <span class="lesson-status-icon">✅</span>
+                <span class="lesson-status-icon">🔒</span>
               </div>
             </div>
             <div class="lesson-detail">
@@ -1304,17 +1304,17 @@
             </div>
             <div class="lesson-divider"></div>
 
-            <!-- Lesson 3 — ACTIVE -->
-            <div class="lesson-row"
-              onclick="openLesson(this, 'My name is…','Module 1: Basic Greetings','Introduce yourself in ASL by learning the name sign construction: flat hand contact on the chin, followed by fingerspelling your initials for emphasis.','8 min','72%', 'https://www.youtube.com/watch?v=RDqlnHHYa2s')">
-              <div class="lesson-icon lesson-icon-active">▶️</div>
+            <!-- Lesson 3 -->
+            <div class="lesson-row locked"
+              onclick="openLesson(this, 'My name is…','Module 1: Basic Greetings','Introduce yourself in ASL by learning the name sign construction: flat hand contact on the chin, followed by fingerspelling your initials for emphasis.','8 min','0%', 'https://youtu.be/GN8LRLFBxNg?si=-oHC3BoN9dcVKQrV')">
+              <div class="lesson-icon lesson-icon-locked">🔒</div>
               <div class="lesson-info">
                 <h3>3. My name is…</h3>
                 <p>Introductions — name sign construction &amp; fingerspelling</p>
               </div>
               <div class="lesson-right">
                 <span class="lesson-duration">8 min</span>
-                <span class="lesson-status-icon">🔵</span>
+                <span class="lesson-status-icon">🔒</span>
               </div>
             </div>
             <div class="lesson-detail">
@@ -1777,11 +1777,13 @@
     let pendingVideoId = null;
 
     let currentVideoId = '';
+    let currentExpectedWords = '';
 
-    function openLesson(row, title, unit, desc, duration, accuracy, videoLink = '') {
-      // if (row.classList.contains('locked')) return;
+    function openLesson(row, title, unit, desc, duration, accuracy, videoLink = '', expectedWords = '') {
+      if (row.classList.contains('locked')) return;
       currentLessonRow = row;
       currentVideoId = videoLink;
+      currentExpectedWords = expectedWords ? expectedWords : title;
 
       // Update modal content
       document.getElementById('modalTitle').textContent = 'Learning the "' + title + '" Sign';
@@ -1948,7 +1950,75 @@
       }
 
       updateOverallProgress();
+      saveProgress();
       closeModal();
+    }
+
+    function saveProgress() {
+      const allLessons = Array.from(document.querySelectorAll('.lesson-row'));
+      const completed = allLessons.filter(row => row.querySelector('.lesson-icon-complete')).length;
+      localStorage.setItem('aslLessonsCompleted', completed);
+    }
+    
+    function loadProgress() {
+      const saved = localStorage.getItem('aslLessonsCompleted');
+      if (!saved) return;
+      let completedCount = parseInt(saved, 10);
+      if (isNaN(completedCount) || completedCount <= 0) return;
+      
+      const allLessons = Array.from(document.querySelectorAll('.lesson-row'));
+      for (let i = 0; i < allLessons.length; i++) {
+        const row = allLessons[i];
+        if (i < completedCount) {
+          // Mark complete
+          row.classList.remove('locked');
+          const icon = row.querySelector('.lesson-icon');
+          if (icon) { icon.className = 'lesson-icon lesson-icon-complete'; icon.textContent = '✅'; }
+          const statusIcon = row.querySelector('.lesson-status-icon');
+          if (statusIcon) statusIcon.textContent = '✅';
+        } else if (i === completedCount) {
+          // Mark active
+          row.classList.remove('locked');
+          const icon = row.querySelector('.lesson-icon');
+          if (icon) { icon.className = 'lesson-icon lesson-icon-active'; icon.textContent = '▶️'; }
+          const statusIcon = row.querySelector('.lesson-status-icon');
+          if (statusIcon) statusIcon.textContent = '🔵';
+          
+          // Ensure unit is unlocked
+          const unit = row.closest('.unit-card');
+          if (unit) {
+            unit.classList.add('open');
+            const unitBadge = unit.querySelector('.unit-badge');
+            if (unitBadge && unitBadge.classList.contains('badge-locked')) {
+              unitBadge.className = 'unit-badge badge-inprogress';
+              unitBadge.textContent = 'In Progress';
+            }
+          }
+        } else {
+          // Mark locked
+          row.classList.add('locked');
+          const icon = row.querySelector('.lesson-icon');
+          if (icon) { icon.className = 'lesson-icon lesson-icon-locked'; icon.textContent = '🔒'; }
+          const statusIcon = row.querySelector('.lesson-status-icon');
+          if (statusIcon) statusIcon.textContent = '🔒';
+        }
+      }
+      
+      // Update unit badges for fully completed units
+      const units = document.querySelectorAll('.unit-card');
+      units.forEach(unit => {
+        const unitLessons = Array.from(unit.querySelectorAll('.lesson-row'));
+        const unitCompleted = unitLessons.filter(r => r.querySelector('.lesson-icon-complete')).length;
+        const badge = unit.querySelector('.unit-badge');
+        if (unitCompleted === unitLessons.length) {
+          if (badge) {
+            badge.className = 'unit-badge badge-complete';
+            badge.textContent = 'Complete';
+          }
+        }
+      });
+      
+      updateOverallProgress();
     }
 
     function updateOverallProgress() {
@@ -1983,8 +2053,9 @@
     // ── Video placeholder click handler ──
     // (video is loaded inside iframe when user clicks play)
 
-    // ── Show Avatar if Logged In ──
+    // ── Initialization & User Data ──
     document.addEventListener('DOMContentLoaded', () => {
+      loadProgress();
       const userName = localStorage.getItem('userName');
       if (userName) {
         const firstLetter = userName.charAt(0).toUpperCase();
@@ -2003,6 +2074,8 @@
     let lessonIntervalId = null;
     let isLessonWaitingForFrame = false;
     let consecutiveSuccesses = 0;
+    let sequenceProgress = 0;
+    let lastSequenceHitTime = 0;
     
     // Normalize target sign string for robust matching against the backend
     function normalizeTargetSign(str) {
@@ -2037,6 +2110,8 @@
           outputImg.style.display = "block";
           document.getElementById('modalAccuracy').textContent = "0%";
           consecutiveSuccesses = 0;
+          sequenceProgress = 0;
+          lastSequenceHitTime = 0;
           connectLessonWS();
         })
         .catch(err => {
@@ -2097,24 +2172,60 @@
         
         // Verification Logic
         if (data.translation && data.translation !== "?") {
-           const currentTargetRaw = document.getElementById('modalActiveName').textContent;
-           const targetSign = normalizeTargetSign(currentTargetRaw);
+           const targetSequence = currentExpectedWords.split(',').map(normalizeTargetSign).filter(Boolean);
            const predicted = normalizeTargetSign(data.translation);
            
-           // Simple substring matching to map backend output to frontend lesson title
-           if (predicted === targetSign || targetSign.includes(predicted) || predicted.includes(targetSign)) {
-              consecutiveSuccesses++;
-              let acc = Math.min(100, consecutiveSuccesses * 20); // 5 consecutive hits = 100%
-              document.getElementById('modalAccuracy').textContent = acc + "%";
-              
-              if (acc === 100) {
-                 badge.style.display = "block";
-                 badge.innerText = "Target Hit! 🎉";
-                 badge.style.background = "var(--gold-light)";
-                 badge.style.color = "var(--dark)";
-                 setTimeout(() => completeCurrentLesson(), 1500); // Auto complete!
-                 stopLessonCamera();
-              }
+           if (targetSequence.length === 1) {
+               // Old logic for single word
+               const targetSign = targetSequence[0];
+               if (predicted === targetSign) {
+                  consecutiveSuccesses++;
+                  let acc = Math.min(100, consecutiveSuccesses * 20); // 5 consecutive hits = 100%
+                  document.getElementById('modalAccuracy').textContent = acc + "%";
+                  
+                  if (acc === 100) {
+                     badge.style.display = "block";
+                     badge.innerText = "Target Hit! 🎉";
+                     badge.style.background = "var(--gold-light)";
+                     badge.style.color = "var(--dark)";
+                     setTimeout(() => completeCurrentLesson(), 1500); // Auto complete!
+                     stopLessonCamera();
+                  }
+               }
+           } else {
+               // Sequence logic for phrases
+               const expectedWord = targetSequence[sequenceProgress];
+               if (predicted === expectedWord) {
+                  const now = Date.now();
+                  if (sequenceProgress > 0 && (now - lastSequenceHitTime) > 5000) {
+                      sequenceProgress = 0; // reset
+                      document.getElementById('modalAccuracy').textContent = "0%";
+                      badge.style.display = "block";
+                      badge.innerText = "Too slow! Try again.";
+                      badge.style.background = "var(--orange)";
+                      badge.style.color = "white";
+                  } else {
+                      lastSequenceHitTime = now;
+                      sequenceProgress++;
+                      
+                      let acc = Math.round((sequenceProgress / targetSequence.length) * 100);
+                      document.getElementById('modalAccuracy').textContent = acc + "%";
+                      
+                      if (sequenceProgress >= targetSequence.length) {
+                          badge.style.display = "block";
+                          badge.innerText = "Phrase Complete! 🎉";
+                          badge.style.background = "var(--gold-light)";
+                          badge.style.color = "var(--dark)";
+                          setTimeout(() => completeCurrentLesson(), 1500); // Auto complete!
+                          stopLessonCamera();
+                      } else {
+                          badge.style.display = "block";
+                          badge.innerText = `Matched: ${predicted.toUpperCase()} (Next: ${targetSequence[sequenceProgress].toUpperCase()})`;
+                          badge.style.background = "var(--blue-light)";
+                          badge.style.color = "white";
+                      }
+                  }
+               }
            }
         }
       };
@@ -2140,7 +2251,13 @@
         if (h > maxH) { w = Math.round(w * (maxH / h)); h = maxH; }
         canvas.width = w; canvas.height = h;
         ctx.drawImage(video, 0, 0, w, h);
-        lessonWs.send(canvas.toDataURL('image/jpeg', 0.6));
+        
+        const payload = {
+            image: canvas.toDataURL('image/jpeg', 0.6),
+            mode: "test",
+            target: currentExpectedWords
+        };
+        lessonWs.send(JSON.stringify(payload));
       }
     }
   </script>

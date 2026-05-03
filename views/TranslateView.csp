@@ -400,7 +400,10 @@
             if(data.image) {
                 outputImage.src = "data:image/jpeg;base64," + data.image;
             }
-            if(data.translation && data.translation !== "?") {
+            if(data.spelling) {
+                transText.innerText = "Spelling: " + data.spelling;
+                lastSpokenTranslation = ""; // Reset so the full word can be spoken later
+            } else if(data.translation && data.translation !== "?") {
                 transText.innerText = data.translation;
                 
                 // Speak if it's a new translation we haven't just spoken

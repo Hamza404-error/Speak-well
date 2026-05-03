@@ -28,11 +28,14 @@ class HandDetector:
                 if len(row) < 43: continue # 1 label + at least 42 features
                 feats = [float(x) if x.strip() != '' else 0.0 for x in row[1:]]
                 if len(feats) == 42:
-                    feats.extend([0.0, 0.0, 0.0, 0.0]) # Pad 4 motion features
-                if len(feats) == 46:
-                    feats.extend([0.0, 0.0, 0.0, 0.0, 0.0]) # Pad 5 pose features
-                if len(feats) >= 51:
-                    X.append(feats[:51])
+                    feats.extend([0.0] * 9) # Pad 4 motion + 5 pose features
+                elif len(feats) == 46:
+                    feats.extend([0.0] * 5) # Pad 5 pose features
+                elif len(feats) > 51:
+                    feats = feats[:51] # Ensure exactly 51 for detector
+                
+                if len(feats) == 51:
+                    X.append(feats)
                     y.append(row[0])
                 
         if len(X) == 0:
@@ -69,12 +72,18 @@ class ASLClassifier:
             for row in reader:
                 if len(row) < 43: continue 
                 feats = [float(x) if x.strip() != '' else 0.0 for x in row[1:]]
+                if len(feats) == 54:
+                    feats = feats[:51] # Drop old padding
+                    
                 if len(feats) == 42:
-                    feats.extend([0.0, 0.0, 0.0, 0.0]) # Pad 4 motion features
-                if len(feats) == 46:
-                    feats.extend([0.0, 0.0, 0.0, 0.0, 0.0]) # Pad 5 pose features
-                if len(feats) >= 51:
-                    X.append(feats[:51])
+                    feats.extend([0.0] * 60) # Pad to 102
+                elif len(feats) == 46:
+                    feats.extend([0.0] * 56) # Pad to 102
+                elif len(feats) == 51:
+                    feats.extend([0.0] * 51) # Pad second hand
+                
+                if len(feats) >= 102:
+                    X.append(feats[:102])
                     y.append(row[0])
                 
         if len(X) == 0:
@@ -87,11 +96,31 @@ class ASLClassifier:
         self.is_trained = True
         return True
 
-    def predict(self, features):
+    def predict(self, features, mode="translation", target=""):
         if not self.is_trained:
             return '?'
-        pred = self.knn.predict([features])
-        return pred[0]
+            
+        distances, _ = self.knn.kneighbors([features], n_neighbors=1)
+        
+        # Threshold: if distance is too large, the gesture is incorrect
+        dist = distances[0][0]
+        if dist > 4.5:  # Tunable threshold
+            return '?'
+            
+        pred = self.knn.predict([features])[0]
+        
+        print(f"[AI] Mode: {mode} | Target: '{target}' | Pred: '{pred}' | Dist: {dist:.2f}")
+        
+        if mode == "test" and target:
+            # Target can be a comma-separated list of expected sequence words
+            target_words = [t.upper().strip() for t in target.split(',')]
+            pred_norm = pred.upper().strip()
+            
+            # Must strictly match one of the expected words
+            if pred_norm not in target_words:
+                return '?'
+                
+        return pred
 
 def log_data(filepath, label, features):
     file_exists = os.path.exists(filepath)
@@ -109,6 +138,10 @@ def log_data(filepath, label, features):
         return False
 
 def main():
+    import time
+    recording_word = None
+    recording_start_time = 0
+
     detector = HandDetector()
     translator = ASLClassifier()
 
@@ -170,6 +203,7 @@ def main():
             if not hasattr(detector, 'histories'):
                 detector.histories = {'Left': [], 'Right': []}
                 
+            valid_hands = []
             for i, hand_landmarks in enumerate(results.hand_landmarks):
                 cat = results.handedness[i][0]
                 handedness = cat.category_name or cat.display_name
@@ -242,45 +276,74 @@ def main():
                 features.extend([nose_offset_x, nose_offset_y, torso_offset_x, torso_offset_y])
 
                 if len(features) == 51:
-                    if not primary_features:
-                        primary_features = features
-                        
                     if not detector.is_hand(features):
                         cv2.putText(image, f"Object ignored ({handedness})", (50, 50 + i*40), cv2.FONT_HERSHEY_SIMPLEX, 0.8, (0, 0, 255), 2)
                     else:
-                        # Draw the skeleton perfectly manually!
-                        HAND_CONNECTIONS = [
-                            (0,1), (1,2), (2,3), (3,4),
-                            (0,5), (5,6), (6,7), (7,8),
-                            (0,9), (9,10), (10,11), (11,12),
-                            (0,13), (13,14), (14,15), (15,16),
-                            (0,17), (17,18), (18,19), (19,20)
-                        ]
-                        for conn in HAND_CONNECTIONS:
-                            p1, p2 = hand_landmarks[conn[0]], hand_landmarks[conn[1]]
-                            x1, y1 = int(p1.x * w), int(p1.y * h)
-                            x2, y2 = int(p2.x * w), int(p2.y * h)
-                            cv2.line(image, (x1, y1), (x2, y2), (0, 255, 255), 2)
-                        
-                        for lm in hand_landmarks:
-                            tx, ty = int(lm.x * w), int(lm.y * h)
-                            cv2.circle(image, (tx, ty), 4, (0, 0, 255), -1)
-                        
-                        translated = translator.predict(features)
-                        if translated != '?':
-                            wx, wy = int(hand_landmarks[0].x * w), int(hand_landmarks[0].y * h)
-                            cv2.putText(image, translated, (max(wx - 20, 10), max(wy + 40, 10)), cv2.FONT_HERSHEY_SIMPLEX, 1.5, (0, 255, 0), 3)
+                        valid_hands.append((hand_landmarks[0].x, features, hand_landmarks, wrist_dx, wrist_dy))
 
-                        # Movement text
-                        movement_magnitude = (wrist_dx**2 + wrist_dy**2)**0.5
-                        if movement_magnitude > 0.02:
-                            wx, wy = int(hand_landmarks[0].x * w), int(hand_landmarks[0].y * h)
-                            cv2.putText(image, "Motion", (max(wx + 20, 10), max(wy + 40, 10)), cv2.FONT_HERSHEY_SIMPLEX, 0.8, (255, 100, 100), 2)
+            if valid_hands:
+                # Sort hands from left to right on the screen
+                valid_hands.sort(key=lambda x: x[0])
+                
+                for _, features, hand_landmarks, wrist_dx, wrist_dy in valid_hands:
+                    # Draw the skeleton perfectly manually!
+                    HAND_CONNECTIONS = [
+                        (0,1), (1,2), (2,3), (3,4),
+                        (0,5), (5,6), (6,7), (7,8),
+                        (0,9), (9,10), (10,11), (11,12),
+                        (0,13), (13,14), (14,15), (15,16),
+                        (0,17), (17,18), (18,19), (19,20)
+                    ]
+                    for conn in HAND_CONNECTIONS:
+                        p1, p2 = hand_landmarks[conn[0]], hand_landmarks[conn[1]]
+                        x1, y1 = int(p1.x * w), int(p1.y * h)
+                        x2, y2 = int(p2.x * w), int(p2.y * h)
+                        cv2.line(image, (x1, y1), (x2, y2), (0, 255, 255), 2)
+                    
+                    for lm in hand_landmarks:
+                        tx, ty = int(lm.x * w), int(lm.y * h)
+                        cv2.circle(image, (tx, ty), 4, (0, 0, 255), -1)
+
+                    # Movement text
+                    movement_magnitude = (wrist_dx**2 + wrist_dy**2)**0.5
+                    if movement_magnitude > 0.02:
+                        wx, wy = int(hand_landmarks[0].x * w), int(hand_landmarks[0].y * h)
+                        cv2.putText(image, "Motion", (max(wx + 20, 10), max(wy + 40, 10)), cv2.FONT_HERSHEY_SIMPLEX, 0.8, (255, 100, 100), 2)
+
+                # Combine features
+                combined_features = valid_hands[0][1].copy()
+                if len(valid_hands) > 1:
+                    combined_features.extend(valid_hands[1][1])
+                else:
+                    combined_features.extend([0.0] * 51)
+                
+                primary_features = combined_features
+                translated = translator.predict(combined_features)
+                if translated != '?':
+                    wx, wy = int(valid_hands[0][2][0].x * w), int(valid_hands[0][2][0].y * h)
+                    cv2.putText(image, translated, (max(wx - 20, 10), max(wy + 40, 10)), cv2.FONT_HERSHEY_SIMPLEX, 1.5, (0, 255, 0), 3)
+
         else:
             cv2.putText(image, "No skeleton located", (50, 50), cv2.FONT_HERSHEY_SIMPLEX, 1.0, (0, 0, 255), 2)
             if hasattr(detector, 'histories'):
                 detector.histories['Left'].clear()
                 detector.histories['Right'].clear()
+
+        if recording_word:
+            elapsed = time.time() - recording_start_time
+            remaining = 2.0 - elapsed
+            if remaining > 0:
+                cv2.putText(image, f"Capturing in {remaining:.1f}...", (w//2 - 200, h//2), cv2.FONT_HERSHEY_SIMPLEX, 1.5, (0, 0, 255), 4)
+            else:
+                if len(primary_features) == 102:
+                    if log_data("asl_data_real.csv", recording_word, primary_features):
+                        translator.train_model("asl_data_real.csv")
+                        print(f"Logged word '{recording_word}'. Resuming camera...")
+                        # Flash screen green for a frame
+                        cv2.rectangle(image, (0, 0), (w, h), (0, 255, 0), 20)
+                else:
+                    print("Could not detect hands! Try again.")
+                recording_word = None
 
         cv2.putText(image, "A-Z for Letters | SPACE for Word", (10, image.shape[0] - 20), cv2.FONT_HERSHEY_SIMPLEX, 0.6, (255, 255, 0), 2)
         cv2.imshow('Live ASL Translator Python', image)
@@ -289,31 +352,31 @@ def main():
         if key == 27:
             break
             #logging data for ASL letters (A-Z) and words (SPACEBAR)
-        if len(primary_features) == 51:
+        if len(primary_features) == 102:
             if 97 <= key <= 122 or 65 <= key <= 90: # a-z or A-Z
                 label = chr(key).upper()
-                if log_data("asl_data_real.csv", label, features):
+                if log_data("asl_data_real.csv", label, primary_features):
                     translator.train_model("asl_data_real.csv")
-            elif key == 32: # SPACEBAR
-                import tkinter as tk
-                from tkinter import simpledialog
-                root = tk.Tk()
-                root.withdraw()
-                root.attributes('-topmost', True)
-                word_label = simpledialog.askstring("Log ASL Word", "CAMERA PAUSED.\nEnter Word Label (e.g. HELLO):", parent=root)
-                root.destroy()
-                
-                if word_label and word_label.strip():
-                    word_label = word_label.strip().upper()
-                    if log_data("asl_data_real.csv", word_label, features):
-                        translator.train_model("asl_data_real.csv")
-                        print(f"Logged word '{word_label}'. Resuming camera...")
-                else:
-                    print("No word entered. Resuming camera...")
             elif key == 48 or key == 49: # '0' or '1'
                 char_key = chr(key)
-                if log_data("hand_detection_data.csv", char_key, features):
+                if log_data("hand_detection_data.csv", char_key, primary_features[:51]):
                     detector.train_model("hand_detection_data.csv")
+                    
+        if key == 32 and not recording_word: # SPACEBAR
+            import tkinter as tk
+            from tkinter import simpledialog
+            root = tk.Tk()
+            root.withdraw()
+            root.attributes('-topmost', True)
+            word_label = simpledialog.askstring("Log ASL Word", "CAMERA PAUSED.\nEnter Word Label (e.g. HELLO):", parent=root)
+            root.destroy()
+            
+            if word_label and word_label.strip():
+                recording_word = word_label.strip().upper()
+                recording_start_time = time.time()
+                print(f"Get ready to sign '{recording_word}'!")
+            else:
+                print("No word entered. Resuming camera...")
                 
     cap.release()
     cv2.destroyAllWindows()

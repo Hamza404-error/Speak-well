@@ -46,6 +46,14 @@ int main() {
         callback(resp);
     });
 
+    drogon::app().registerHandler("/translate",
+    [](const drogon::HttpRequestPtr &,
+       std::function<void(const drogon::HttpResponsePtr &)> &&callback) {
+        
+        auto resp = drogon::HttpResponse::newHttpViewResponse("TranslateView");
+        callback(resp);
+    });
+
     drogon::app().registerHandler("/dictionary",
     [](const drogon::HttpRequestPtr &,
        std::function<void(const drogon::HttpResponsePtr &)> &&callback) {

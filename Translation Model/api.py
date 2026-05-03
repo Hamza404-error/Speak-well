@@ -79,18 +79,43 @@ async def websocket_endpoint(websocket: WebSocket):
     detector.history = []
     prediction_buffer = []
     last_spoken = ""
+    
+    # Macro States
+    last_translations = [] # list of (word, timestamp)
+    macro_state = "IDLE"
+    fingerspell_word = ""
+    last_letter_time = 0.0
+    
     try:
         while True:
             data = await websocket.receive_text()
             
-            if ',' in data:
-                data = data.split(',')[1]
-            try:
-                img_data = base64.b64decode(data)
-                nparr = np.frombuffer(img_data, np.uint8)
-                image = cv2.imdecode(nparr, cv2.IMREAD_COLOR)
-            except Exception:
-                continue
+            mode = "translation"
+            target = ""
+            
+            if data.startswith('{'):
+                import json
+                try:
+                    payload = json.loads(data)
+                    mode = payload.get("mode", "translation")
+                    target = payload.get("target", "")
+                    img_str = payload.get("image", "")
+                    if ',' in img_str:
+                        img_str = img_str.split(',')[1]
+                    img_data = base64.b64decode(img_str)
+                    nparr = np.frombuffer(img_data, np.uint8)
+                    image = cv2.imdecode(nparr, cv2.IMREAD_COLOR)
+                except Exception:
+                    continue
+            else:
+                if ',' in data:
+                    data = data.split(',')[1]
+                try:
+                    img_data = base64.b64decode(data)
+                    nparr = np.frombuffer(img_data, np.uint8)
+                    image = cv2.imdecode(nparr, cv2.IMREAD_COLOR)
+                except Exception:
+                    continue
                 
             if image is None:
                 continue
@@ -126,7 +151,7 @@ async def websocket_endpoint(websocket: WebSocket):
                 if not hasattr(detector, 'histories'):
                     detector.histories = {'Left': [], 'Right': []}
                 
-                translations_this_frame = []
+                valid_hands = []
                 
                 for i, hand_landmarks in enumerate(results.hand_landmarks):
                     cat = results.handedness[i][0]
@@ -196,35 +221,36 @@ async def websocket_endpoint(websocket: WebSocket):
                         if not detector.is_hand(features):
                             cv2.putText(image, f"Object ignored ({handedness})", (50, 50 + i*40), cv2.FONT_HERSHEY_SIMPLEX, 0.8, (0, 0, 255), 2)
                         else:
-                            HAND_CONNECTIONS = [
-                                (0,1), (1,2), (2,3), (3,4),
-                                (0,5), (5,6), (6,7), (7,8),
-                                (0,9), (9,10), (10,11), (11,12),
-                                (0,13), (13,14), (14,15), (15,16),
-                                (0,17), (17,18), (18,19), (19,20)
-                            ]
-                            for conn in HAND_CONNECTIONS:
-                                p1, p2 = hand_landmarks[conn[0]], hand_landmarks[conn[1]]
-                                x1, y1 = int(p1.x * w), int(p1.y * h)
-                                x2, y2 = int(p2.x * w), int(p2.y * h)
-                                cv2.line(image, (x1, y1), (x2, y2), (0, 255, 255), 2)
+                            valid_hands.append((hand_landmarks[0].x, features, hand_landmarks))
                             
-                            for lm in hand_landmarks:
-                                tx, ty = int(lm.x * w), int(lm.y * h)
-                                cv2.circle(image, (tx, ty), 4, (0, 0, 255), -1)
-                            
-                            raw_t = translator.predict(features)
-                            if raw_t != '?':
-                                wx = hand_landmarks[0].x
-                                translations_this_frame.append((wx, raw_t))
+                if valid_hands:
+                    valid_hands.sort(key=lambda x: x[0])
+                    
+                    for _, _, hand_landmarks in valid_hands:
+                        HAND_CONNECTIONS = [
+                            (0,1), (1,2), (2,3), (3,4),
+                            (0,5), (5,6), (6,7), (7,8),
+                            (0,9), (9,10), (10,11), (11,12),
+                            (0,13), (13,14), (14,15), (15,16),
+                            (0,17), (17,18), (18,19), (19,20)
+                        ]
+                        for conn in HAND_CONNECTIONS:
+                            p1, p2 = hand_landmarks[conn[0]], hand_landmarks[conn[1]]
+                            x1, y1 = int(p1.x * w), int(p1.y * h)
+                            x2, y2 = int(p2.x * w), int(p2.y * h)
+                            cv2.line(image, (x1, y1), (x2, y2), (0, 255, 255), 2)
+                        
+                        for lm in hand_landmarks:
+                            tx, ty = int(lm.x * w), int(lm.y * h)
+                            cv2.circle(image, (tx, ty), 4, (0, 0, 255), -1)
 
-                if translations_this_frame:
-                    translations_this_frame.sort(key=lambda item: item[0])
-                    unique_t = []
-                    for _, label in translations_this_frame:
-                        if label not in unique_t:
-                            unique_t.append(label)
-                    raw_translation = " | ".join(unique_t)
+                    combined_features = valid_hands[0][1].copy()
+                    if len(valid_hands) > 1:
+                        combined_features.extend(valid_hands[1][1])
+                    else:
+                        combined_features.extend([0.0] * 51)
+                        
+                    raw_translation = translator.predict(combined_features, mode=mode, target=target)
                 else:
                     raw_translation = "?"
                 
@@ -251,26 +277,73 @@ async def websocket_endpoint(websocket: WebSocket):
                     detector.histories['Left'].clear()
                     detector.histories['Right'].clear()
 
-            # TTS Processing in Python Backend
+            # Macro and State Machine Logic
+            spelling_out = ""
+            import time
+            now = time.time()
+            
+            # Check for macro timeouts and logic
+            if mode == "translation" and macro_state == "FINGERSPELL_WAIT":
+                if fingerspell_word and (now - last_letter_time) > 3.0:
+                    # Commit the spelled word
+                    translation = fingerspell_word
+                    macro_state = "IDLE"
+                    fingerspell_word = ""
+                else:
+                    spelling_out = fingerspell_word
+                    
+                    if translation != "?" and len(translation) == 1:
+                        if not fingerspell_word or translation != fingerspell_word[-1]:
+                            fingerspell_word += translation
+                            last_letter_time = now
+                            spelling_out = fingerspell_word
+                    # intercept standard translation so UI doesn't speak letters
+                    translation = "?"
+                    
+            elif mode == "translation" and translation != "?" and translation != last_spoken:
+                # Normal translation processing
+                last_translations.append((translation, now))
+                # keep last 10 seconds
+                last_translations = [t for t in last_translations if now - t[1] < 10.0]
+                
+                if len(last_translations) >= 2:
+                    w1 = last_translations[-2][0]
+                    w2 = last_translations[-1][0]
+                    
+                    if w1 == "HOW" and w2 == "YOU":
+                        translation = "HOW ARE YOU"
+                        last_translations.clear()
+                    elif w1 == "MY" and w2 == "NAME":
+                        translation = "MY NAME IS"
+                        macro_state = "FINGERSPELL_WAIT"
+                        fingerspell_word = ""
+                        last_letter_time = now
+                        last_translations.clear()
+
+            # Update TTS and last_spoken state
             if translation and translation != "?":
                 if translation != last_spoken:
-                    tts_queue.put(translation)
+                    try:
+                        tts_queue.put(translation)
+                    except NameError:
+                        pass
                     last_spoken = translation
             else:
                 if not results.hand_landmarks:
-                    last_spoken = ""  # Reset when hand drops
+                    last_spoken = ""
                 elif translation == "?":
-                    last_spoken = ""  # Reset when transitioning or recognising
-
-            # Re-encode image to base64 jpeg
-            _, buffer = cv2.imencode('.jpg', image, [cv2.IMWRITE_JPEG_QUALITY, 70])
+                    last_spoken = ""
+            
+            _, buffer = cv2.imencode('.jpg', image, [int(cv2.IMWRITE_JPEG_QUALITY), 60])
             b64_image = base64.b64encode(buffer).decode('utf-8')
             
-            await websocket.send_json({
+            payload_out = {
                 "image": b64_image,
                 "translation": translation,
+                "spelling": spelling_out,
                 "skeleton_found": bool(results.hand_landmarks)
-            })
+            }
+            await websocket.send_json(payload_out)
             
     except WebSocketDisconnect:
         print("Client disconnected.")
