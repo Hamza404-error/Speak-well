@@ -799,6 +799,8 @@ if %errorlevel% neq 0 goto :VCEnd</Command>
     <ClCompile Include="C:\Projects\ASL\Speak-well\build\LearnView.cc" />
     <ClCompile Include="C:\Projects\ASL\Speak-well\build\LessonsView.cc" />
     <ClCompile Include="C:\Projects\ASL\Speak-well\build\TranslateView.cc" />
+    <ClCompile Include="C:\Projects\ASL\Speak-well\controllers\ApiController.cc" />
+    <ClCompile Include="C:\Projects\ASL\Speak-well\controllers\PageController.cc" />
   </ItemGroup>
   <ItemGroup />
   <ItemGroup>

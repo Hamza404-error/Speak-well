@@ -19,6 +19,12 @@
     <ClCompile Include="C:\Projects\ASL\Speak-well\build\TranslateView.cc">
       <Filter>Source Files</Filter>
     </ClCompile>
+    <ClCompile Include="C:\Projects\ASL\Speak-well\controllers\ApiController.cc">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="C:\Projects\ASL\Speak-well\controllers\PageController.cc">
+      <Filter>Source Files</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <CustomBuild Include="C:\Projects\ASL\Speak-well\build\CMakeFiles\cd86ab54237829555bf1e0f26bcb5c5e\DictionaryView.h.rule">

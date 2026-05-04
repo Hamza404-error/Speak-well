@@ -4,3 +4,5 @@ C:\Projects\ASL\Speak-well\build\HomeView.cc;C:\Projects\ASL\Speak-well\build\My
 C:\Projects\ASL\Speak-well\build\LearnView.cc;C:\Projects\ASL\Speak-well\build\MyBackendApp.dir\Debug\LearnView.obj
 C:\Projects\ASL\Speak-well\build\LessonsView.cc;C:\Projects\ASL\Speak-well\build\MyBackendApp.dir\Debug\LessonsView.obj
 C:\Projects\ASL\Speak-well\build\TranslateView.cc;C:\Projects\ASL\Speak-well\build\MyBackendApp.dir\Debug\TranslateView.obj
+C:\Projects\ASL\Speak-well\controllers\ApiController.cc;C:\Projects\ASL\Speak-well\build\MyBackendApp.dir\Debug\ApiController.obj
+C:\Projects\ASL\Speak-well\controllers\PageController.cc;C:\Projects\ASL\Speak-well\build\MyBackendApp.dir\Debug\PageController.obj

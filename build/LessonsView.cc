@@ -1233,10 +1233,6 @@ LessonsView_tmp_stream<<"\n";
 	LessonsView_tmp_stream << "      <a href=\"/\" class=\"logo\">Speak Well</a>\n";
 	LessonsView_tmp_stream << "      <ul class=\"nav-links\">\n";
 	LessonsView_tmp_stream << "        <li><a href=\"/lesson\" class=\"active\">LESSONS</a></li>\n";
-<<<<<<< HEAD
-=======
-	LessonsView_tmp_stream << "        <!-- <li><a href=\"#\">PRACTICE</a></li> -->\n";
->>>>>>> 9ea2ec77be3bd00b188b27826bc100927706a131
 	LessonsView_tmp_stream << "        <li><a href=\"/dictionary\">DICTIONARY</a></li>\n";
 	LessonsView_tmp_stream << "      </ul>\n";
 	LessonsView_tmp_stream << "      <div class=\"nav-icons\">\n";
@@ -1346,11 +1342,7 @@ LessonsView_tmp_stream<<"\n";
 LessonsView_tmp_stream<<"\n";
 	LessonsView_tmp_stream << "            <!-- Lesson 4 -->\n";
 	LessonsView_tmp_stream << "            <div class=\"lesson-row locked\"\n";
-<<<<<<< HEAD
-	LessonsView_tmp_stream << "              onclick=\"openLesson(this, 'Nice to meet you', 'Module 1: Basic Greetings', '', '6 min', '0%', 'BO3c7Y7bIe4')\">\n";
-=======
 	LessonsView_tmp_stream << "              onclick=\"openLesson(this, 'Nice to meet you', 'Module 1: Basic Greetings', '', '6 min', '0%', 'https://www.youtube.com/watch?v=BO3c7Y7bIe4')\">\n";
->>>>>>> 9ea2ec77be3bd00b188b27826bc100927706a131
 	LessonsView_tmp_stream << "              <div class=\"lesson-icon lesson-icon-locked\">🔒</div>\n";
 	LessonsView_tmp_stream << "              <div class=\"lesson-info\">\n";
 	LessonsView_tmp_stream << "                <h3>4. Nice to meet you</h3>\n";
@@ -1368,11 +1360,7 @@ LessonsView_tmp_stream<<"\n";
 LessonsView_tmp_stream<<"\n";
 	LessonsView_tmp_stream << "            <!-- Lesson 5 -->\n";
 	LessonsView_tmp_stream << "            <div class=\"lesson-row locked\"\n";
-<<<<<<< HEAD
-	LessonsView_tmp_stream << "              onclick=\"openLesson(this, 'Goodbye &amp; See you later', 'Module 1: Basic Greetings', '', '4 min', '0%', 'BO3c7Y7bIe4')\">\n";
-=======
 	LessonsView_tmp_stream << "              onclick=\"openLesson(this, 'Goodbye &amp; See you later', 'Module 1: Basic Greetings', '', '4 min', '0%', 'https://www.youtube.com/watch?v=BO3c7Y7bIe4')\">\n";
->>>>>>> 9ea2ec77be3bd00b188b27826bc100927706a131
 	LessonsView_tmp_stream << "              <div class=\"lesson-icon lesson-icon-locked\">🔒</div>\n";
 	LessonsView_tmp_stream << "              <div class=\"lesson-info\">\n";
 	LessonsView_tmp_stream << "                <h3>5. Goodbye &amp; See you later</h3>\n";
@@ -1414,11 +1402,7 @@ LessonsView_tmp_stream<<"\n";
 	LessonsView_tmp_stream << "        <div class=\"unit-body\">\n";
 	LessonsView_tmp_stream << "          <div class=\"lessons-list\">\n";
 	LessonsView_tmp_stream << "            <div class=\"lesson-row locked\"\n";
-<<<<<<< HEAD
-	LessonsView_tmp_stream << "              onclick=\"openLesson(this, 'Numbers 1–10', 'Module 2: Numbers &amp; Counting', '', '7 min', '0%', '0Z46mYh6JtI')\">\n";
-=======
 	LessonsView_tmp_stream << "              onclick=\"openLesson(this, 'Numbers 1–10', 'Module 2: Numbers &amp; Counting', '', '7 min', '0%', 'https://www.youtube.com/watch?v=0Z46mYh6JtI')\">\n";
->>>>>>> 9ea2ec77be3bd00b188b27826bc100927706a131
 	LessonsView_tmp_stream << "              <div class=\"lesson-icon lesson-icon-locked\">🔒</div>\n";
 	LessonsView_tmp_stream << "              <div class=\"lesson-info\">\n";
 	LessonsView_tmp_stream << "                <h3>1. Numbers 1–10</h3>\n";
@@ -1432,11 +1416,7 @@ LessonsView_tmp_stream<<"\n";
 	LessonsView_tmp_stream << "            </div>\n";
 	LessonsView_tmp_stream << "            <div class=\"lesson-divider\"></div>\n";
 	LessonsView_tmp_stream << "            <div class=\"lesson-row locked\"\n";
-<<<<<<< HEAD
-	LessonsView_tmp_stream << "              onclick=\"openLesson(this, 'Numbers 11–20', 'Module 2: Numbers &amp; Counting', '', '6 min', '0%', '0Z46mYh6JtI')\">\n";
-=======
 	LessonsView_tmp_stream << "              onclick=\"openLesson(this, 'Numbers 11–20', 'Module 2: Numbers &amp; Counting', '', '6 min', '0%', 'https://www.youtube.com/watch?v=0Z46mYh6JtI')\">\n";
->>>>>>> 9ea2ec77be3bd00b188b27826bc100927706a131
 	LessonsView_tmp_stream << "              <div class=\"lesson-icon lesson-icon-locked\">🔒</div>\n";
 	LessonsView_tmp_stream << "              <div class=\"lesson-info\">\n";
 	LessonsView_tmp_stream << "                <h3>2. Numbers 11–20</h3>\n";
@@ -1450,11 +1430,7 @@ LessonsView_tmp_stream<<"\n";
 	LessonsView_tmp_stream << "            </div>\n";
 	LessonsView_tmp_stream << "            <div class=\"lesson-divider\"></div>\n";
 	LessonsView_tmp_stream << "            <div class=\"lesson-row locked\"\n";
-<<<<<<< HEAD
-	LessonsView_tmp_stream << "              onclick=\"openLesson(this, 'Tens &amp; Hundreds', 'Module 2: Numbers &amp; Counting', '', '8 min', '0%', 'p4vW7m9W9lU')\">\n";
-=======
 	LessonsView_tmp_stream << "              onclick=\"openLesson(this, 'Tens &amp; Hundreds', 'Module 2: Numbers &amp; Counting', '', '8 min', '0%', 'https://www.youtube.com/watch?v=p4vW7m9W9lU')\">\n";
->>>>>>> 9ea2ec77be3bd00b188b27826bc100927706a131
 	LessonsView_tmp_stream << "              <div class=\"lesson-icon lesson-icon-locked\">🔒</div>\n";
 	LessonsView_tmp_stream << "              <div class=\"lesson-info\">\n";
 	LessonsView_tmp_stream << "                <h3>3. Tens &amp; Hundreds</h3>\n";
@@ -1468,11 +1444,7 @@ LessonsView_tmp_stream<<"\n";
 	LessonsView_tmp_stream << "            </div>\n";
 	LessonsView_tmp_stream << "            <div class=\"lesson-divider\"></div>\n";
 	LessonsView_tmp_stream << "            <div class=\"lesson-row locked\"\n";
-<<<<<<< HEAD
-	LessonsView_tmp_stream << "              onclick=\"openLesson(this, 'Counting in Context', 'Module 2: Numbers &amp; Counting', '', '9 min', '0%', '0Z46mYh6JtI')\">\n";
-=======
 	LessonsView_tmp_stream << "              onclick=\"openLesson(this, 'Counting in Context', 'Module 2: Numbers &amp; Counting', '', '9 min', '0%', 'https://www.youtube.com/watch?v=0Z46mYh6JtI')\">\n";
->>>>>>> 9ea2ec77be3bd00b188b27826bc100927706a131
 	LessonsView_tmp_stream << "              <div class=\"lesson-icon lesson-icon-locked\">🔒</div>\n";
 	LessonsView_tmp_stream << "              <div class=\"lesson-info\">\n";
 	LessonsView_tmp_stream << "                <h3>4. Counting in Context</h3>\n";
@@ -1511,11 +1483,7 @@ LessonsView_tmp_stream<<"\n";
 	LessonsView_tmp_stream << "        <div class=\"unit-body\">\n";
 	LessonsView_tmp_stream << "          <div class=\"lessons-list\">\n";
 	LessonsView_tmp_stream << "            <div class=\"lesson-row locked\"\n";
-<<<<<<< HEAD
-	LessonsView_tmp_stream << "              onclick=\"openLesson(this, 'Happy &amp; Sad', 'Module 3: Emotions &amp; Feelings', '', '5 min', '0%', 'p4vW7m9W9lU')\">\n";
-=======
 	LessonsView_tmp_stream << "              onclick=\"openLesson(this, 'Happy &amp; Sad', 'Module 3: Emotions &amp; Feelings', '', '5 min', '0%', 'https://www.youtube.com/watch?v=p4vW7m9W9lU')\">\n";
->>>>>>> 9ea2ec77be3bd00b188b27826bc100927706a131
 	LessonsView_tmp_stream << "              <div class=\"lesson-icon lesson-icon-locked\">🔒</div>\n";
 	LessonsView_tmp_stream << "              <div class=\"lesson-info\">\n";
 	LessonsView_tmp_stream << "                <h3>1. Happy &amp; Sad</h3>\n";
@@ -1529,11 +1497,7 @@ LessonsView_tmp_stream<<"\n";
 	LessonsView_tmp_stream << "            </div>\n";
 	LessonsView_tmp_stream << "            <div class=\"lesson-divider\"></div>\n";
 	LessonsView_tmp_stream << "            <div class=\"lesson-row locked\"\n";
-<<<<<<< HEAD
-	LessonsView_tmp_stream << "              onclick=\"openLesson(this, 'Excited &amp; Nervous', 'Module 3: Emotions &amp; Feelings', '', '6 min', '0%', 'p4vW7m9W9lU')\">\n";
-=======
 	LessonsView_tmp_stream << "              onclick=\"openLesson(this, 'Excited &amp; Nervous', 'Module 3: Emotions &amp; Feelings', '', '6 min', '0%', 'https://www.youtube.com/watch?v=p4vW7m9W9lU')\">\n";
->>>>>>> 9ea2ec77be3bd00b188b27826bc100927706a131
 	LessonsView_tmp_stream << "              <div class=\"lesson-icon lesson-icon-locked\">🔒</div>\n";
 	LessonsView_tmp_stream << "              <div class=\"lesson-info\">\n";
 	LessonsView_tmp_stream << "                <h3>2. Excited &amp; Nervous</h3>\n";
@@ -1547,11 +1511,7 @@ LessonsView_tmp_stream<<"\n";
 	LessonsView_tmp_stream << "            </div>\n";
 	LessonsView_tmp_stream << "            <div class=\"lesson-divider\"></div>\n";
 	LessonsView_tmp_stream << "            <div class=\"lesson-row locked\"\n";
-<<<<<<< HEAD
-	LessonsView_tmp_stream << "              onclick=\"openLesson(this, 'Angry &amp; Frustrated', 'Module 3: Emotions &amp; Feelings', '', '7 min', '0%', 'p4vW7m9W9lU')\">\n";
-=======
 	LessonsView_tmp_stream << "              onclick=\"openLesson(this, 'Angry &amp; Frustrated', 'Module 3: Emotions &amp; Feelings', '', '7 min', '0%', 'https://www.youtube.com/watch?v=p4vW7m9W9lU')\">\n";
->>>>>>> 9ea2ec77be3bd00b188b27826bc100927706a131
 	LessonsView_tmp_stream << "              <div class=\"lesson-icon lesson-icon-locked\">🔒</div>\n";
 	LessonsView_tmp_stream << "              <div class=\"lesson-info\">\n";
 	LessonsView_tmp_stream << "                <h3>3. Angry &amp; Frustrated</h3>\n";
@@ -1565,11 +1525,7 @@ LessonsView_tmp_stream<<"\n";
 	LessonsView_tmp_stream << "            </div>\n";
 	LessonsView_tmp_stream << "            <div class=\"lesson-divider\"></div>\n";
 	LessonsView_tmp_stream << "            <div class=\"lesson-row locked\"\n";
-<<<<<<< HEAD
-	LessonsView_tmp_stream << "              onclick=\"openLesson(this, 'Surprised &amp; Confused', 'Module 3: Emotions &amp; Feelings', '', '5 min', '0%', 'RDqlnHHYa2s')\">\n";
-=======
 	LessonsView_tmp_stream << "              onclick=\"openLesson(this, 'Surprised &amp; Confused', 'Module 3: Emotions &amp; Feelings', '', '5 min', '0%', 'https://www.youtube.com/watch?v=RDqlnHHYa2s')\">\n";
->>>>>>> 9ea2ec77be3bd00b188b27826bc100927706a131
 	LessonsView_tmp_stream << "              <div class=\"lesson-icon lesson-icon-locked\">🔒</div>\n";
 	LessonsView_tmp_stream << "              <div class=\"lesson-info\">\n";
 	LessonsView_tmp_stream << "                <h3>4. Surprised &amp; Confused</h3>\n";
@@ -1583,11 +1539,7 @@ LessonsView_tmp_stream<<"\n";
 	LessonsView_tmp_stream << "            </div>\n";
 	LessonsView_tmp_stream << "            <div class=\"lesson-divider\"></div>\n";
 	LessonsView_tmp_stream << "            <div class=\"lesson-row locked\"\n";
-<<<<<<< HEAD
-	LessonsView_tmp_stream << "              onclick=\"openLesson(this, 'Emotions in Sentences', 'Module 3: Emotions &amp; Feelings', '', '10 min', '0%', '0Z46mYh6JtI')\">\n";
-=======
 	LessonsView_tmp_stream << "              onclick=\"openLesson(this, 'Emotions in Sentences', 'Module 3: Emotions &amp; Feelings', '', '10 min', '0%', 'https://www.youtube.com/watch?v=0Z46mYh6JtI')\">\n";
->>>>>>> 9ea2ec77be3bd00b188b27826bc100927706a131
 	LessonsView_tmp_stream << "              <div class=\"lesson-icon lesson-icon-locked\">🔒</div>\n";
 	LessonsView_tmp_stream << "              <div class=\"lesson-info\">\n";
 	LessonsView_tmp_stream << "                <h3>5. Emotions in Sentences</h3>\n";
@@ -1626,11 +1578,7 @@ LessonsView_tmp_stream<<"\n";
 	LessonsView_tmp_stream << "        <div class=\"unit-body\">\n";
 	LessonsView_tmp_stream << "          <div class=\"lessons-list\">\n";
 	LessonsView_tmp_stream << "            <div class=\"lesson-row locked\"\n";
-<<<<<<< HEAD
-	LessonsView_tmp_stream << "              onclick=\"openLesson(this, 'Asking for Help', 'Module 4: Daily Conversations', '', '8 min', '0%', '0Z46mYh6JtI')\">\n";
-=======
 	LessonsView_tmp_stream << "              onclick=\"openLesson(this, 'Asking for Help', 'Module 4: Daily Conversations', '', '8 min', '0%', 'https://www.youtube.com/watch?v=0Z46mYh6JtI')\">\n";
->>>>>>> 9ea2ec77be3bd00b188b27826bc100927706a131
 	LessonsView_tmp_stream << "              <div class=\"lesson-icon lesson-icon-locked\">🔒</div>\n";
 	LessonsView_tmp_stream << "              <div class=\"lesson-info\">\n";
 	LessonsView_tmp_stream << "                <h3>1. Asking for Help</h3>\n";
@@ -1644,11 +1592,7 @@ LessonsView_tmp_stream<<"\n";
 	LessonsView_tmp_stream << "            </div>\n";
 	LessonsView_tmp_stream << "            <div class=\"lesson-divider\"></div>\n";
 	LessonsView_tmp_stream << "            <div class=\"lesson-row locked\"\n";
-<<<<<<< HEAD
-	LessonsView_tmp_stream << "              onclick=\"openLesson(this, 'At the Store', 'Module 4: Daily Conversations', '', '10 min', '0%', 'TpbXQBMBF6Y')\">\n";
-=======
 	LessonsView_tmp_stream << "              onclick=\"openLesson(this, 'At the Store', 'Module 4: Daily Conversations', '', '10 min', '0%', 'https://www.youtube.com/watch?v=TpbXQBMBF6Y')\">\n";
->>>>>>> 9ea2ec77be3bd00b188b27826bc100927706a131
 	LessonsView_tmp_stream << "              <div class=\"lesson-icon lesson-icon-locked\">🔒</div>\n";
 	LessonsView_tmp_stream << "              <div class=\"lesson-info\">\n";
 	LessonsView_tmp_stream << "                <h3>2. At the Store</h3>\n";
@@ -1662,11 +1606,7 @@ LessonsView_tmp_stream<<"\n";
 	LessonsView_tmp_stream << "            </div>\n";
 	LessonsView_tmp_stream << "            <div class=\"lesson-divider\"></div>\n";
 	LessonsView_tmp_stream << "            <div class=\"lesson-row locked\"\n";
-<<<<<<< HEAD
-	LessonsView_tmp_stream << "              onclick=\"openLesson(this, 'Talking About Family', 'Module 4: Daily Conversations', '', '9 min', '0%', '0Z46mYh6JtI')\">\n";
-=======
 	LessonsView_tmp_stream << "              onclick=\"openLesson(this, 'Talking About Family', 'Module 4: Daily Conversations', '', '9 min', '0%', 'https://www.youtube.com/watch?v=0Z46mYh6JtI')\">\n";
->>>>>>> 9ea2ec77be3bd00b188b27826bc100927706a131
 	LessonsView_tmp_stream << "              <div class=\"lesson-icon lesson-icon-locked\">🔒</div>\n";
 	LessonsView_tmp_stream << "              <div class=\"lesson-info\">\n";
 	LessonsView_tmp_stream << "                <h3>3. Talking About Family</h3>\n";
@@ -1680,11 +1620,7 @@ LessonsView_tmp_stream<<"\n";
 	LessonsView_tmp_stream << "            </div>\n";
 	LessonsView_tmp_stream << "            <div class=\"lesson-divider\"></div>\n";
 	LessonsView_tmp_stream << "            <div class=\"lesson-row locked\"\n";
-<<<<<<< HEAD
-	LessonsView_tmp_stream << "              onclick=\"openLesson(this, 'Full Conversation Role-play', 'Module 4: Daily Conversations', '', '15 min', '0%', '0Z46mYh6JtI')\">\n";
-=======
 	LessonsView_tmp_stream << "              onclick=\"openLesson(this, 'Full Conversation Role-play', 'Module 4: Daily Conversations', '', '15 min', '0%', 'https://www.youtube.com/watch?v=0Z46mYh6JtI')\">\n";
->>>>>>> 9ea2ec77be3bd00b188b27826bc100927706a131
 	LessonsView_tmp_stream << "              <div class=\"lesson-icon lesson-icon-locked\">🔒</div>\n";
 	LessonsView_tmp_stream << "              <div class=\"lesson-info\">\n";
 	LessonsView_tmp_stream << "                <h3>4. Full Conversation Role-play</h3>\n";
@@ -1806,6 +1742,7 @@ LessonsView_tmp_stream<<"\n";
 	LessonsView_tmp_stream << "              <span>Accuracy</span>\n";
 	LessonsView_tmp_stream << "              <span class=\"pct\" id=\"modalAccuracy\">0%</span>\n";
 	LessonsView_tmp_stream << "            </div>\n";
+	LessonsView_tmp_stream << "            <button class=\"assessment-btn\" id=\"lessonCameraBtn\" onclick=\"toggleLessonCamera()\">Start Camera</button>\n";
 	LessonsView_tmp_stream << "            <button class=\"assessment-btn\" id=\"lessonCameraBtn\" onclick=\"toggleLessonCamera()\">Start Camera</button>\n";
 	LessonsView_tmp_stream << "          </div>\n";
 LessonsView_tmp_stream<<"\n";
