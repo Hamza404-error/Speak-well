@@ -310,6 +310,26 @@
     let cameraStream = null;
     let isTranslating = false;
     let intervalId = null;
+    let lastSpokenTranslation = "";
+    let speechMsg = null; // Store globally to prevent garbage collection bug in some browsers
+    let isWaitingForFrame = false;
+
+    function speakTranslation(text) {
+        if ('speechSynthesis' in window) {
+            console.log("Speaking translation:", text);
+            window.speechSynthesis.cancel(); // Stop current speech
+            
+            speechMsg = new SpeechSynthesisUtterance(text);
+            speechMsg.lang = 'en-US';
+            speechMsg.rate = 1.0; 
+            speechMsg.volume = 1.0;
+            
+            // Short delay ensures engine resets properly after cancel()
+            setTimeout(() => {
+                window.speechSynthesis.speak(speechMsg);
+            }, 50);
+        }
+    }
 
     function toggleCamera() {
         if (isTranslating) {
@@ -369,21 +389,33 @@
             }
             statusBadge.className = "status-badge connected";
             statusBadge.innerText = "Connected to AI";
-            // Start sending frames (approx ~7 FPS)
-            intervalId = setInterval(sendFrame, 150); 
+            // Check frequently, but only send if not waiting on server response (Ping-pong)
+            intervalId = setInterval(sendFrame, 35); 
         };
         
         ws.onmessage = (event) => {
+            isWaitingForFrame = false; // Server finished processing previous frame
             const data = JSON.parse(event.data);
             if(data.image) {
                 outputImage.src = "data:image/jpeg;base64," + data.image;
             }
-            if(data.translation && data.translation !== "?") {
+            if(data.spelling) {
+                transText.innerText = "Spelling: " + data.spelling;
+                lastSpokenTranslation = ""; // Reset so the full word can be spoken later
+            } else if(data.translation && data.translation !== "?") {
                 transText.innerText = data.translation;
+                
+                // Speak if it's a new translation we haven't just spoken
+                if (lastSpokenTranslation !== data.translation) {
+                    speakTranslation(data.translation);
+                    lastSpokenTranslation = data.translation;
+                }
             } else if (data.skeleton_found) {
                 transText.innerText = "Recognizing...";
+                lastSpokenTranslation = ""; // Reset when returning to recognizing so same letter can be re-spoken
             } else {
                 transText.innerText = "No hand detected";
+                lastSpokenTranslation = ""; // Reset so the same sign can be spoken again later
             }
         };
         
@@ -398,16 +430,30 @@
     }
 
     function sendFrame() {
-        if(ws && ws.readyState === WebSocket.OPEN && video.readyState === video.HAVE_ENOUGH_DATA) {
-            canvas.width = video.videoWidth;
-            canvas.height = video.videoHeight;
-            // Draw flipped video to match mirror effect
-            ctx.translate(canvas.width, 0);
-            ctx.scale(-1, 1);
-            ctx.drawImage(video, 0, 0, canvas.width, canvas.height);
-            ctx.setTransform(1, 0, 0, 1, 0, 0); // reset transform
+        if(ws && ws.readyState === WebSocket.OPEN && video.readyState === video.HAVE_ENOUGH_DATA && !isWaitingForFrame) {
+            isWaitingForFrame = true; // Lock down until server replies
             
-            // Get JPEG base64
+            // Limit resolution max to ~640x480 for much lower network/AI latency
+            const maxW = 640;
+            const maxH = 480;
+            
+            let w = video.videoWidth;
+            let h = video.videoHeight;
+            
+            if (w > maxW) {
+                h = Math.round(h * (maxW / w));
+                w = maxW;
+            }
+            if (h > maxH) {
+                w = Math.round(w * (maxH / h));
+                h = maxH;
+            }
+            
+            canvas.width = w;
+            canvas.height = h;
+            ctx.drawImage(video, 0, 0, w, h);
+            
+            // Get JPEG base64 (0.6 quality keeps it tiny)
             const dataUrl = canvas.toDataURL('image/jpeg', 0.6); 
             ws.send(dataUrl);
         }

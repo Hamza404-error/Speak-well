@@ -1,19 +1,21 @@
 # ninja log v6
 43	137	7996051553581555	LearnView.h	265ba7f58996a6d0
+19	138	7996051553541550	C:/Projects/Horizon/build/DictionaryView.cc	348a30beaa9a0974
 43	137	7996051553581555	LearnView.cc	265ba7f58996a6d0
+32	155	7996051553581555	HomeView.cc	552f3048a899d2d6
 43	137	7996051553581555	C:/Projects/Horizon/build/LearnView.h	265ba7f58996a6d0
 43	137	7996051553581555	C:/Projects/Horizon/build/LearnView.cc	265ba7f58996a6d0
+184	12572	7996051554367051	CMakeFiles/MyBackendApp.dir/main.cc.obj	58a8bc705f0f104
+57	172	7996051553721594	C:/Projects/Horizon/build/LessonsView.h	af783abf91046f70
 19	138	7996051553541550	DictionaryView.h	348a30beaa9a0974
-19	138	7996051553541550	DictionaryView.cc	348a30beaa9a0974
 19	138	7996051553541550	C:/Projects/Horizon/build/DictionaryView.h	348a30beaa9a0974
-19	138	7996051553541550	C:/Projects/Horizon/build/DictionaryView.cc	348a30beaa9a0974
+255	13764	7996051555077150	CMakeFiles/MyBackendApp.dir/controllers/PageController.cc.obj	49a7fcd716ca5ecf
+19	138	7996051553541550	DictionaryView.cc	348a30beaa9a0974
 32	155	7996051553581555	HomeView.h	552f3048a899d2d6
-32	155	7996051553581555	HomeView.cc	552f3048a899d2d6
 32	155	7996051553581555	C:/Projects/Horizon/build/HomeView.h	552f3048a899d2d6
 32	155	7996051553581555	C:/Projects/Horizon/build/HomeView.cc	552f3048a899d2d6
 57	172	7996051553721594	LessonsView.h	af783abf91046f70
 57	172	7996051553721594	LessonsView.cc	af783abf91046f70
-57	172	7996051553721594	C:/Projects/Horizon/build/LessonsView.h	af783abf91046f70
 57	172	7996051553721594	C:/Projects/Horizon/build/LessonsView.cc	af783abf91046f70
 71	183	7996051553971764	TranslateView.h	7d1605273bf43df2
 71	183	7996051553971764	TranslateView.cc	7d1605273bf43df2
@@ -25,8 +27,6 @@
 235	8582	7996051554887068	CMakeFiles/MyBackendApp.dir/TranslateView.cc.obj	be736c334e56af2e
 204	9804	7996051554577083	CMakeFiles/MyBackendApp.dir/HomeView.cc.obj	99046b5a292fe196
 245	11626	7996051554977197	CMakeFiles/MyBackendApp.dir/controllers/ApiController.cc.obj	6da91704d35e2a14
-184	12572	7996051554367051	CMakeFiles/MyBackendApp.dir/main.cc.obj	58a8bc705f0f104
 85	13012	7996051553381587	test/CMakeFiles/MyBackendApp_test.dir/test_main.cc.obj	6329d23f0f704b49
-255	13764	7996051555077150	CMakeFiles/MyBackendApp.dir/controllers/PageController.cc.obj	49a7fcd716ca5ecf
 13014	18327	7996051682671225	test/MyBackendApp_test.exe	ad746bdf3b225ef6
 13765	19018	7996051690185070	MyBackendApp.exe	d6a3767b567ea58b

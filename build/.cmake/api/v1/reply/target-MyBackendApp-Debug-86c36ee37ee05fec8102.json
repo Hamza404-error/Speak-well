@@ -2,10 +2,10 @@
 	"artifacts" : 
 	[
 		{
-			"path" : "MyBackendApp.exe"
+			"path" : "Debug/MyBackendApp.exe"
 		},
 		{
-			"path" : "MyBackendApp.pdb"
+			"path" : "Debug/MyBackendApp.pdb"
 		}
 	],
 	"backtrace" : 2,
@@ -191,11 +191,11 @@
 			[
 				{
 					"backtrace" : 17,
-					"path" : "C:/Projects/Horizon"
+					"path" : "C:/Projects/ASL/Speak-well"
 				},
 				{
 					"backtrace" : 17,
-					"path" : "C:/Projects/Horizon/models"
+					"path" : "C:/Projects/ASL/Speak-well/models"
 				},
 				{
 					"backtrace" : 3,
@@ -223,6 +223,12 @@
 				6,
 				7
 			]
+		}
+	],
+	"dependencies" : 
+	[
+		{
+			"id" : "ZERO_CHECK::@6890427a1f51a3e7e1df"
 		}
 	],
 	"id" : "MyBackendApp::@6890427a1f51a3e7e1df",
@@ -391,31 +397,31 @@
 		{
 			"backtrace" : 0,
 			"isGenerated" : true,
-			"path" : "build/DictionaryView.h.rule",
+			"path" : "build/CMakeFiles/cd86ab54237829555bf1e0f26bcb5c5e/DictionaryView.h.rule",
 			"sourceGroupIndex" : 1
 		},
 		{
 			"backtrace" : 0,
 			"isGenerated" : true,
-			"path" : "build/HomeView.h.rule",
+			"path" : "build/CMakeFiles/cd86ab54237829555bf1e0f26bcb5c5e/HomeView.h.rule",
 			"sourceGroupIndex" : 1
 		},
 		{
 			"backtrace" : 0,
 			"isGenerated" : true,
-			"path" : "build/LearnView.h.rule",
+			"path" : "build/CMakeFiles/cd86ab54237829555bf1e0f26bcb5c5e/LearnView.h.rule",
 			"sourceGroupIndex" : 1
 		},
 		{
 			"backtrace" : 0,
 			"isGenerated" : true,
-			"path" : "build/LessonsView.h.rule",
+			"path" : "build/CMakeFiles/cd86ab54237829555bf1e0f26bcb5c5e/LessonsView.h.rule",
 			"sourceGroupIndex" : 1
 		},
 		{
 			"backtrace" : 0,
 			"isGenerated" : true,
-			"path" : "build/TranslateView.h.rule",
+			"path" : "build/CMakeFiles/cd86ab54237829555bf1e0f26bcb5c5e/TranslateView.h.rule",
 			"sourceGroupIndex" : 1
 		}
 	],

@@ -1,5 +1,7 @@
+import asyncio
 import cv2
 import mediapipe as mp
+
 import numpy as np
 import csv
 import os
@@ -26,9 +28,14 @@ class HandDetector:
                 if len(row) < 43: continue # 1 label + at least 42 features
                 feats = [float(x) if x.strip() != '' else 0.0 for x in row[1:]]
                 if len(feats) == 42:
-                    feats.extend([0.0, 0.0, 0.0, 0.0]) # Pad 4 motion features
-                if len(feats) >= 46:
-                    X.append(feats[:46])
+                    feats.extend([0.0] * 9) # Pad 4 motion + 5 pose features
+                elif len(feats) == 46:
+                    feats.extend([0.0] * 5) # Pad 5 pose features
+                elif len(feats) > 51:
+                    feats = feats[:51] # Ensure exactly 51 for detector
+                
+                if len(feats) == 51:
+                    X.append(feats)
                     y.append(row[0])
                 
         if len(X) == 0:
@@ -65,10 +72,18 @@ class ASLClassifier:
             for row in reader:
                 if len(row) < 43: continue 
                 feats = [float(x) if x.strip() != '' else 0.0 for x in row[1:]]
+                if len(feats) == 54:
+                    feats = feats[:51] # Drop old padding
+                    
                 if len(feats) == 42:
-                    feats.extend([0.0, 0.0, 0.0, 0.0]) # Pad 4 motion features
-                if len(feats) >= 46:
-                    X.append(feats[:46])
+                    feats.extend([0.0] * 60) # Pad to 102
+                elif len(feats) == 46:
+                    feats.extend([0.0] * 56) # Pad to 102
+                elif len(feats) == 51:
+                    feats.extend([0.0] * 51) # Pad second hand
+                
+                if len(feats) >= 102:
+                    X.append(feats[:102])
                     y.append(row[0])
                 
         if len(X) == 0:
@@ -81,11 +96,31 @@ class ASLClassifier:
         self.is_trained = True
         return True
 
-    def predict(self, features):
+    def predict(self, features, mode="translation", target=""):
         if not self.is_trained:
             return '?'
-        pred = self.knn.predict([features])
-        return pred[0]
+            
+        distances, _ = self.knn.kneighbors([features], n_neighbors=1)
+        
+        # Threshold: if distance is too large, the gesture is incorrect
+        dist = distances[0][0]
+        if dist > 4.5:  # Tunable threshold
+            return '?'
+            
+        pred = self.knn.predict([features])[0]
+        
+        print(f"[AI] Mode: {mode} | Target: '{target}' | Pred: '{pred}' | Dist: {dist:.2f}")
+        
+        if mode == "test" and target:
+            # Target can be a comma-separated list of expected sequence words
+            target_words = [t.upper().strip() for t in target.split(',')]
+            pred_norm = pred.upper().strip()
+            
+            # Must strictly match one of the expected words
+            if pred_norm not in target_words:
+                return '?'
+                
+        return pred
 
 def log_data(filepath, label, features):
     file_exists = os.path.exists(filepath)
@@ -103,6 +138,10 @@ def log_data(filepath, label, features):
         return False
 
 def main():
+    import time
+    recording_word = None
+    recording_start_time = 0
+
     detector = HandDetector()
     translator = ASLClassifier()
 
@@ -112,8 +151,18 @@ def main():
 
     # Initialize Modern MediaPipe Task Vision HandLandmarker
     base_options = python.BaseOptions(model_asset_path='hand_landmarker.task')
-    options = vision.HandLandmarkerOptions(base_options=base_options, num_hands=1)
+    options = vision.HandLandmarkerOptions(base_options=base_options, num_hands=2)
     landmarker = vision.HandLandmarker.create_from_options(options)
+
+    pose_url = "https://storage.googleapis.com/mediapipe-models/pose_landmarker/pose_landmarker_lite/float16/1/pose_landmarker_lite.task"
+    import urllib.request
+    if not os.path.exists("pose_landmarker.task"):
+        print("Downloading pose model...")
+        urllib.request.urlretrieve(pose_url, "pose_landmarker.task")
+
+    base_options_pose = python.BaseOptions(model_asset_path='pose_landmarker.task')
+    options_pose = vision.PoseLandmarkerOptions(base_options=base_options_pose)
+    pose_landmarker = vision.PoseLandmarker.create_from_options(options_pose)
 
     cap = cv2.VideoCapture(0)
     
@@ -128,62 +177,115 @@ def main():
         
         mp_image = mp.Image(image_format=mp.ImageFormat.SRGB, data=rgb_image)
         results = landmarker.detect(mp_image)
+        pose_results = pose_landmarker.detect(mp_image)
         
-        features = []
+        h, w, c = image.shape
+        if pose_results.pose_landmarks:
+            pose_lms = pose_results.pose_landmarks[0]
+            CONNECTIONS = [
+                (11, 12), (11, 13), (13, 15), (12, 14), (14, 16),
+                (11, 23), (12, 24), (23, 24), (23, 25), (25, 27),
+                (24, 26), (26, 28)
+            ]
+            for lm in pose_lms:
+                cx, cy = int(lm.x * w), int(lm.y * h)
+                cv2.circle(image, (cx, cy), 4, (255, 0, 255), -1)
+            for conn in CONNECTIONS:
+                p1 = pose_lms[conn[0]]
+                p2 = pose_lms[conn[1]]
+                x1, y1 = int(p1.x * w), int(p1.y * h)
+                x2, y2 = int(p2.x * w), int(p2.y * h)
+                cv2.line(image, (x1, y1), (x2, y2), (255, 255, 255), 2)
+        
+        primary_features = []
         
         if results.hand_landmarks:
-            hand_landmarks = results.hand_landmarks[0] # List of 21 NormalizedLandmarks
-            
-            # Get bounding box to create scale-invariant relative features
-            h, w, c = image.shape
-            x_max = 0
-            y_max = 0
-            x_min = w
-            y_min = h
-            
-            for lm in hand_landmarks:
-                x, y = int(lm.x * w), int(lm.y * h)
-                if x > x_max: x_max = x
-                if x < x_min: x_min = x
-                if y > y_max: y_max = y
-                if y < y_min: y_min = y
-            
-            box_w = x_max - x_min
-            box_h = y_max - y_min
-            box_w = box_w if box_w > 0 else 1
-            box_h = box_h if box_h > 0 else 1
-            
-            # Extract 42 geometric (x,y) features relative to the bounding box
-            for lm in hand_landmarks:
-                rel_x = (lm.x * w - x_min) / box_w
-                rel_y = (lm.y * h - y_min) / box_h
-                features.extend([rel_x, rel_y])
-
-            # Extract 4 motion features (dx, dy of wrist and index over 10 frames)
-            current_wrist = (hand_landmarks[0].x, hand_landmarks[0].y)
-            current_index = (hand_landmarks[8].x, hand_landmarks[8].y)
-            
-            if not hasattr(detector, 'history'):
-                detector.history = []
-            
-            detector.history.append((current_wrist, current_index))
-            if len(detector.history) > 10:
-                detector.history.pop(0)
+            if not hasattr(detector, 'histories'):
+                detector.histories = {'Left': [], 'Right': []}
                 
-            wrist_dx, wrist_dy, index_dx, index_dy = 0.0, 0.0, 0.0, 0.0
-            if len(detector.history) == 10:
-                old_wrist, old_index = detector.history[0]
-                wrist_dx = current_wrist[0] - old_wrist[0]
-                wrist_dy = current_wrist[1] - old_wrist[1]
-                index_dx = current_index[0] - old_index[0]
-                index_dy = current_index[1] - old_index[1]
+            valid_hands = []
+            for i, hand_landmarks in enumerate(results.hand_landmarks):
+                cat = results.handedness[i][0]
+                handedness = cat.category_name or cat.display_name
+                features = []
                 
-            features.extend([wrist_dx, wrist_dy, index_dx, index_dy])
+                # Get bounding box to create scale-invariant relative features
+                h, w, c = image.shape
+                x_max = 0
+                y_max = 0
+                x_min = w
+                y_min = h
+                
+                for lm in hand_landmarks:
+                    x, y = int(lm.x * w), int(lm.y * h)
+                    if x > x_max: x_max = x
+                    if x < x_min: x_min = x
+                    if y > y_max: y_max = y
+                    if y < y_min: y_min = y
+                
+                box_w = x_max - x_min
+                box_h = y_max - y_min
+                box_w = box_w if box_w > 0 else 1
+                box_h = box_h if box_h > 0 else 1
+                
+                # Extract 42 geometric (x,y) features relative to the bounding box
+                for lm in hand_landmarks:
+                    rel_x = (lm.x * w - x_min) / box_w
+                    rel_y = (lm.y * h - y_min) / box_h
+                    features.extend([rel_x, rel_y])
 
-            if len(features) == 46:
-                if not detector.is_hand(features):
-                    cv2.putText(image, "Object ignored (Not a Hand)", (50, 50), cv2.FONT_HERSHEY_SIMPLEX, 0.8, (0, 0, 255), 2)
-                else:
+                # Extract 4 motion features (dx, dy of wrist and index over 10 frames)
+                current_wrist = (hand_landmarks[0].x, hand_landmarks[0].y)
+                current_index = (hand_landmarks[8].x, hand_landmarks[8].y)
+                
+                hist = detector.histories[handedness]
+                hist.append((current_wrist, current_index))
+                if len(hist) > 10:
+                    hist.pop(0)
+                    
+                wrist_dx, wrist_dy, index_dx, index_dy = 0.0, 0.0, 0.0, 0.0
+                if len(hist) == 10:
+                    old_wrist, old_index = hist[0]
+                    wrist_dx = current_wrist[0] - old_wrist[0]
+                    wrist_dy = current_wrist[1] - old_wrist[1]
+                    index_dx = current_index[0] - old_index[0]
+                    index_dy = current_index[1] - old_index[1]
+                    
+                features.extend([wrist_dx, wrist_dy, index_dx, index_dy])
+
+                hand_flag = 1.0 if handedness.strip().lower() == 'right' else -1.0
+                features.append(hand_flag)
+                
+                nose_offset_x, nose_offset_y = 0.0, 0.0
+                torso_offset_x, torso_offset_y = 0.0, 0.0
+                
+                if pose_results and pose_results.pose_landmarks:
+                    pose_lms = pose_results.pose_landmarks[0]
+                    nose = pose_lms[0]
+                    l_shoulder, r_shoulder = pose_lms[11], pose_lms[12]
+                    
+                    torso_x = (l_shoulder.x + r_shoulder.x) / 2.0
+                    torso_y = (l_shoulder.y + r_shoulder.y) / 2.0
+                    
+                    # Multiply by 10.0 to heavily weight spatial location in the KNN distance algorithm
+                    nose_offset_x = (current_wrist[0] - nose.x) * 10.0
+                    nose_offset_y = (current_wrist[1] - nose.y) * 10.0
+                    torso_offset_x = (current_wrist[0] - torso_x) * 10.0
+                    torso_offset_y = (current_wrist[1] - torso_y) * 10.0
+                    
+                features.extend([nose_offset_x, nose_offset_y, torso_offset_x, torso_offset_y])
+
+                if len(features) == 51:
+                    if not detector.is_hand(features):
+                        cv2.putText(image, f"Object ignored ({handedness})", (50, 50 + i*40), cv2.FONT_HERSHEY_SIMPLEX, 0.8, (0, 0, 255), 2)
+                    else:
+                        valid_hands.append((hand_landmarks[0].x, features, hand_landmarks, wrist_dx, wrist_dy))
+
+            if valid_hands:
+                # Sort hands from left to right on the screen
+                valid_hands.sort(key=lambda x: x[0])
+                
+                for _, features, hand_landmarks, wrist_dx, wrist_dy in valid_hands:
                     # Draw the skeleton perfectly manually!
                     HAND_CONNECTIONS = [
                         (0,1), (1,2), (2,3), (3,4),
@@ -199,52 +301,82 @@ def main():
                         cv2.line(image, (x1, y1), (x2, y2), (0, 255, 255), 2)
                     
                     for lm in hand_landmarks:
-                        x, y = int(lm.x * w), int(lm.y * h)
-                        cv2.circle(image, (x, y), 4, (0, 0, 255), -1)
-                    
-                    translated = translator.predict(features)
-                    if translated != '?':
-                        cv2.putText(image, f"Translation: {translated}", (50, 50), cv2.FONT_HERSHEY_SIMPLEX, 1.5, (0, 255, 0), 3)
+                        tx, ty = int(lm.x * w), int(lm.y * h)
+                        cv2.circle(image, (tx, ty), 4, (0, 0, 255), -1)
 
                     # Movement text
                     movement_magnitude = (wrist_dx**2 + wrist_dy**2)**0.5
                     if movement_magnitude > 0.02:
-                        cv2.putText(image, f"Movement Detected", (50, 90), cv2.FONT_HERSHEY_SIMPLEX, 0.8, (255, 100, 100), 2)
+                        wx, wy = int(hand_landmarks[0].x * w), int(hand_landmarks[0].y * h)
+                        cv2.putText(image, "Motion", (max(wx + 20, 10), max(wy + 40, 10)), cv2.FONT_HERSHEY_SIMPLEX, 0.8, (255, 100, 100), 2)
+
+                # Combine features
+                combined_features = valid_hands[0][1].copy()
+                if len(valid_hands) > 1:
+                    combined_features.extend(valid_hands[1][1])
+                else:
+                    combined_features.extend([0.0] * 51)
+                
+                primary_features = combined_features
+                translated = translator.predict(combined_features)
+                if translated != '?':
+                    wx, wy = int(valid_hands[0][2][0].x * w), int(valid_hands[0][2][0].y * h)
+                    cv2.putText(image, translated, (max(wx - 20, 10), max(wy + 40, 10)), cv2.FONT_HERSHEY_SIMPLEX, 1.5, (0, 255, 0), 3)
+
         else:
             cv2.putText(image, "No skeleton located", (50, 50), cv2.FONT_HERSHEY_SIMPLEX, 1.0, (0, 0, 255), 2)
+            if hasattr(detector, 'histories'):
+                detector.histories['Left'].clear()
+                detector.histories['Right'].clear()
 
-        cv2.putText(image, "A-Z for Letters | SPACE for Word | '1'/'0' for Hand", (10, image.shape[0] - 20), cv2.FONT_HERSHEY_SIMPLEX, 0.6, (255, 255, 0), 2)
+        if recording_word:
+            elapsed = time.time() - recording_start_time
+            remaining = 2.0 - elapsed
+            if remaining > 0:
+                cv2.putText(image, f"Capturing in {remaining:.1f}...", (w//2 - 200, h//2), cv2.FONT_HERSHEY_SIMPLEX, 1.5, (0, 0, 255), 4)
+            else:
+                if len(primary_features) == 102:
+                    if log_data("asl_data_real.csv", recording_word, primary_features):
+                        translator.train_model("asl_data_real.csv")
+                        print(f"Logged word '{recording_word}'. Resuming camera...")
+                        # Flash screen green for a frame
+                        cv2.rectangle(image, (0, 0), (w, h), (0, 255, 0), 20)
+                else:
+                    print("Could not detect hands! Try again.")
+                recording_word = None
+
+        cv2.putText(image, "A-Z for Letters | SPACE for Word", (10, image.shape[0] - 20), cv2.FONT_HERSHEY_SIMPLEX, 0.6, (255, 255, 0), 2)
         cv2.imshow('Live ASL Translator Python', image)
         
         key = cv2.waitKey(5) & 0xFF
         if key == 27:
             break
-            
-        if len(features) == 46:
+            #logging data for ASL letters (A-Z) and words (SPACEBAR)
+        if len(primary_features) == 102:
             if 97 <= key <= 122 or 65 <= key <= 90: # a-z or A-Z
                 label = chr(key).upper()
-                if log_data("asl_data_real.csv", label, features):
+                if log_data("asl_data_real.csv", label, primary_features):
                     translator.train_model("asl_data_real.csv")
-            elif key == 32: # SPACEBAR
-                import tkinter as tk
-                from tkinter import simpledialog
-                root = tk.Tk()
-                root.withdraw()
-                root.attributes('-topmost', True)
-                word_label = simpledialog.askstring("Log ASL Word", "CAMERA PAUSED.\nEnter Word Label (e.g. HELLO):", parent=root)
-                root.destroy()
-                
-                if word_label and word_label.strip():
-                    word_label = word_label.strip().upper()
-                    if log_data("asl_data_real.csv", word_label, features):
-                        translator.train_model("asl_data_real.csv")
-                        print(f"Logged word '{word_label}'. Resuming camera...")
-                else:
-                    print("No word entered. Resuming camera...")
             elif key == 48 or key == 49: # '0' or '1'
                 char_key = chr(key)
-                if log_data("hand_detection_data.csv", char_key, features):
+                if log_data("hand_detection_data.csv", char_key, primary_features[:51]):
                     detector.train_model("hand_detection_data.csv")
+                    
+        if key == 32 and not recording_word: # SPACEBAR
+            import tkinter as tk
+            from tkinter import simpledialog
+            root = tk.Tk()
+            root.withdraw()
+            root.attributes('-topmost', True)
+            word_label = simpledialog.askstring("Log ASL Word", "CAMERA PAUSED.\nEnter Word Label (e.g. HELLO):", parent=root)
+            root.destroy()
+            
+            if word_label and word_label.strip():
+                recording_word = word_label.strip().upper()
+                recording_start_time = time.time()
+                print(f"Get ready to sign '{recording_word}'!")
+            else:
+                print("No word entered. Resuming camera...")
                 
     cap.release()
     cv2.destroyAllWindows()

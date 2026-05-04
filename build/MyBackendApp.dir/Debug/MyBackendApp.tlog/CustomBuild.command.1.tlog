@@ -1,0 +1,80 @@
+^C:\PROJECTS\ASL\SPEAK-WELL\BUILD\CMAKEFILES\CD86AB54237829555BF1E0F26BCB5C5E\DICTIONARYVIEW.H.RULE
+setlocal
+cd C:\Projects\ASL\Speak-well
+if %errorlevel% neq 0 goto :cmEnd
+C:
+if %errorlevel% neq 0 goto :cmEnd
+C:\vcpkg\installed\x64-windows\tools\drogon\drogon_ctl.exe create view views/DictionaryView.csp -o C:/Projects/ASL/Speak-well/build
+if %errorlevel% neq 0 goto :cmEnd
+:cmEnd
+endlocal & call :cmErrorLevel %errorlevel% & goto :cmDone
+:cmErrorLevel
+exit /b %1
+:cmDone
+if %errorlevel% neq 0 goto :VCEnd
+^C:\PROJECTS\ASL\SPEAK-WELL\BUILD\CMAKEFILES\CD86AB54237829555BF1E0F26BCB5C5E\HOMEVIEW.H.RULE
+setlocal
+cd C:\Projects\ASL\Speak-well
+if %errorlevel% neq 0 goto :cmEnd
+C:
+if %errorlevel% neq 0 goto :cmEnd
+C:\vcpkg\installed\x64-windows\tools\drogon\drogon_ctl.exe create view views/HomeView.csp -o C:/Projects/ASL/Speak-well/build
+if %errorlevel% neq 0 goto :cmEnd
+:cmEnd
+endlocal & call :cmErrorLevel %errorlevel% & goto :cmDone
+:cmErrorLevel
+exit /b %1
+:cmDone
+if %errorlevel% neq 0 goto :VCEnd
+^C:\PROJECTS\ASL\SPEAK-WELL\BUILD\CMAKEFILES\CD86AB54237829555BF1E0F26BCB5C5E\LEARNVIEW.H.RULE
+setlocal
+cd C:\Projects\ASL\Speak-well
+if %errorlevel% neq 0 goto :cmEnd
+C:
+if %errorlevel% neq 0 goto :cmEnd
+C:\vcpkg\installed\x64-windows\tools\drogon\drogon_ctl.exe create view views/LearnView.csp -o C:/Projects/ASL/Speak-well/build
+if %errorlevel% neq 0 goto :cmEnd
+:cmEnd
+endlocal & call :cmErrorLevel %errorlevel% & goto :cmDone
+:cmErrorLevel
+exit /b %1
+:cmDone
+if %errorlevel% neq 0 goto :VCEnd
+^C:\PROJECTS\ASL\SPEAK-WELL\BUILD\CMAKEFILES\CD86AB54237829555BF1E0F26BCB5C5E\LESSONSVIEW.H.RULE
+setlocal
+cd C:\Projects\ASL\Speak-well
+if %errorlevel% neq 0 goto :cmEnd
+C:
+if %errorlevel% neq 0 goto :cmEnd
+C:\vcpkg\installed\x64-windows\tools\drogon\drogon_ctl.exe create view views/LessonsView.csp -o C:/Projects/ASL/Speak-well/build
+if %errorlevel% neq 0 goto :cmEnd
+:cmEnd
+endlocal & call :cmErrorLevel %errorlevel% & goto :cmDone
+:cmErrorLevel
+exit /b %1
+:cmDone
+if %errorlevel% neq 0 goto :VCEnd
+^C:\PROJECTS\ASL\SPEAK-WELL\BUILD\CMAKEFILES\CD86AB54237829555BF1E0F26BCB5C5E\TRANSLATEVIEW.H.RULE
+setlocal
+cd C:\Projects\ASL\Speak-well
+if %errorlevel% neq 0 goto :cmEnd
+C:
+if %errorlevel% neq 0 goto :cmEnd
+C:\vcpkg\installed\x64-windows\tools\drogon\drogon_ctl.exe create view views/TranslateView.csp -o C:/Projects/ASL/Speak-well/build
+if %errorlevel% neq 0 goto :cmEnd
+:cmEnd
+endlocal & call :cmErrorLevel %errorlevel% & goto :cmDone
+:cmErrorLevel
+exit /b %1
+:cmDone
+if %errorlevel% neq 0 goto :VCEnd
+^C:\PROJECTS\ASL\SPEAK-WELL\CMAKELISTS.TXT
+setlocal
+"C:\Program Files\CMake\bin\cmake.exe" -SC:/Projects/ASL/Speak-well -BC:/Projects/ASL/Speak-well/build --check-stamp-file C:/Projects/ASL/Speak-well/build/CMakeFiles/generate.stamp
+if %errorlevel% neq 0 goto :cmEnd
+:cmEnd
+endlocal & call :cmErrorLevel %errorlevel% & goto :cmDone
+:cmErrorLevel
+exit /b %1
+:cmDone
+if %errorlevel% neq 0 goto :VCEnd
