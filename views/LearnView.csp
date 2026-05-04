@@ -854,13 +854,12 @@
   <!-- ── NAVBAR ── -->
   <nav>
     <div class="nav-inner">
-      <a href="/" class="logo">Clarified Horizon</a>
+      <a href="/" class="logo">Speak well</a>
       <ul class="nav-links">
         <li><a href="/">HOME</a></li>
         <li><a href="#" class="active">LEARN</a></li>
-        <li><a href="#">TRANSLATE</a></li>
+        <li><a href="/translate">TRANSLATE</a></li>
       </ul>
-      <div class="nav-avatar" title="Sarah">S</div>
     </div>
   </nav>
 
@@ -884,10 +883,10 @@
       </div>
       <div class="hero-content">
         <div class="hero-eyebrow">Learning Dashboard</div>
-        <h1>Welcome back, Sarah!<br>Continue your journey.</h1>
+        <h1>Welcome back, [[display_name]]!<br>Continue your journey.</h1>
         <div class="hero-ctas">
           <a href="/lesson" class="btn btn-dark">Resume Lesson</a>
-          <a href="#goals" class="btn btn-ghost-white">View Goals</a>
+          <a href="/goals" class="btn btn-ghost-white">View Goals</a>
         </div>
       </div>
     </div>
@@ -902,10 +901,10 @@
         <div class="active-section">
           <div class="sec-hd">
             <h2>Active Learning</h2>
-            <a href="learn.html" class="sec-link">View All History</a>
+            <a href="/lesson" class="sec-link">View All History</a>
           </div>
 
-          <a href="learn.html" class="active-card">
+          <a href="/lesson" class="active-card">
             <div class="active-thumb">
               <div class="play-circle">▶</div>
             </div>
@@ -934,7 +933,7 @@
           <div class="group-label">Essential ASL</div>
           <div class="grid-2">
 
-            <a href="learn.html" class="pathway-card">
+            <a href="/learn" class="pathway-card">
               <div class="card-top">
                 <div class="p-icon">🤟</div>
                 <span class="p-meta">BEGINNER · 15M</span>
@@ -943,7 +942,7 @@
               <p>Master finger-spelling and the visual building blocks of ASL communication.</p>
             </a>
 
-            <a href="learn.html" class="pathway-card">
+            <a href="/learn" class="pathway-card">
               <div class="card-top">
                 <div class="p-icon">👨‍👩‍👧</div>
                 <span class="p-meta">BEGINNER · 25M</span>
@@ -958,19 +957,19 @@
           <div class="group-label">Specializations</div>
           <div class="grid-3">
 
-            <a href="learn.html" class="pathway-card">
+            <a href="/learn" class="pathway-card">
               <div class="p-icon" style="margin-bottom:12px">💼</div>
               <h3>Workplace Sign</h3>
               <p>Professional terminology and corporate etiquette in ASL.</p>
             </a>
 
-            <a href="learn.html" class="pathway-card">
+            <a href="/learn" class="pathway-card">
               <div class="p-icon" style="margin-bottom:12px">🌍</div>
               <h3>Cultural Nuances</h3>
               <p>Deaf culture, history, and linguistic variations.</p>
             </a>
 
-            <a href="learn.html" class="pathway-card">
+            <a href="/learn" class="pathway-card">
               <div class="p-icon" style="margin-bottom:12px">💬</div>
               <h3>Fluent Conversations</h3>
               <p>Connecting signs into fluid, natural sentences.</p>
@@ -982,17 +981,6 @@
 
       <!-- RIGHT -->
       <div class="right-col">
-
-        <!-- Daily Challenge -->
-        <div class="daily-card">
-          <div class="daily-eyebrow">⚡ Daily Challenge</div>
-          <h3>5-Minute Fingerspelling Sprint</h3>
-          <p>Test your speed and accuracy on 20 random words.</p>
-          <div class="challenge-track">
-            <div class="challenge-fill" id="cFill"></div>
-          </div>
-          <button class="btn-challenge" onclick="startChallenge()">Start Challenge</button>
-        </div>
 
         <!-- Achievements -->
         <div class="ach-card">
@@ -1055,13 +1043,10 @@
         <!-- Support Tools -->
         <div class="support-card" id="goals">
           <div class="support-title">Support Tools</div>
-          <a href="#" class="support-item"><span class="si-icon">👥</span> Live Help Desk</a>
           <div class="s-div"></div>
           <a href="/dictionary" class="support-item"><span class="si-icon">📖</span> ASL Dictionary</a>
           <div class="s-div"></div>
-          <a href="learn.html" class="support-item"><span class="si-icon">🎯</span> My Learning Goals</a>
-          <div class="s-div"></div>
-          <a href="index.html" class="support-item"><span class="si-icon">🏠</span> Back to Home</a>
+          <a href="/" class="support-item"><span class="si-icon">🏠</span> Back to Home</a>
         </div>
 
       </div><!-- /right -->
@@ -1100,5 +1085,4 @@
   </script>
 
 </body>
-
 </html>

@@ -1210,14 +1210,12 @@
   <!-- ── NAVBAR ── -->
   <nav>
     <div class="nav-inner">
-      <a href="/" class="logo">Sign<span>Horizon</span></a>
+      <a href="/" class="logo">Speak Well</a>
       <ul class="nav-links">
         <li><a href="/lesson" class="active">LESSONS</a></li>
-        <li><a href="#">PRACTICE</a></li>
         <li><a href="/dictionary">DICTIONARY</a></li>
       </ul>
       <div class="nav-icons">
-        <button class="nav-icon-btn" title="Dashboard" onclick="window.location='/learn'">📊</button>
         <button class="nav-icon-btn" title="Home" onclick="window.location='/'">🏠</button>
       </div>
     </div>
@@ -1721,7 +1719,7 @@
               <span>Accuracy</span>
               <span class="pct" id="modalAccuracy">84%</span>
             </div>
-            <button class="assessment-btn">Start Final Assessment</button>
+            <button class="assessment-btn" id="lessonCameraBtn" onclick="toggleLessonCamera()">Start Camera</button>
           </div>
 
           <!-- Module progress -->

@@ -230,13 +230,12 @@
 <!-- ── NAVBAR ── -->
 <nav>
   <div class="nav-inner">
-    <a href="/" class="logo">Clarified Horizon</a>
+    <a href="/" class="logo">Speak well</a>
     <ul class="nav-links">
       <li><a href="/">HOME</a></li>
       <li><a href="/learn">LEARN</a></li>
       <li><a href="/translate" class="active">TRANSLATE</a></li>
     </ul>
-    <div class="nav-avatar" title="Sarah">S</div>
   </div>
 </nav>
 

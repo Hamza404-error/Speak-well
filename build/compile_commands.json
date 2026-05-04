@@ -37,6 +37,18 @@
 },
 {
   "directory": "C:/Projects/Horizon/build",
+  "command": "C:\\PROGRA~1\\MICROS~3\\18\\COMMUN~1\\VC\\Tools\\MSVC\\1450~1.357\\bin\\Hostx64\\x64\\cl.exe  /nologo /TP -IC:\\Projects\\Horizon -IC:\\Projects\\Horizon\\models -external:IC:\\vcpkg\\installed\\x64-windows\\include -external:W0 /DWIN32 /D_WINDOWS /W3 /GR /EHsc /MDd /Zi /Ob0 /Od /RTC1 -std:c++20 /wd4251 /wd4275 /FoCMakeFiles\\MyBackendApp.dir\\controllers\\ApiController.cc.obj /FdCMakeFiles\\MyBackendApp.dir\\ /FS -c C:\\Projects\\Horizon\\controllers\\ApiController.cc",
+  "file": "C:/Projects/Horizon/controllers/ApiController.cc",
+  "output": "C:/Projects/Horizon/build/CMakeFiles/MyBackendApp.dir/controllers/ApiController.cc.obj"
+},
+{
+  "directory": "C:/Projects/Horizon/build",
+  "command": "C:\\PROGRA~1\\MICROS~3\\18\\COMMUN~1\\VC\\Tools\\MSVC\\1450~1.357\\bin\\Hostx64\\x64\\cl.exe  /nologo /TP -IC:\\Projects\\Horizon -IC:\\Projects\\Horizon\\models -external:IC:\\vcpkg\\installed\\x64-windows\\include -external:W0 /DWIN32 /D_WINDOWS /W3 /GR /EHsc /MDd /Zi /Ob0 /Od /RTC1 -std:c++20 /wd4251 /wd4275 /FoCMakeFiles\\MyBackendApp.dir\\controllers\\PageController.cc.obj /FdCMakeFiles\\MyBackendApp.dir\\ /FS -c C:\\Projects\\Horizon\\controllers\\PageController.cc",
+  "file": "C:/Projects/Horizon/controllers/PageController.cc",
+  "output": "C:/Projects/Horizon/build/CMakeFiles/MyBackendApp.dir/controllers/PageController.cc.obj"
+},
+{
+  "directory": "C:/Projects/Horizon/build",
   "command": "C:\\PROGRA~1\\MICROS~3\\18\\COMMUN~1\\VC\\Tools\\MSVC\\1450~1.357\\bin\\Hostx64\\x64\\cl.exe  /nologo /TP -external:IC:\\vcpkg\\installed\\x64-windows\\include -external:W0 /DWIN32 /D_WINDOWS /W3 /GR /EHsc /MDd /Zi /Ob0 /Od /RTC1 -std:c++20 /wd4251 /wd4275 /Fotest\\CMakeFiles\\MyBackendApp_test.dir\\test_main.cc.obj /Fdtest\\CMakeFiles\\MyBackendApp_test.dir\\ /FS -c C:\\Projects\\Horizon\\test\\test_main.cc",
   "file": "C:/Projects/Horizon/test/test_main.cc",
   "output": "C:/Projects/Horizon/build/test/CMakeFiles/MyBackendApp_test.dir/test_main.cc.obj"

@@ -109,6 +109,26 @@ build CMakeFiles\MyBackendApp.dir\TranslateView.cc.obj: CXX_COMPILER__MyBackendA
   TARGET_PDB = MyBackendApp.pdb
   TARGET_SUPPORT_DIR = CMakeFiles\MyBackendApp.dir
 
+build CMakeFiles\MyBackendApp.dir\controllers\ApiController.cc.obj: CXX_COMPILER__MyBackendApp_unscanned_Debug C$:\Projects\Horizon\controllers\ApiController.cc || cmake_object_order_depends_target_MyBackendApp
+  CONFIG = Debug
+  FLAGS = /DWIN32 /D_WINDOWS /W3 /GR /EHsc /MDd /Zi /Ob0 /Od /RTC1 -std:c++20 /wd4251 /wd4275
+  INCLUDES = -IC:\Projects\Horizon -IC:\Projects\Horizon\models -external:IC:\vcpkg\installed\x64-windows\include -external:W0
+  OBJECT_DIR = CMakeFiles\MyBackendApp.dir
+  OBJECT_FILE_DIR = CMakeFiles\MyBackendApp.dir\controllers
+  TARGET_COMPILE_PDB = CMakeFiles\MyBackendApp.dir\
+  TARGET_PDB = MyBackendApp.pdb
+  TARGET_SUPPORT_DIR = CMakeFiles\MyBackendApp.dir
+
+build CMakeFiles\MyBackendApp.dir\controllers\PageController.cc.obj: CXX_COMPILER__MyBackendApp_unscanned_Debug C$:\Projects\Horizon\controllers\PageController.cc || cmake_object_order_depends_target_MyBackendApp
+  CONFIG = Debug
+  FLAGS = /DWIN32 /D_WINDOWS /W3 /GR /EHsc /MDd /Zi /Ob0 /Od /RTC1 -std:c++20 /wd4251 /wd4275
+  INCLUDES = -IC:\Projects\Horizon -IC:\Projects\Horizon\models -external:IC:\vcpkg\installed\x64-windows\include -external:W0
+  OBJECT_DIR = CMakeFiles\MyBackendApp.dir
+  OBJECT_FILE_DIR = CMakeFiles\MyBackendApp.dir\controllers
+  TARGET_COMPILE_PDB = CMakeFiles\MyBackendApp.dir\
+  TARGET_PDB = MyBackendApp.pdb
+  TARGET_SUPPORT_DIR = CMakeFiles\MyBackendApp.dir
+
 
 # =============================================================================
 # Link build statements for EXECUTABLE target MyBackendApp
@@ -117,7 +137,7 @@ build CMakeFiles\MyBackendApp.dir\TranslateView.cc.obj: CXX_COMPILER__MyBackendA
 #############################################
 # Link the executable MyBackendApp.exe
 
-build MyBackendApp.exe: CXX_EXECUTABLE_LINKER__MyBackendApp_Debug CMakeFiles\MyBackendApp.dir\main.cc.obj CMakeFiles\MyBackendApp.dir\DictionaryView.cc.obj CMakeFiles\MyBackendApp.dir\HomeView.cc.obj CMakeFiles\MyBackendApp.dir\LearnView.cc.obj CMakeFiles\MyBackendApp.dir\LessonsView.cc.obj CMakeFiles\MyBackendApp.dir\TranslateView.cc.obj | C$:\vcpkg\installed\x64-windows\debug\lib\drogon.lib C$:\vcpkg\installed\x64-windows\debug\lib\trantor.lib C$:\vcpkg\installed\x64-windows\debug\lib\jsoncpp.lib
+build MyBackendApp.exe: CXX_EXECUTABLE_LINKER__MyBackendApp_Debug CMakeFiles\MyBackendApp.dir\main.cc.obj CMakeFiles\MyBackendApp.dir\DictionaryView.cc.obj CMakeFiles\MyBackendApp.dir\HomeView.cc.obj CMakeFiles\MyBackendApp.dir\LearnView.cc.obj CMakeFiles\MyBackendApp.dir\LessonsView.cc.obj CMakeFiles\MyBackendApp.dir\TranslateView.cc.obj CMakeFiles\MyBackendApp.dir\controllers\ApiController.cc.obj CMakeFiles\MyBackendApp.dir\controllers\PageController.cc.obj | C$:\vcpkg\installed\x64-windows\debug\lib\drogon.lib C$:\vcpkg\installed\x64-windows\debug\lib\trantor.lib C$:\vcpkg\installed\x64-windows\debug\lib\jsoncpp.lib
   CONFIG = Debug
   FLAGS = /DWIN32 /D_WINDOWS /W3 /GR /EHsc /MDd /Zi /Ob0 /Od /RTC1
   LINK_FLAGS = /machine:x64 /debug /INCREMENTAL /subsystem:console

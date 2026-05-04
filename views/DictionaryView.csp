@@ -331,12 +331,13 @@
   <!-- ── NAVBAR ── -->
   <nav>
     <div class="nav-inner">
-      <a href="/" class="logo">Clarified Horizon</a>
+      <a href="/" class="logo">Speak well</a>
       <ul class="nav-links">
-        <li><a href="/">HOME</a></li>
-        <li><a href="/learn">LEARN</a></li>
+        <li><a href="/lesson">LESSONS</a></li>
         <li><a href="/dictionary" class="active">DICTIONARY</a></li>
       </ul>
+      <div class="nav-actions">
+      </div>
     </div>
   </nav>
 
@@ -434,5 +435,154 @@
   </script>
 
 </body>
+
+<!-- ── AUTH MODAL ── -->
+<div class="auth-modal-overlay" id="authModal" style="display:none;" onclick="handleAuthOverlayClick(event)">
+  <div class="auth-modal-content">
+    <button class="auth-close" onclick="closeAuthModal()">✕</button>
+    <div class="auth-tabs">
+      <button class="auth-tab active" id="tab-login" onclick="switchAuthTab('login')">Sign In</button>
+      <button class="auth-tab" id="tab-signup" onclick="switchAuthTab('signup')">Sign Up</button>
+    </div>
+    <div class="auth-body">
+      <div id="form-login">
+        <h3>Welcome Back!</h3>
+        <input type="text" id="login-username" placeholder="Enter Username" class="auth-input" />
+        <button class="btn btn-teal auth-submit" onclick="submitAuth('login')"
+          style="background:var(--teal);color:white;border:none;padding:12px;border-radius:14px;cursor:pointer;">Sign
+          In</button>
+      </div>
+      <div id="form-signup" style="display:none;">
+        <h3>Create an Account</h3>
+        <input type="text" id="signup-username" placeholder="Choose a Username" class="auth-input" />
+        <button class="btn btn-teal auth-submit" onclick="submitAuth('signup')"
+          style="background:var(--teal);color:white;border:none;padding:12px;border-radius:14px;cursor:pointer;">Sign
+          Up</button>
+      </div>
+    </div>
+  </div>
+</div>
+
+<style>
+  .auth-modal-overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.5);
+    backdrop-filter: blur(4px);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    z-index: 1000;
+  }
+
+  .auth-modal-content {
+    background: var(--white);
+    border-radius: var(--radius-lg);
+    padding: 32px;
+    width: 100%;
+    max-width: 400px;
+    position: relative;
+    box-shadow: var(--shadow-lg);
+  }
+
+  .auth-close {
+    position: absolute;
+    top: 16px;
+    right: 16px;
+    background: none;
+    border: none;
+    font-size: 20px;
+    cursor: pointer;
+    color: var(--gray-400);
+  }
+
+  .auth-tabs {
+    display: flex;
+    gap: 16px;
+    margin-bottom: 24px;
+    border-bottom: 2px solid var(--gray-200);
+  }
+
+  .auth-tab {
+    background: none;
+    border: none;
+    font-size: 16px;
+    font-weight: 700;
+    color: var(--gray-400);
+    padding-bottom: 8px;
+    cursor: pointer;
+    border-bottom: 2px solid transparent;
+    margin-bottom: -2px;
+  }
+
+  .auth-tab.active {
+    color: var(--teal);
+    border-bottom-color: var(--teal);
+  }
+
+  .auth-body h3 {
+    font-family: var(--font-display);
+    font-size: 24px;
+    margin-bottom: 16px;
+    color: var(--dark);
+  }
+
+  .auth-input {
+    width: 100%;
+    padding: 12px 16px;
+    border: 1.5px solid var(--gray-200);
+    border-radius: var(--radius);
+    font-size: 15px;
+    margin-bottom: 16px;
+    font-family: var(--font-body);
+  }
+
+  .auth-input:focus {
+    outline: none;
+    border-color: var(--teal);
+  }
+
+  .auth-submit {
+    width: 100%;
+    justify-content: center;
+    padding: 14px;
+    font-size: 16px;
+  }
+</style>
+
+<script>
+  function openAuthModal() { document.getElementById('authModal').style.display = 'flex'; }
+  function closeAuthModal() { document.getElementById('authModal').style.display = 'none'; }
+  function handleAuthOverlayClick(e) { if (e.target === document.getElementById('authModal')) closeAuthModal(); }
+  function switchAuthTab(tab) {
+    document.getElementById('tab-login').classList.remove('active');
+    document.getElementById('tab-signup').classList.remove('active');
+    document.getElementById('form-login').style.display = 'none';
+    document.getElementById('form-signup').style.display = 'none';
+
+    document.getElementById('tab-' + tab).classList.add('active');
+    document.getElementById('form-' + tab).style.display = 'block';
+  }
+  function submitAuth(type) {
+    const endpoint = type === 'login' ? '/api/login' : '/api/signup';
+    const username = document.getElementById(type + '-username').value;
+    if (!username) return alert("Please enter a username");
+
+    fetch(endpoint, {
+      method: 'POST',
+      headers: { 'Content-Type': 'application/json' },
+      body: JSON.stringify({ username: username })
+    }).then(res => res.json()).then(data => {
+      if (data.status === 'success') {
+        window.location.reload();
+      } else {
+        alert("Error processing request");
+      }
+    });
+  }
+</script>
 
 </html>

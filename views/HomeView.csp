@@ -882,7 +882,7 @@
   <nav>
     <div class="container">
       <div class="nav-inner">
-        <a href="/" class="logo">Clarified Horizon</a>
+        <a href="/" class="logo">Speak well</a>
         <ul class="nav-links">
           <li><a href="/" class="active">HOME</a></li>
           <li><a href="/learn">LEARN</a></li>
@@ -1067,9 +1067,9 @@
         if (navActions) {
           navActions.innerHTML = '<div class="nav-avatar" title="Logged in as ' + userName + ' (Click to Log Out / Dashboard)" onclick="if(confirm(\'Do you want to log out? (Cancel to go to Dashboard)\')) { localStorage.removeItem(\'userName\'); window.location.reload(); } else { window.location.href=\'/learn\'; }">' + firstLetter + '</div>';
         }
-      }
-    });
-  </script>
+    }
+  });
+</script>
 
 </body>
 
